@@ -56,6 +56,9 @@
                              Text="Main Page">
 
             <!--  secondary commands  -->
+            <controls:PageHeader.PrimaryCommands>
+                <AppBarButton Content="&#xE72D;" FontFamily="Segoe MDL2 Assets" Margin="30, 0, 0, 0" Click="AppBarButton_Click" Width="Auto"/>
+            </controls:PageHeader.PrimaryCommands>
             <controls:PageHeader.SecondaryCommands>
                 <AppBarButton Click="{x:Bind ViewModel.GotoSettings}" Label="Settings" />
                 <AppBarButton Click="{x:Bind ViewModel.GotoPrivacy}" Label="Privacy" />
@@ -75,8 +78,7 @@
 
                 <TextBox MinWidth="150"
                          MinHeight="62"
-                         Header="Parameter to pass"
-                         Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         Header="Enter the Key Words:"
                          TextWrapping="Wrap">
                     <Interactivity:Interaction.Behaviors>
 
@@ -97,7 +99,7 @@
 
             <Button x:Name="submitButton"
                     Click="{x:Bind ViewModel.GotoDetailsPage}"
-                    Content="Submit"
+                    Content="Search"
                     RelativePanel.AlignBottomWith="parameterResizer"
                     RelativePanel.RightOf="parameterResizer" />
 

@@ -156,7 +156,7 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[78];
+            _typeNameTable = new string[77];
             _typeNameTable[0] = "Template10.Common.BootStrapper";
             _typeNameTable[1] = "Windows.UI.Xaml.Application";
             _typeNameTable[2] = "Template10.Common.StateItems";
@@ -232,11 +232,10 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
             _typeNameTable[72] = "KnowledgeCombingTree.ViewModels.AboutPartViewModel";
             _typeNameTable[73] = "Template10.Converters.ValueWhenConverter";
             _typeNameTable[74] = "KnowledgeCombingTree.Views.SettingsPage";
-            _typeNameTable[75] = "Template10.Behaviors.MessageDialogAction";
-            _typeNameTable[76] = "KnowledgeCombingTree.Views.Shell";
-            _typeNameTable[77] = "KnowledgeCombingTree.Views.Splash";
+            _typeNameTable[75] = "KnowledgeCombingTree.Views.Shell";
+            _typeNameTable[76] = "KnowledgeCombingTree.Views.Splash";
 
-            _typeTable = new global::System.Type[78];
+            _typeTable = new global::System.Type[77];
             _typeTable[0] = typeof(global::Template10.Common.BootStrapper);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Application);
             _typeTable[2] = typeof(global::Template10.Common.StateItems);
@@ -312,9 +311,8 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
             _typeTable[72] = typeof(global::KnowledgeCombingTree.ViewModels.AboutPartViewModel);
             _typeTable[73] = typeof(global::Template10.Converters.ValueWhenConverter);
             _typeTable[74] = typeof(global::KnowledgeCombingTree.Views.SettingsPage);
-            _typeTable[75] = typeof(global::Template10.Behaviors.MessageDialogAction);
-            _typeTable[76] = typeof(global::KnowledgeCombingTree.Views.Shell);
-            _typeTable[77] = typeof(global::KnowledgeCombingTree.Views.Splash);
+            _typeTable[75] = typeof(global::KnowledgeCombingTree.Views.Shell);
+            _typeTable[76] = typeof(global::KnowledgeCombingTree.Views.Splash);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -374,8 +372,7 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
         private object Activate_72_AboutPartViewModel() { return new global::KnowledgeCombingTree.ViewModels.AboutPartViewModel(); }
         private object Activate_73_ValueWhenConverter() { return new global::Template10.Converters.ValueWhenConverter(); }
         private object Activate_74_SettingsPage() { return new global::KnowledgeCombingTree.Views.SettingsPage(); }
-        private object Activate_75_MessageDialogAction() { return new global::Template10.Behaviors.MessageDialogAction(); }
-        private object Activate_76_Shell() { return new global::KnowledgeCombingTree.Views.Shell(); }
+        private object Activate_75_Shell() { return new global::KnowledgeCombingTree.Views.Shell(); }
         private void MapAdd_2_StateItems(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.String, global::System.Object>)instance;
@@ -1138,23 +1135,14 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 75:   //  Template10.Behaviors.MessageDialogAction
-                userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_75_MessageDialogAction;
-                userType.AddMemberName("Title");
-                userType.AddMemberName("Content");
-                userType.AddMemberName("OkText");
-                xamlType = userType;
-                break;
-
-            case 76:   //  KnowledgeCombingTree.Views.Shell
+            case 75:   //  KnowledgeCombingTree.Views.Shell
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_76_Shell;
+                userType.Activator = Activate_75_Shell;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 77:   //  KnowledgeCombingTree.Views.Splash
+            case 76:   //  KnowledgeCombingTree.Views.Splash
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
                 userType.SetIsLocalType();
                 xamlType = userType;
@@ -2276,36 +2264,6 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             that.Debug = (global::System.Boolean)Value;
         }
-        private object get_112_MessageDialogAction_Title(object instance)
-        {
-            var that = (global::Template10.Behaviors.MessageDialogAction)instance;
-            return that.Title;
-        }
-        private void set_112_MessageDialogAction_Title(object instance, object Value)
-        {
-            var that = (global::Template10.Behaviors.MessageDialogAction)instance;
-            that.Title = (global::System.String)Value;
-        }
-        private object get_113_MessageDialogAction_Content(object instance)
-        {
-            var that = (global::Template10.Behaviors.MessageDialogAction)instance;
-            return that.Content;
-        }
-        private void set_113_MessageDialogAction_Content(object instance, object Value)
-        {
-            var that = (global::Template10.Behaviors.MessageDialogAction)instance;
-            that.Content = (global::System.String)Value;
-        }
-        private object get_114_MessageDialogAction_OkText(object instance)
-        {
-            var that = (global::Template10.Behaviors.MessageDialogAction)instance;
-            return that.OkText;
-        }
-        private void set_114_MessageDialogAction_OkText(object instance, object Value)
-        {
-            var that = (global::Template10.Behaviors.MessageDialogAction)instance;
-            that.OkText = (global::System.String)Value;
-        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
@@ -3059,27 +3017,6 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "Debug", "Boolean");
                 xamlMember.Getter = get_111_ValueWhenConverter_Debug;
                 xamlMember.Setter = set_111_ValueWhenConverter_Debug;
-                break;
-            case "Template10.Behaviors.MessageDialogAction.Title":
-                userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.MessageDialogAction");
-                xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "Title", "String");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_112_MessageDialogAction_Title;
-                xamlMember.Setter = set_112_MessageDialogAction_Title;
-                break;
-            case "Template10.Behaviors.MessageDialogAction.Content":
-                userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.MessageDialogAction");
-                xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "Content", "String");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_113_MessageDialogAction_Content;
-                xamlMember.Setter = set_113_MessageDialogAction_Content;
-                break;
-            case "Template10.Behaviors.MessageDialogAction.OkText":
-                userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.MessageDialogAction");
-                xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "OkText", "String");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_114_MessageDialogAction_OkText;
-                xamlMember.Setter = set_114_MessageDialogAction_OkText;
                 break;
             }
             return xamlMember;

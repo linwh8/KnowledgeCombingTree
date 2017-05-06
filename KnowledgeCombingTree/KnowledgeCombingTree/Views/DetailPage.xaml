@@ -53,7 +53,14 @@
                              RelativePanel.AlignLeftWithPanel="True"
                              RelativePanel.AlignRightWithPanel="True"
                              RelativePanel.AlignTopWithPanel="True"
-                             Text="Detail Page" />
+                             Text="Detail Page" >
+            
+            <controls:PageHeader.PrimaryCommands>
+                <AppBarButton Icon="NewFolder"/>
+            </controls:PageHeader.PrimaryCommands>
+            
+        </controls:PageHeader>
+
 
         <!--  content  -->
         <ScrollViewer EntranceNavigationTransitionInfo.IsTargetElement="True"
@@ -64,7 +71,6 @@
                       RelativePanel.Below="pageHeader"
                       VerticalScrollBarVisibility="Auto">
             <StackPanel>
-                <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="You passed:" />
                 <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Text="{x:Bind ViewModel.Value, Mode=OneWay, FallbackValue=DesigntimeValue}" />
             </StackPanel>
         </ScrollViewer>
