@@ -18,7 +18,7 @@ namespace KnowledgeCombingTree.ViewModels
             }
         }
 
-        string _Value = "Gas";
+        string _Value = "";
         public string Value { get { return _Value; } set { Set(ref _Value, value); } }
 
         public override async Task OnNavigatedToAsync(object parameter, NavigationMode mode, IDictionary<string, object> suspensionState)
@@ -51,8 +51,8 @@ namespace KnowledgeCombingTree.ViewModels
         public void GotoSettings() =>
             NavigationService.Navigate(typeof(Views.SettingsPage), 0);
 
-        //public void GotoPrivacy() =>
-          //  NavigationService.Navigate(typeof(Views.SettingsPage), 1);
+        public void GotoPrivacy() =>
+            NavigationService.Navigate(typeof(Views.SettingsPage), 1);
 
         public void GotoAbout() =>
             NavigationService.Navigate(typeof(Views.SettingsPage), 2);

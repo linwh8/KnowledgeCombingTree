@@ -9,6 +9,7 @@
       xmlns:local="using:KnowledgeCombingTree.Views"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:vm="using:KnowledgeCombingTree.ViewModels"
+      xmlns:md="using:KnowledgeCombingTree.Models"
       x:Name="ThisPage"
       mc:Ignorable="d">
 
@@ -70,9 +71,81 @@
                       RelativePanel.AlignRightWithPanel="True"
                       RelativePanel.Below="pageHeader"
                       VerticalScrollBarVisibility="Auto">
-            <StackPanel>
-                <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Text="{x:Bind ViewModel.Value, Mode=OneWay, FallbackValue=DesigntimeValue}" />
-            </StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid x:Name="List">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="8*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    
+                    <!--接受拖拽的区域-->
+                    <Border AllowDrop="True"
+                            Drop="Border_Drop"
+                            DragOver="Border_DragOver"
+                            Background="{ThemeResource ToolTipForegroundThemeBrush}">
+                        <TextBlock Text="Please drag the folder here" RequestedTheme="Dark"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Microsoft YaHei" />
+                    </Border>
+                    
+                    <!--文件夹显示区域-->
+                    <Grid Grid.Row="1">
+                        <ListView x:Name="FolderList" CanDragItems="True" DragItemsStarting="FolderList_DragItemsStarting"
+                                  ItemsSource="{x:Bind ViewModel.AllItems}" ItemClick="FolderList_ItemClick"
+                                  IsItemClickEnabled="True">
+                            <ListView.ItemTemplate>
+                                <DataTemplate x:DataType="md:FolderItem">
+                                    <Grid Margin="0,8">
+                                        <Grid  Margin="12,0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <TextBlock>
+                                                <Run Text="FolderPath" />
+                                                <Run Text="{x:Bind FolderPath}" />
+                                            </TextBlock>
+                                        </Grid>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+
+                    <!--拖拽删除区-->
+                    <Border Grid.Row="2" x:Name="DelBoder"
+                            AllowDrop="True"
+                            Drop="DelBoder_Drop"
+                            DragOver="DelBoder_DragOver"
+                            Background="{ThemeResource ToolTipForegroundThemeBrush}">
+                        <TextBlock Text="Please drag the folder you want to delete here" RequestedTheme="Dark" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Microsoft YaHei" />
+                    </Border>
+                </Grid>
+                
+                <Grid Name="ItemSetting" Grid.Column="1" Visibility="Collapsed">
+                    <ScrollViewer Margin="30,0,0,0">
+                        <StackPanel>
+                            <Image x:Name="ItemImage" Source="ms-appx:///Assets/DefaultImage.jpg" Width="350" Height="200" Margin="20" />
+                            <WebView Name="web" Height="340" Visibility="Collapsed"/>
+                            <RelativePanel>
+                                <AppBarButton Name="SelectPictureButton" Icon="Pictures" Label="select" RelativePanel.AlignRightWithPanel="True" Margin="10" />
+                            </RelativePanel>
+                            <TextBox x:Name="Title" Width="350" Header="Title" Margin="0,12,20,0" TextWrapping="Wrap" />
+                            <TextBox x:Name="Details" Width="350" Header="Details" Margin="0,12,20,0" TextWrapping="Wrap" />
+                            <TextBox x:Name="Path" Width="350" Header="Path" Margin="0,12,20,0" TextWrapping="Wrap" />
+                            <TextBox x:Name="URL" Margin="0,12,20,0" Width="350" Header="URL"/>
+                            <Button Name="openURLButton" Content="&#xEB97;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" Click="openURLButton_Click"/>
+                            <RelativePanel Margin="0,12,20,0">
+                                <Button Name="updateButton" Content="Update" RelativePanel.AlignLeftWithPanel="True" Click="updateButton_Click"/>
+                                <Button Name="cancelButton" Content="Cancel" RelativePanel.AlignRightWithPanel="True" Margin="0,0,10,0" Click="cancelButton_Click"/>
+                            </RelativePanel>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </Grid>
         </ScrollViewer>
 
     </RelativePanel>
