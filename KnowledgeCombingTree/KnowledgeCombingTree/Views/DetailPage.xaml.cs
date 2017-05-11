@@ -1,6 +1,7 @@
 using KnowledgeCombingTree.ViewModels;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Controls;
+<<<<<<< HEAD
 using KnowledgeCombingTree.Models;
 using Windows.UI.Xaml;
 using Windows.Storage.Pickers;
@@ -19,6 +20,18 @@ using Windows.ApplicationModel.DataTransfer;
 using System.Diagnostics;
 using System.Linq;
 using System.Collections.Generic;
+=======
+using Windows.UI.Xaml.Media.Imaging;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using Windows.ApplicationModel.DataTransfer;
+using Windows.Storage;
+using System.Collections.Generic;
+using System.Linq;
+using Windows.ApplicationModel.DataTransfer.DragDrop;
+using System;
+using Windows.UI.Popups;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
 using System.Net;
 using System.IO;
 
@@ -32,6 +45,7 @@ namespace KnowledgeCombingTree.Views
         {
             InitializeComponent();
             NavigationCacheMode = NavigationCacheMode.Disabled;
+<<<<<<< HEAD
 
 //            ViewModel.SelectedItem = null;
         }
@@ -176,6 +190,11 @@ namespace KnowledgeCombingTree.Views
         }
 
         /*-----------------------------------------拖拽相关------------------------------------------*/
+=======
+            
+        }
+
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         // 拖拽完成后执行的函数(拖拽接受区域)
         private async void Border_Drop(object sender, Windows.UI.Xaml.DragEventArgs e)
         {
@@ -186,14 +205,22 @@ namespace KnowledgeCombingTree.Views
                 try
                 {
                     StorageFile file = items.OfType<StorageFile>().First();
+<<<<<<< HEAD
                     TreeNode new_node = new TreeNode("-1", 0, file.Path, "", "", "");
                     ViewModel.AddTreeNode(new_node);
+=======
+                    ViewModel.AddFolderItem(file.Path);
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 }
                 catch
                 {
                     StorageFolder folder = items[0] as StorageFolder;
+<<<<<<< HEAD
                     TreeNode new_node = new TreeNode("-1", 0, folder.Path, "", "", "");
                     ViewModel.AddTreeNode(new_node);
+=======
+                    ViewModel.AddFolderItem(folder.Path);
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 }
             }
         }
@@ -215,12 +242,20 @@ namespace KnowledgeCombingTree.Views
 
         }
 
+<<<<<<< HEAD
         Models.TreeNode DelItem;
+=======
+        Models.FolderItem DelItem;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
 
         // 拖拽完成执行的函数(拖拽删除区域) 
         private void DelBoder_Drop(object sender, Windows.UI.Xaml.DragEventArgs e)
         {
+<<<<<<< HEAD
             ViewModel.RemoveTreeNode(DelItem);
+=======
+            ViewModel.RemoveFolderItem(DelItem);
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         }
 
         // 拖拽过程中执行的函数(拖拽删除区域)
@@ -229,6 +264,7 @@ namespace KnowledgeCombingTree.Views
             e.AcceptedOperation = DataPackageOperation.Move;
             e.DragUIOverride.Caption = "Delete";
             e.DragUIOverride.IsContentVisible = false;
+<<<<<<< HEAD
         }
 
         // 开始拖拽Item以准备删除
@@ -295,7 +331,70 @@ namespace KnowledgeCombingTree.Views
             var webStringTemp = await FileIO.ReadTextAsync(file);
             var webString = webStringTemp.ToString();
             web.NavigateToString(webString);
+=======
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
+        }
+
+        // 开始拖拽Item以准备删除
+        private void FolderList_DragItemsStarting(object sender, DragItemsStartingEventArgs e)
+        {
+            DelItem = e.Items.FirstOrDefault() as Models.FolderItem;
+        }
+
+        // ListView的点击执行函数
+        private void FolderList_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ViewModel.SelectedItem = (Models.FolderItem)(e.ClickedItem);
+            ItemSetting.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            Title.Text = ViewModel.SelectedItem.Title;
+            Details.Text = ViewModel.SelectedItem.Details;
+            Path.Text = ViewModel.SelectedItem.FolderPath;
+            URL.Text = ViewModel.SelectedItem.URL;
+        }
+
+        // update按钮的点击执行函数
+        private void updateButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            ViewModel.UpdateFolderItem(Title.Text, Details.Text, Path.Text, URL.Text);
+            ItemSetting.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            ItemImage.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            web.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+        }
+        // cancel按钮的点击执行函数
+        private void cancelButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            ItemSetting.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            ItemImage.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            web.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+        }
+        // openURLButton的点击执行函数
+        private async void openURLButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            // 建立文件
+            web.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            ItemImage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            var local = ApplicationData.Current.LocalFolder;
+            var localStorageFolder = await local.CreateFolderAsync("File", CreationCollisionOption.OpenIfExists);
+            var file = await localStorageFolder.CreateFileAsync("web.html", CreationCollisionOption.GenerateUniqueName);
+            var url = URL.Text;
+
+            // 将网页转化成byte数组
+            List<Byte> allbytes = new List<byte>();
+            using (var response = await WebRequest.Create(url).GetResponseAsync()) {
+                using (Stream responseStream = response.GetResponseStream()) {
+                    byte[] buffer = new byte[4000];
+                    int bytesRead = 0;
+                    while ((bytesRead = await responseStream.ReadAsync(buffer,0,4000)) > 0) {
+                        allbytes.AddRange(buffer.Take(bytesRead));
+                    }
+                }
+            }
+            await FileIO.WriteBytesAsync(file, allbytes.ToArray());
+
+            // 从文件中读取内容转化成字符串，显示在WebView上
+            var webStringTemp = await FileIO.ReadTextAsync(file);
+            var webString = webStringTemp.ToString();
+            web.NavigateToString(webString);
         }
     }
 }
-

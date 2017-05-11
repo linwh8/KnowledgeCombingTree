@@ -156,7 +156,11 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
 
         private void InitTypeTables()
         {
+<<<<<<< HEAD
             _typeNameTable = new string[80];
+=======
+            _typeNameTable = new string[81];
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
             _typeNameTable[0] = "Template10.Common.BootStrapper";
             _typeNameTable[1] = "Windows.UI.Xaml.Application";
             _typeNameTable[2] = "Template10.Common.StateItems";
@@ -210,6 +214,7 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
             _typeNameTable[50] = "KnowledgeCombingTree.ViewModels.DetailPageViewModel";
             _typeNameTable[51] = "Template10.Mvvm.ViewModelBase";
             _typeNameTable[52] = "Template10.Mvvm.BindableBase";
+<<<<<<< HEAD
             _typeNameTable[53] = "System.Collections.ObjectModel.ObservableCollection`1<KnowledgeCombingTree.Models.TreeNode>";
             _typeNameTable[54] = "System.Collections.ObjectModel.Collection`1<KnowledgeCombingTree.Models.TreeNode>";
             _typeNameTable[55] = "KnowledgeCombingTree.Models.TreeNode";
@@ -239,6 +244,38 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
             _typeNameTable[79] = "KnowledgeCombingTree.Views.Splash";
 
             _typeTable = new global::System.Type[80];
+=======
+            _typeNameTable[53] = "System.Collections.ObjectModel.ObservableCollection`1<KnowledgeCombingTree.Models.FolderItem>";
+            _typeNameTable[54] = "System.Collections.ObjectModel.Collection`1<KnowledgeCombingTree.Models.FolderItem>";
+            _typeNameTable[55] = "KnowledgeCombingTree.Models.FolderItem";
+            _typeNameTable[56] = "Windows.UI.Xaml.Media.Imaging.BitmapImage";
+            _typeNameTable[57] = "Template10.Common.IDispatcherWrapper";
+            _typeNameTable[58] = "Template10.Common.IStateItems";
+            _typeNameTable[59] = "KnowledgeCombingTree.Views.DetailPage";
+            _typeNameTable[60] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[61] = "KnowledgeCombingTree.ViewModels.MainPageViewModel";
+            _typeNameTable[62] = "Microsoft.Xaml.Interactivity.Interaction";
+            _typeNameTable[63] = "Microsoft.Xaml.Interactivity.BehaviorCollection";
+            _typeNameTable[64] = "Windows.UI.Xaml.DependencyObjectCollection";
+            _typeNameTable[65] = "Template10.Behaviors.KeyBehavior";
+            _typeNameTable[66] = "Microsoft.Xaml.Interactivity.ActionCollection";
+            _typeNameTable[67] = "Windows.System.VirtualKey";
+            _typeNameTable[68] = "Template10.Behaviors.KeyBehavior.Kinds";
+            _typeNameTable[69] = "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior";
+            _typeNameTable[70] = "Microsoft.Xaml.Interactivity.Behavior";
+            _typeNameTable[71] = "Template10.Behaviors.FocusAction";
+            _typeNameTable[72] = "Microsoft.Xaml.Interactions.Core.CallMethodAction";
+            _typeNameTable[73] = "KnowledgeCombingTree.Views.MainPage";
+            _typeNameTable[74] = "KnowledgeCombingTree.ViewModels.SettingsPageViewModel";
+            _typeNameTable[75] = "KnowledgeCombingTree.ViewModels.SettingsPartViewModel";
+            _typeNameTable[76] = "KnowledgeCombingTree.ViewModels.AboutPartViewModel";
+            _typeNameTable[77] = "Template10.Converters.ValueWhenConverter";
+            _typeNameTable[78] = "KnowledgeCombingTree.Views.SettingsPage";
+            _typeNameTable[79] = "KnowledgeCombingTree.Views.Shell";
+            _typeNameTable[80] = "KnowledgeCombingTree.Views.Splash";
+
+            _typeTable = new global::System.Type[81];
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
             _typeTable[0] = typeof(global::Template10.Common.BootStrapper);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Application);
             _typeTable[2] = typeof(global::Template10.Common.StateItems);
@@ -292,6 +329,7 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
             _typeTable[50] = typeof(global::KnowledgeCombingTree.ViewModels.DetailPageViewModel);
             _typeTable[51] = typeof(global::Template10.Mvvm.ViewModelBase);
             _typeTable[52] = typeof(global::Template10.Mvvm.BindableBase);
+<<<<<<< HEAD
             _typeTable[53] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::KnowledgeCombingTree.Models.TreeNode>);
             _typeTable[54] = typeof(global::System.Collections.ObjectModel.Collection<global::KnowledgeCombingTree.Models.TreeNode>);
             _typeTable[55] = typeof(global::KnowledgeCombingTree.Models.TreeNode);
@@ -319,6 +357,36 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
             _typeTable[77] = typeof(global::KnowledgeCombingTree.Views.SettingsPage);
             _typeTable[78] = typeof(global::KnowledgeCombingTree.Views.Shell);
             _typeTable[79] = typeof(global::KnowledgeCombingTree.Views.Splash);
+=======
+            _typeTable[53] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::KnowledgeCombingTree.Models.FolderItem>);
+            _typeTable[54] = typeof(global::System.Collections.ObjectModel.Collection<global::KnowledgeCombingTree.Models.FolderItem>);
+            _typeTable[55] = typeof(global::KnowledgeCombingTree.Models.FolderItem);
+            _typeTable[56] = typeof(global::Windows.UI.Xaml.Media.Imaging.BitmapImage);
+            _typeTable[57] = typeof(global::Template10.Common.IDispatcherWrapper);
+            _typeTable[58] = typeof(global::Template10.Common.IStateItems);
+            _typeTable[59] = typeof(global::KnowledgeCombingTree.Views.DetailPage);
+            _typeTable[60] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[61] = typeof(global::KnowledgeCombingTree.ViewModels.MainPageViewModel);
+            _typeTable[62] = typeof(global::Microsoft.Xaml.Interactivity.Interaction);
+            _typeTable[63] = typeof(global::Microsoft.Xaml.Interactivity.BehaviorCollection);
+            _typeTable[64] = typeof(global::Windows.UI.Xaml.DependencyObjectCollection);
+            _typeTable[65] = typeof(global::Template10.Behaviors.KeyBehavior);
+            _typeTable[66] = typeof(global::Microsoft.Xaml.Interactivity.ActionCollection);
+            _typeTable[67] = typeof(global::Windows.System.VirtualKey);
+            _typeTable[68] = typeof(global::Template10.Behaviors.KeyBehavior.Kinds);
+            _typeTable[69] = typeof(global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior);
+            _typeTable[70] = typeof(global::Microsoft.Xaml.Interactivity.Behavior);
+            _typeTable[71] = typeof(global::Template10.Behaviors.FocusAction);
+            _typeTable[72] = typeof(global::Microsoft.Xaml.Interactions.Core.CallMethodAction);
+            _typeTable[73] = typeof(global::KnowledgeCombingTree.Views.MainPage);
+            _typeTable[74] = typeof(global::KnowledgeCombingTree.ViewModels.SettingsPageViewModel);
+            _typeTable[75] = typeof(global::KnowledgeCombingTree.ViewModels.SettingsPartViewModel);
+            _typeTable[76] = typeof(global::KnowledgeCombingTree.ViewModels.AboutPartViewModel);
+            _typeTable[77] = typeof(global::Template10.Converters.ValueWhenConverter);
+            _typeTable[78] = typeof(global::KnowledgeCombingTree.Views.SettingsPage);
+            _typeTable[79] = typeof(global::KnowledgeCombingTree.Views.Shell);
+            _typeTable[80] = typeof(global::KnowledgeCombingTree.Views.Splash);
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -364,6 +432,7 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
         private object Activate_46_Resizer() { return new global::Template10.Controls.Resizer(); }
         private object Activate_49_Busy() { return new global::KnowledgeCombingTree.Views.Busy(); }
         private object Activate_50_DetailPageViewModel() { return new global::KnowledgeCombingTree.ViewModels.DetailPageViewModel(); }
+<<<<<<< HEAD
         private object Activate_53_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::KnowledgeCombingTree.Models.TreeNode>(); }
         private object Activate_54_Collection() { return new global::System.Collections.ObjectModel.Collection<global::KnowledgeCombingTree.Models.TreeNode>(); }
         private object Activate_58_DetailPage() { return new global::KnowledgeCombingTree.Views.DetailPage(); }
@@ -381,6 +450,26 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
         private object Activate_76_ValueWhenConverter() { return new global::Template10.Converters.ValueWhenConverter(); }
         private object Activate_77_SettingsPage() { return new global::KnowledgeCombingTree.Views.SettingsPage(); }
         private object Activate_78_Shell() { return new global::KnowledgeCombingTree.Views.Shell(); }
+=======
+        private object Activate_53_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::KnowledgeCombingTree.Models.FolderItem>(); }
+        private object Activate_54_Collection() { return new global::System.Collections.ObjectModel.Collection<global::KnowledgeCombingTree.Models.FolderItem>(); }
+        private object Activate_55_FolderItem() { return new global::KnowledgeCombingTree.Models.FolderItem(); }
+        private object Activate_59_DetailPage() { return new global::KnowledgeCombingTree.Views.DetailPage(); }
+        private object Activate_61_MainPageViewModel() { return new global::KnowledgeCombingTree.ViewModels.MainPageViewModel(); }
+        private object Activate_63_BehaviorCollection() { return new global::Microsoft.Xaml.Interactivity.BehaviorCollection(); }
+        private object Activate_65_KeyBehavior() { return new global::Template10.Behaviors.KeyBehavior(); }
+        private object Activate_66_ActionCollection() { return new global::Microsoft.Xaml.Interactivity.ActionCollection(); }
+        private object Activate_69_EventTriggerBehavior() { return new global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior(); }
+        private object Activate_71_FocusAction() { return new global::Template10.Behaviors.FocusAction(); }
+        private object Activate_72_CallMethodAction() { return new global::Microsoft.Xaml.Interactions.Core.CallMethodAction(); }
+        private object Activate_73_MainPage() { return new global::KnowledgeCombingTree.Views.MainPage(); }
+        private object Activate_74_SettingsPageViewModel() { return new global::KnowledgeCombingTree.ViewModels.SettingsPageViewModel(); }
+        private object Activate_75_SettingsPartViewModel() { return new global::KnowledgeCombingTree.ViewModels.SettingsPartViewModel(); }
+        private object Activate_76_AboutPartViewModel() { return new global::KnowledgeCombingTree.ViewModels.AboutPartViewModel(); }
+        private object Activate_77_ValueWhenConverter() { return new global::Template10.Converters.ValueWhenConverter(); }
+        private object Activate_78_SettingsPage() { return new global::KnowledgeCombingTree.Views.SettingsPage(); }
+        private object Activate_79_Shell() { return new global::KnowledgeCombingTree.Views.Shell(); }
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         private void MapAdd_2_StateItems(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.String, global::System.Object>)instance;
@@ -409,23 +498,40 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
         }
         private void VectorAdd_53_ObservableCollection(object instance, object item)
         {
+<<<<<<< HEAD
             var collection = (global::System.Collections.Generic.ICollection<global::KnowledgeCombingTree.Models.TreeNode>)instance;
             var newItem = (global::KnowledgeCombingTree.Models.TreeNode)item;
+=======
+            var collection = (global::System.Collections.Generic.ICollection<global::KnowledgeCombingTree.Models.FolderItem>)instance;
+            var newItem = (global::KnowledgeCombingTree.Models.FolderItem)item;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
             collection.Add(newItem);
         }
         private void VectorAdd_54_Collection(object instance, object item)
         {
+<<<<<<< HEAD
             var collection = (global::System.Collections.Generic.ICollection<global::KnowledgeCombingTree.Models.TreeNode>)instance;
             var newItem = (global::KnowledgeCombingTree.Models.TreeNode)item;
             collection.Add(newItem);
         }
         private void VectorAdd_62_BehaviorCollection(object instance, object item)
+=======
+            var collection = (global::System.Collections.Generic.ICollection<global::KnowledgeCombingTree.Models.FolderItem>)instance;
+            var newItem = (global::KnowledgeCombingTree.Models.FolderItem)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_63_BehaviorCollection(object instance, object item)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
             var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
             collection.Add(newItem);
         }
+<<<<<<< HEAD
         private void VectorAdd_65_ActionCollection(object instance, object item)
+=======
+        private void VectorAdd_66_ActionCollection(object instance, object item)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
             var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
@@ -807,10 +913,15 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
             case 50:   //  KnowledgeCombingTree.ViewModels.DetailPageViewModel
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Template10.Mvvm.ViewModelBase"));
                 userType.Activator = Activate_50_DetailPageViewModel;
+<<<<<<< HEAD
                 userType.AddMemberName("RootItems");
                 userType.AddMemberName("ChildrenItems");
                 userType.AddMemberName("SelectedItem");
                 userType.AddMemberName("Value");
+=======
+                userType.AddMemberName("AllItems");
+                userType.AddMemberName("SelectedItem");
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -828,45 +939,80 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
                 xamlType = userType;
                 break;
 
+<<<<<<< HEAD
             case 53:   //  System.Collections.ObjectModel.ObservableCollection`1<KnowledgeCombingTree.Models.TreeNode>
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<KnowledgeCombingTree.Models.TreeNode>"));
+=======
+            case 53:   //  System.Collections.ObjectModel.ObservableCollection`1<KnowledgeCombingTree.Models.FolderItem>
+                userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<KnowledgeCombingTree.Models.FolderItem>"));
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 userType.CollectionAdd = VectorAdd_53_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
+<<<<<<< HEAD
             case 54:   //  System.Collections.ObjectModel.Collection`1<KnowledgeCombingTree.Models.TreeNode>
+=======
+            case 54:   //  System.Collections.ObjectModel.Collection`1<KnowledgeCombingTree.Models.FolderItem>
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.Activator = Activate_54_Collection;
                 userType.CollectionAdd = VectorAdd_54_Collection;
                 xamlType = userType;
                 break;
 
+<<<<<<< HEAD
             case 55:   //  KnowledgeCombingTree.Models.TreeNode
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+=======
+            case 55:   //  KnowledgeCombingTree.Models.FolderItem
+                userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_55_FolderItem;
+                userType.AddMemberName("Img");
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
+<<<<<<< HEAD
             case 56:   //  Template10.Common.IDispatcherWrapper
+=======
+            case 56:   //  Windows.UI.Xaml.Media.Imaging.BitmapImage
+                xamlType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 57:   //  Template10.Common.IDispatcherWrapper
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
+<<<<<<< HEAD
             case 57:   //  Template10.Common.IStateItems
+=======
+            case 58:   //  Template10.Common.IStateItems
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
+<<<<<<< HEAD
             case 58:   //  KnowledgeCombingTree.Views.DetailPage
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_58_DetailPage;
+=======
+            case 59:   //  KnowledgeCombingTree.Views.DetailPage
+                userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_59_DetailPage;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
+<<<<<<< HEAD
             case 59:   //  Windows.UI.Xaml.Controls.Page
                 xamlType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
@@ -874,24 +1020,44 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
             case 60:   //  KnowledgeCombingTree.ViewModels.MainPageViewModel
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Template10.Mvvm.ViewModelBase"));
                 userType.Activator = Activate_60_MainPageViewModel;
+=======
+            case 60:   //  Windows.UI.Xaml.Controls.Page
+                xamlType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 61:   //  KnowledgeCombingTree.ViewModels.MainPageViewModel
+                userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Template10.Mvvm.ViewModelBase"));
+                userType.Activator = Activate_61_MainPageViewModel;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 userType.AddMemberName("Value");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
+<<<<<<< HEAD
             case 61:   //  Microsoft.Xaml.Interactivity.Interaction
+=======
+            case 62:   //  Microsoft.Xaml.Interactivity.Interaction
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.AddMemberName("Behaviors");
                 xamlType = userType;
                 break;
 
+<<<<<<< HEAD
             case 62:   //  Microsoft.Xaml.Interactivity.BehaviorCollection
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
                 userType.CollectionAdd = VectorAdd_62_BehaviorCollection;
+=======
+            case 63:   //  Microsoft.Xaml.Interactivity.BehaviorCollection
+                userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
+                userType.CollectionAdd = VectorAdd_63_BehaviorCollection;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
+<<<<<<< HEAD
             case 63:   //  Windows.UI.Xaml.DependencyObjectCollection
                 xamlType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
@@ -899,6 +1065,15 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
             case 64:   //  Template10.Behaviors.KeyBehavior
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
                 userType.Activator = Activate_64_KeyBehavior;
+=======
+            case 64:   //  Windows.UI.Xaml.DependencyObjectCollection
+                xamlType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 65:   //  Template10.Behaviors.KeyBehavior
+                userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
+                userType.Activator = Activate_65_KeyBehavior;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 userType.SetContentPropertyName("Template10.Behaviors.KeyBehavior.Actions");
                 userType.AddMemberName("Actions");
                 userType.AddMemberName("Key");
@@ -910,14 +1085,24 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
                 xamlType = userType;
                 break;
 
+<<<<<<< HEAD
             case 65:   //  Microsoft.Xaml.Interactivity.ActionCollection
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
                 userType.CollectionAdd = VectorAdd_65_ActionCollection;
+=======
+            case 66:   //  Microsoft.Xaml.Interactivity.ActionCollection
+                userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
+                userType.CollectionAdd = VectorAdd_66_ActionCollection;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
+<<<<<<< HEAD
             case 66:   //  Windows.System.VirtualKey
+=======
+            case 67:   //  Windows.System.VirtualKey
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("None", global::Windows.System.VirtualKey.None);
                 userType.AddEnumValue("LeftButton", global::Windows.System.VirtualKey.LeftButton);
@@ -1092,16 +1277,26 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
                 xamlType = userType;
                 break;
 
+<<<<<<< HEAD
             case 67:   //  Template10.Behaviors.KeyBehavior.Kinds
+=======
+            case 68:   //  Template10.Behaviors.KeyBehavior.Kinds
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("KeyUp", global::Template10.Behaviors.KeyBehavior.Kinds.KeyUp);
                 userType.AddEnumValue("KeyDown", global::Template10.Behaviors.KeyBehavior.Kinds.KeyDown);
                 xamlType = userType;
                 break;
 
+<<<<<<< HEAD
             case 68:   //  Microsoft.Xaml.Interactions.Core.EventTriggerBehavior
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.Xaml.Interactivity.Behavior"));
                 userType.Activator = Activate_68_EventTriggerBehavior;
+=======
+            case 69:   //  Microsoft.Xaml.Interactions.Core.EventTriggerBehavior
+                userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.Xaml.Interactivity.Behavior"));
+                userType.Activator = Activate_69_EventTriggerBehavior;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 userType.SetContentPropertyName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions");
                 userType.AddMemberName("Actions");
                 userType.AddMemberName("EventName");
@@ -1109,60 +1304,102 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
                 xamlType = userType;
                 break;
 
+<<<<<<< HEAD
             case 69:   //  Microsoft.Xaml.Interactivity.Behavior
+=======
+            case 70:   //  Microsoft.Xaml.Interactivity.Behavior
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
                 userType.AddMemberName("AssociatedObject");
                 xamlType = userType;
                 break;
 
+<<<<<<< HEAD
             case 70:   //  Template10.Behaviors.FocusAction
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
                 userType.Activator = Activate_70_FocusAction;
+=======
+            case 71:   //  Template10.Behaviors.FocusAction
+                userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
+                userType.Activator = Activate_71_FocusAction;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 userType.AddMemberName("TargetObject");
                 xamlType = userType;
                 break;
 
+<<<<<<< HEAD
             case 71:   //  Microsoft.Xaml.Interactions.Core.CallMethodAction
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
                 userType.Activator = Activate_71_CallMethodAction;
+=======
+            case 72:   //  Microsoft.Xaml.Interactions.Core.CallMethodAction
+                userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
+                userType.Activator = Activate_72_CallMethodAction;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 userType.AddMemberName("MethodName");
                 userType.AddMemberName("TargetObject");
                 xamlType = userType;
                 break;
 
+<<<<<<< HEAD
             case 72:   //  KnowledgeCombingTree.Views.MainPage
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_72_MainPage;
+=======
+            case 73:   //  KnowledgeCombingTree.Views.MainPage
+                userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_73_MainPage;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
+<<<<<<< HEAD
             case 73:   //  KnowledgeCombingTree.ViewModels.SettingsPageViewModel
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Template10.Mvvm.ViewModelBase"));
                 userType.Activator = Activate_73_SettingsPageViewModel;
+=======
+            case 74:   //  KnowledgeCombingTree.ViewModels.SettingsPageViewModel
+                userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Template10.Mvvm.ViewModelBase"));
+                userType.Activator = Activate_74_SettingsPageViewModel;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 userType.AddMemberName("SettingsPartViewModel");
                 userType.AddMemberName("AboutPartViewModel");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
+<<<<<<< HEAD
             case 74:   //  KnowledgeCombingTree.ViewModels.SettingsPartViewModel
+=======
+            case 75:   //  KnowledgeCombingTree.ViewModels.SettingsPartViewModel
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Template10.Mvvm.ViewModelBase"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
+<<<<<<< HEAD
             case 75:   //  KnowledgeCombingTree.ViewModels.AboutPartViewModel
+=======
+            case 76:   //  KnowledgeCombingTree.ViewModels.AboutPartViewModel
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Template10.Mvvm.ViewModelBase"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
+<<<<<<< HEAD
             case 76:   //  Template10.Converters.ValueWhenConverter
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.Activator = Activate_76_ValueWhenConverter;
+=======
+            case 77:   //  Template10.Converters.ValueWhenConverter
+                userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_77_ValueWhenConverter;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 userType.AddMemberName("When");
                 userType.AddMemberName("Value");
                 userType.AddMemberName("Otherwise");
@@ -1171,21 +1408,37 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
                 xamlType = userType;
                 break;
 
+<<<<<<< HEAD
             case 77:   //  KnowledgeCombingTree.Views.SettingsPage
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_77_SettingsPage;
+=======
+            case 78:   //  KnowledgeCombingTree.Views.SettingsPage
+                userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_78_SettingsPage;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
+<<<<<<< HEAD
             case 78:   //  KnowledgeCombingTree.Views.Shell
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_78_Shell;
+=======
+            case 79:   //  KnowledgeCombingTree.Views.Shell
+                userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_79_Shell;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
+<<<<<<< HEAD
             case 79:   //  KnowledgeCombingTree.Views.Splash
+=======
+            case 80:   //  KnowledgeCombingTree.Views.Splash
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
                 userType.SetIsLocalType();
                 xamlType = userType;
@@ -2069,6 +2322,7 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
             var that = (global::KnowledgeCombingTree.Views.Busy)instance;
             that.IsBusy = (global::System.Boolean)Value;
         }
+<<<<<<< HEAD
         private object get_85_DetailPageViewModel_RootItems(object instance)
         {
             var that = (global::KnowledgeCombingTree.ViewModels.DetailPageViewModel)instance;
@@ -2100,55 +2354,110 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
             that.SelectedItem = (global::KnowledgeCombingTree.Models.TreeNode)Value;
         }
         private object get_88_DetailPageViewModel_Value(object instance)
+=======
+        private object get_85_DetailPageViewModel_AllItems(object instance)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::KnowledgeCombingTree.ViewModels.DetailPageViewModel)instance;
-            return that.Value;
+            return that.AllItems;
         }
+        private object get_86_FolderItem_Img(object instance)
+        {
+            var that = (global::KnowledgeCombingTree.Models.FolderItem)instance;
+            return that.Img;
+        }
+        private void set_86_FolderItem_Img(object instance, object Value)
+        {
+            var that = (global::KnowledgeCombingTree.Models.FolderItem)instance;
+            that.Img = (global::Windows.UI.Xaml.Media.Imaging.BitmapImage)Value;
+        }
+<<<<<<< HEAD
         private void set_88_DetailPageViewModel_Value(object instance, object Value)
+=======
+        private object get_87_DetailPageViewModel_SelectedItem(object instance)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::KnowledgeCombingTree.ViewModels.DetailPageViewModel)instance;
-            that.Value = (global::System.String)Value;
+            return that.SelectedItem;
         }
+<<<<<<< HEAD
         private object get_89_ViewModelBase_NavigationService(object instance)
+=======
+        private void set_87_DetailPageViewModel_SelectedItem(object instance, object Value)
+        {
+            var that = (global::KnowledgeCombingTree.ViewModels.DetailPageViewModel)instance;
+            that.SelectedItem = (global::KnowledgeCombingTree.Models.FolderItem)Value;
+        }
+        private object get_88_ViewModelBase_NavigationService(object instance)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Template10.Mvvm.ViewModelBase)instance;
             return that.NavigationService;
         }
+<<<<<<< HEAD
         private void set_89_ViewModelBase_NavigationService(object instance, object Value)
+=======
+        private void set_88_ViewModelBase_NavigationService(object instance, object Value)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Template10.Mvvm.ViewModelBase)instance;
             that.NavigationService = (global::Template10.Services.NavigationService.INavigationService)Value;
         }
+<<<<<<< HEAD
         private object get_90_ViewModelBase_Dispatcher(object instance)
+=======
+        private object get_89_ViewModelBase_Dispatcher(object instance)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Template10.Mvvm.ViewModelBase)instance;
             return that.Dispatcher;
         }
+<<<<<<< HEAD
         private void set_90_ViewModelBase_Dispatcher(object instance, object Value)
+=======
+        private void set_89_ViewModelBase_Dispatcher(object instance, object Value)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Template10.Mvvm.ViewModelBase)instance;
             that.Dispatcher = (global::Template10.Common.IDispatcherWrapper)Value;
         }
+<<<<<<< HEAD
         private object get_91_ViewModelBase_SessionState(object instance)
+=======
+        private object get_90_ViewModelBase_SessionState(object instance)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Template10.Mvvm.ViewModelBase)instance;
             return that.SessionState;
         }
+<<<<<<< HEAD
         private void set_91_ViewModelBase_SessionState(object instance, object Value)
+=======
+        private void set_90_ViewModelBase_SessionState(object instance, object Value)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Template10.Mvvm.ViewModelBase)instance;
             that.SessionState = (global::Template10.Common.IStateItems)Value;
         }
+<<<<<<< HEAD
         private object get_92_MainPageViewModel_Value(object instance)
+=======
+        private object get_91_MainPageViewModel_Value(object instance)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::KnowledgeCombingTree.ViewModels.MainPageViewModel)instance;
             return that.Value;
         }
+<<<<<<< HEAD
         private void set_92_MainPageViewModel_Value(object instance, object Value)
+=======
+        private void set_91_MainPageViewModel_Value(object instance, object Value)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::KnowledgeCombingTree.ViewModels.MainPageViewModel)instance;
             that.Value = (global::System.String)Value;
         }
+<<<<<<< HEAD
         private object get_93_Interaction_Behaviors(object instance)
         {
             return global::Microsoft.Xaml.Interactivity.Interaction.GetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance);
@@ -2158,181 +2467,332 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
             global::Microsoft.Xaml.Interactivity.Interaction.SetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance, (global::Microsoft.Xaml.Interactivity.BehaviorCollection)Value);
         }
         private object get_94_KeyBehavior_Actions(object instance)
+=======
+        private object get_92_Interaction_Behaviors(object instance)
+        {
+            return global::Microsoft.Xaml.Interactivity.Interaction.GetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance);
+        }
+        private void set_92_Interaction_Behaviors(object instance, object Value)
+        {
+            global::Microsoft.Xaml.Interactivity.Interaction.SetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance, (global::Microsoft.Xaml.Interactivity.BehaviorCollection)Value);
+        }
+        private object get_93_KeyBehavior_Actions(object instance)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Template10.Behaviors.KeyBehavior)instance;
             return that.Actions;
         }
+<<<<<<< HEAD
         private object get_95_KeyBehavior_Key(object instance)
+=======
+        private object get_94_KeyBehavior_Key(object instance)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Template10.Behaviors.KeyBehavior)instance;
             return that.Key;
         }
+<<<<<<< HEAD
         private void set_95_KeyBehavior_Key(object instance, object Value)
+=======
+        private void set_94_KeyBehavior_Key(object instance, object Value)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Template10.Behaviors.KeyBehavior)instance;
             that.Key = (global::Windows.System.VirtualKey)Value;
         }
+<<<<<<< HEAD
         private object get_96_KeyBehavior_AssociatedObject(object instance)
+=======
+        private object get_95_KeyBehavior_AssociatedObject(object instance)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Template10.Behaviors.KeyBehavior)instance;
             return that.AssociatedObject;
         }
+<<<<<<< HEAD
         private object get_97_KeyBehavior_AndControl(object instance)
+=======
+        private object get_96_KeyBehavior_AndControl(object instance)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Template10.Behaviors.KeyBehavior)instance;
             return that.AndControl;
         }
+<<<<<<< HEAD
         private void set_97_KeyBehavior_AndControl(object instance, object Value)
+=======
+        private void set_96_KeyBehavior_AndControl(object instance, object Value)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Template10.Behaviors.KeyBehavior)instance;
             that.AndControl = (global::System.Boolean)Value;
         }
+<<<<<<< HEAD
         private object get_98_KeyBehavior_AndAlt(object instance)
+=======
+        private object get_97_KeyBehavior_AndAlt(object instance)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Template10.Behaviors.KeyBehavior)instance;
             return that.AndAlt;
         }
+<<<<<<< HEAD
         private void set_98_KeyBehavior_AndAlt(object instance, object Value)
+=======
+        private void set_97_KeyBehavior_AndAlt(object instance, object Value)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Template10.Behaviors.KeyBehavior)instance;
             that.AndAlt = (global::System.Boolean)Value;
         }
+<<<<<<< HEAD
         private object get_99_KeyBehavior_AndShift(object instance)
+=======
+        private object get_98_KeyBehavior_AndShift(object instance)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Template10.Behaviors.KeyBehavior)instance;
             return that.AndShift;
         }
+<<<<<<< HEAD
         private void set_99_KeyBehavior_AndShift(object instance, object Value)
+=======
+        private void set_98_KeyBehavior_AndShift(object instance, object Value)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Template10.Behaviors.KeyBehavior)instance;
             that.AndShift = (global::System.Boolean)Value;
         }
+<<<<<<< HEAD
         private object get_100_KeyBehavior_Event(object instance)
+=======
+        private object get_99_KeyBehavior_Event(object instance)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Template10.Behaviors.KeyBehavior)instance;
             return that.Event;
         }
+<<<<<<< HEAD
         private void set_100_KeyBehavior_Event(object instance, object Value)
+=======
+        private void set_99_KeyBehavior_Event(object instance, object Value)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Template10.Behaviors.KeyBehavior)instance;
             that.Event = (global::Template10.Behaviors.KeyBehavior.Kinds)Value;
         }
+<<<<<<< HEAD
         private object get_101_EventTriggerBehavior_Actions(object instance)
+=======
+        private object get_100_EventTriggerBehavior_Actions(object instance)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             return that.Actions;
         }
+<<<<<<< HEAD
         private object get_102_EventTriggerBehavior_EventName(object instance)
+=======
+        private object get_101_EventTriggerBehavior_EventName(object instance)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             return that.EventName;
         }
+<<<<<<< HEAD
         private void set_102_EventTriggerBehavior_EventName(object instance, object Value)
+=======
+        private void set_101_EventTriggerBehavior_EventName(object instance, object Value)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             that.EventName = (global::System.String)Value;
         }
+<<<<<<< HEAD
         private object get_103_EventTriggerBehavior_SourceObject(object instance)
+=======
+        private object get_102_EventTriggerBehavior_SourceObject(object instance)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             return that.SourceObject;
         }
+<<<<<<< HEAD
         private void set_103_EventTriggerBehavior_SourceObject(object instance, object Value)
+=======
+        private void set_102_EventTriggerBehavior_SourceObject(object instance, object Value)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             that.SourceObject = (global::System.Object)Value;
         }
+<<<<<<< HEAD
         private object get_104_Behavior_AssociatedObject(object instance)
+=======
+        private object get_103_Behavior_AssociatedObject(object instance)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Microsoft.Xaml.Interactivity.Behavior)instance;
             return that.AssociatedObject;
         }
+<<<<<<< HEAD
         private object get_105_FocusAction_TargetObject(object instance)
+=======
+        private object get_104_FocusAction_TargetObject(object instance)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Template10.Behaviors.FocusAction)instance;
             return that.TargetObject;
         }
+<<<<<<< HEAD
         private void set_105_FocusAction_TargetObject(object instance, object Value)
+=======
+        private void set_104_FocusAction_TargetObject(object instance, object Value)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Template10.Behaviors.FocusAction)instance;
             that.TargetObject = (global::Windows.UI.Xaml.Controls.Control)Value;
         }
+<<<<<<< HEAD
         private object get_106_CallMethodAction_MethodName(object instance)
+=======
+        private object get_105_CallMethodAction_MethodName(object instance)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.CallMethodAction)instance;
             return that.MethodName;
         }
+<<<<<<< HEAD
         private void set_106_CallMethodAction_MethodName(object instance, object Value)
+=======
+        private void set_105_CallMethodAction_MethodName(object instance, object Value)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.CallMethodAction)instance;
             that.MethodName = (global::System.String)Value;
         }
+<<<<<<< HEAD
         private object get_107_CallMethodAction_TargetObject(object instance)
+=======
+        private object get_106_CallMethodAction_TargetObject(object instance)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.CallMethodAction)instance;
             return that.TargetObject;
         }
+<<<<<<< HEAD
         private void set_107_CallMethodAction_TargetObject(object instance, object Value)
+=======
+        private void set_106_CallMethodAction_TargetObject(object instance, object Value)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.CallMethodAction)instance;
             that.TargetObject = (global::System.Object)Value;
         }
+<<<<<<< HEAD
         private object get_108_SettingsPageViewModel_SettingsPartViewModel(object instance)
+=======
+        private object get_107_SettingsPageViewModel_SettingsPartViewModel(object instance)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::KnowledgeCombingTree.ViewModels.SettingsPageViewModel)instance;
             return that.SettingsPartViewModel;
         }
+<<<<<<< HEAD
         private object get_109_SettingsPageViewModel_AboutPartViewModel(object instance)
+=======
+        private object get_108_SettingsPageViewModel_AboutPartViewModel(object instance)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::KnowledgeCombingTree.ViewModels.SettingsPageViewModel)instance;
             return that.AboutPartViewModel;
         }
+<<<<<<< HEAD
         private object get_110_ValueWhenConverter_When(object instance)
+=======
+        private object get_109_ValueWhenConverter_When(object instance)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             return that.When;
         }
+<<<<<<< HEAD
         private void set_110_ValueWhenConverter_When(object instance, object Value)
+=======
+        private void set_109_ValueWhenConverter_When(object instance, object Value)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             that.When = (global::System.Object)Value;
         }
+<<<<<<< HEAD
         private object get_111_ValueWhenConverter_Value(object instance)
+=======
+        private object get_110_ValueWhenConverter_Value(object instance)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             return that.Value;
         }
+<<<<<<< HEAD
         private void set_111_ValueWhenConverter_Value(object instance, object Value)
+=======
+        private void set_110_ValueWhenConverter_Value(object instance, object Value)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             that.Value = (global::System.Object)Value;
         }
+<<<<<<< HEAD
         private object get_112_ValueWhenConverter_Otherwise(object instance)
+=======
+        private object get_111_ValueWhenConverter_Otherwise(object instance)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             return that.Otherwise;
         }
+<<<<<<< HEAD
         private void set_112_ValueWhenConverter_Otherwise(object instance, object Value)
+=======
+        private void set_111_ValueWhenConverter_Otherwise(object instance, object Value)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             that.Otherwise = (global::System.Object)Value;
         }
+<<<<<<< HEAD
         private object get_113_ValueWhenConverter_OtherwiseValueBack(object instance)
+=======
+        private object get_112_ValueWhenConverter_OtherwiseValueBack(object instance)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             return that.OtherwiseValueBack;
         }
+<<<<<<< HEAD
         private void set_113_ValueWhenConverter_OtherwiseValueBack(object instance, object Value)
+=======
+        private void set_112_ValueWhenConverter_OtherwiseValueBack(object instance, object Value)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             that.OtherwiseValueBack = (global::System.Object)Value;
         }
+<<<<<<< HEAD
         private object get_114_ValueWhenConverter_Debug(object instance)
+=======
+        private object get_113_ValueWhenConverter_Debug(object instance)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             return that.Debug;
         }
+<<<<<<< HEAD
         private void set_114_ValueWhenConverter_Debug(object instance, object Value)
+=======
+        private void set_113_ValueWhenConverter_Debug(object instance, object Value)
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             that.Debug = (global::System.Boolean)Value;
@@ -2920,6 +3380,7 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
                 xamlMember.Getter = get_84_Busy_IsBusy;
                 xamlMember.Setter = set_84_Busy_IsBusy;
                 break;
+<<<<<<< HEAD
             case "KnowledgeCombingTree.ViewModels.DetailPageViewModel.RootItems":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("KnowledgeCombingTree.ViewModels.DetailPageViewModel");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "RootItems", "System.Collections.ObjectModel.ObservableCollection`1<KnowledgeCombingTree.Models.TreeNode>");
@@ -2943,171 +3404,314 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "Value", "String");
                 xamlMember.Getter = get_88_DetailPageViewModel_Value;
                 xamlMember.Setter = set_88_DetailPageViewModel_Value;
+=======
+            case "KnowledgeCombingTree.ViewModels.DetailPageViewModel.AllItems":
+                userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("KnowledgeCombingTree.ViewModels.DetailPageViewModel");
+                xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "AllItems", "System.Collections.ObjectModel.ObservableCollection`1<KnowledgeCombingTree.Models.FolderItem>");
+                xamlMember.Getter = get_85_DetailPageViewModel_AllItems;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "KnowledgeCombingTree.Models.FolderItem.Img":
+                userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("KnowledgeCombingTree.Models.FolderItem");
+                xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "Img", "Windows.UI.Xaml.Media.Imaging.BitmapImage");
+                xamlMember.Getter = get_86_FolderItem_Img;
+                xamlMember.Setter = set_86_FolderItem_Img;
+                break;
+            case "KnowledgeCombingTree.ViewModels.DetailPageViewModel.SelectedItem":
+                userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("KnowledgeCombingTree.ViewModels.DetailPageViewModel");
+                xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "SelectedItem", "KnowledgeCombingTree.Models.FolderItem");
+                xamlMember.Getter = get_87_DetailPageViewModel_SelectedItem;
+                xamlMember.Setter = set_87_DetailPageViewModel_SelectedItem;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 break;
             case "Template10.Mvvm.ViewModelBase.NavigationService":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Mvvm.ViewModelBase");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "NavigationService", "Template10.Services.NavigationService.INavigationService");
+<<<<<<< HEAD
                 xamlMember.Getter = get_89_ViewModelBase_NavigationService;
                 xamlMember.Setter = set_89_ViewModelBase_NavigationService;
+=======
+                xamlMember.Getter = get_88_ViewModelBase_NavigationService;
+                xamlMember.Setter = set_88_ViewModelBase_NavigationService;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 break;
             case "Template10.Mvvm.ViewModelBase.Dispatcher":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Mvvm.ViewModelBase");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "Dispatcher", "Template10.Common.IDispatcherWrapper");
+<<<<<<< HEAD
                 xamlMember.Getter = get_90_ViewModelBase_Dispatcher;
                 xamlMember.Setter = set_90_ViewModelBase_Dispatcher;
+=======
+                xamlMember.Getter = get_89_ViewModelBase_Dispatcher;
+                xamlMember.Setter = set_89_ViewModelBase_Dispatcher;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 break;
             case "Template10.Mvvm.ViewModelBase.SessionState":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Mvvm.ViewModelBase");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "SessionState", "Template10.Common.IStateItems");
+<<<<<<< HEAD
                 xamlMember.Getter = get_91_ViewModelBase_SessionState;
                 xamlMember.Setter = set_91_ViewModelBase_SessionState;
+=======
+                xamlMember.Getter = get_90_ViewModelBase_SessionState;
+                xamlMember.Setter = set_90_ViewModelBase_SessionState;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 break;
             case "KnowledgeCombingTree.ViewModels.MainPageViewModel.Value":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("KnowledgeCombingTree.ViewModels.MainPageViewModel");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "Value", "String");
+<<<<<<< HEAD
                 xamlMember.Getter = get_92_MainPageViewModel_Value;
                 xamlMember.Setter = set_92_MainPageViewModel_Value;
+=======
+                xamlMember.Getter = get_91_MainPageViewModel_Value;
+                xamlMember.Setter = set_91_MainPageViewModel_Value;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 break;
             case "Microsoft.Xaml.Interactivity.Interaction.Behaviors":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactivity.Interaction");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "Behaviors", "Microsoft.Xaml.Interactivity.BehaviorCollection");
                 xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
                 xamlMember.SetIsAttachable();
+<<<<<<< HEAD
                 xamlMember.Getter = get_93_Interaction_Behaviors;
                 xamlMember.Setter = set_93_Interaction_Behaviors;
+=======
+                xamlMember.Getter = get_92_Interaction_Behaviors;
+                xamlMember.Setter = set_92_Interaction_Behaviors;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 break;
             case "Template10.Behaviors.KeyBehavior.Actions":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.KeyBehavior");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "Actions", "Microsoft.Xaml.Interactivity.ActionCollection");
                 xamlMember.SetIsDependencyProperty();
+<<<<<<< HEAD
                 xamlMember.Getter = get_94_KeyBehavior_Actions;
+=======
+                xamlMember.Getter = get_93_KeyBehavior_Actions;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 xamlMember.SetIsReadOnly();
                 break;
             case "Template10.Behaviors.KeyBehavior.Key":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.KeyBehavior");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "Key", "Windows.System.VirtualKey");
+<<<<<<< HEAD
                 xamlMember.Getter = get_95_KeyBehavior_Key;
                 xamlMember.Setter = set_95_KeyBehavior_Key;
+=======
+                xamlMember.Getter = get_94_KeyBehavior_Key;
+                xamlMember.Setter = set_94_KeyBehavior_Key;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 break;
             case "Template10.Behaviors.KeyBehavior.AssociatedObject":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.KeyBehavior");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "AssociatedObject", "Windows.UI.Xaml.DependencyObject");
+<<<<<<< HEAD
                 xamlMember.Getter = get_96_KeyBehavior_AssociatedObject;
+=======
+                xamlMember.Getter = get_95_KeyBehavior_AssociatedObject;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 xamlMember.SetIsReadOnly();
                 break;
             case "Template10.Behaviors.KeyBehavior.AndControl":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.KeyBehavior");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "AndControl", "Boolean");
+<<<<<<< HEAD
                 xamlMember.Getter = get_97_KeyBehavior_AndControl;
                 xamlMember.Setter = set_97_KeyBehavior_AndControl;
+=======
+                xamlMember.Getter = get_96_KeyBehavior_AndControl;
+                xamlMember.Setter = set_96_KeyBehavior_AndControl;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 break;
             case "Template10.Behaviors.KeyBehavior.AndAlt":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.KeyBehavior");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "AndAlt", "Boolean");
+<<<<<<< HEAD
                 xamlMember.Getter = get_98_KeyBehavior_AndAlt;
                 xamlMember.Setter = set_98_KeyBehavior_AndAlt;
+=======
+                xamlMember.Getter = get_97_KeyBehavior_AndAlt;
+                xamlMember.Setter = set_97_KeyBehavior_AndAlt;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 break;
             case "Template10.Behaviors.KeyBehavior.AndShift":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.KeyBehavior");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "AndShift", "Boolean");
+<<<<<<< HEAD
                 xamlMember.Getter = get_99_KeyBehavior_AndShift;
                 xamlMember.Setter = set_99_KeyBehavior_AndShift;
+=======
+                xamlMember.Getter = get_98_KeyBehavior_AndShift;
+                xamlMember.Setter = set_98_KeyBehavior_AndShift;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 break;
             case "Template10.Behaviors.KeyBehavior.Event":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.KeyBehavior");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "Event", "Template10.Behaviors.KeyBehavior.Kinds");
+<<<<<<< HEAD
                 xamlMember.Getter = get_100_KeyBehavior_Event;
                 xamlMember.Setter = set_100_KeyBehavior_Event;
+=======
+                xamlMember.Getter = get_99_KeyBehavior_Event;
+                xamlMember.Setter = set_99_KeyBehavior_Event;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 break;
             case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "Actions", "Microsoft.Xaml.Interactivity.ActionCollection");
                 xamlMember.SetIsDependencyProperty();
+<<<<<<< HEAD
                 xamlMember.Getter = get_101_EventTriggerBehavior_Actions;
+=======
+                xamlMember.Getter = get_100_EventTriggerBehavior_Actions;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.EventName":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "EventName", "String");
                 xamlMember.SetIsDependencyProperty();
+<<<<<<< HEAD
                 xamlMember.Getter = get_102_EventTriggerBehavior_EventName;
                 xamlMember.Setter = set_102_EventTriggerBehavior_EventName;
+=======
+                xamlMember.Getter = get_101_EventTriggerBehavior_EventName;
+                xamlMember.Setter = set_101_EventTriggerBehavior_EventName;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 break;
             case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.SourceObject":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "SourceObject", "Object");
                 xamlMember.SetIsDependencyProperty();
+<<<<<<< HEAD
                 xamlMember.Getter = get_103_EventTriggerBehavior_SourceObject;
                 xamlMember.Setter = set_103_EventTriggerBehavior_SourceObject;
+=======
+                xamlMember.Getter = get_102_EventTriggerBehavior_SourceObject;
+                xamlMember.Setter = set_102_EventTriggerBehavior_SourceObject;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 break;
             case "Microsoft.Xaml.Interactivity.Behavior.AssociatedObject":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactivity.Behavior");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "AssociatedObject", "Windows.UI.Xaml.DependencyObject");
+<<<<<<< HEAD
                 xamlMember.Getter = get_104_Behavior_AssociatedObject;
+=======
+                xamlMember.Getter = get_103_Behavior_AssociatedObject;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 xamlMember.SetIsReadOnly();
                 break;
             case "Template10.Behaviors.FocusAction.TargetObject":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.FocusAction");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "TargetObject", "Windows.UI.Xaml.Controls.Control");
                 xamlMember.SetIsDependencyProperty();
+<<<<<<< HEAD
                 xamlMember.Getter = get_105_FocusAction_TargetObject;
                 xamlMember.Setter = set_105_FocusAction_TargetObject;
+=======
+                xamlMember.Getter = get_104_FocusAction_TargetObject;
+                xamlMember.Setter = set_104_FocusAction_TargetObject;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 break;
             case "Microsoft.Xaml.Interactions.Core.CallMethodAction.MethodName":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.CallMethodAction");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "MethodName", "String");
                 xamlMember.SetIsDependencyProperty();
+<<<<<<< HEAD
                 xamlMember.Getter = get_106_CallMethodAction_MethodName;
                 xamlMember.Setter = set_106_CallMethodAction_MethodName;
+=======
+                xamlMember.Getter = get_105_CallMethodAction_MethodName;
+                xamlMember.Setter = set_105_CallMethodAction_MethodName;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 break;
             case "Microsoft.Xaml.Interactions.Core.CallMethodAction.TargetObject":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.CallMethodAction");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "TargetObject", "Object");
                 xamlMember.SetIsDependencyProperty();
+<<<<<<< HEAD
                 xamlMember.Getter = get_107_CallMethodAction_TargetObject;
                 xamlMember.Setter = set_107_CallMethodAction_TargetObject;
+=======
+                xamlMember.Getter = get_106_CallMethodAction_TargetObject;
+                xamlMember.Setter = set_106_CallMethodAction_TargetObject;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 break;
             case "KnowledgeCombingTree.ViewModels.SettingsPageViewModel.SettingsPartViewModel":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("KnowledgeCombingTree.ViewModels.SettingsPageViewModel");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "SettingsPartViewModel", "KnowledgeCombingTree.ViewModels.SettingsPartViewModel");
+<<<<<<< HEAD
                 xamlMember.Getter = get_108_SettingsPageViewModel_SettingsPartViewModel;
+=======
+                xamlMember.Getter = get_107_SettingsPageViewModel_SettingsPartViewModel;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 xamlMember.SetIsReadOnly();
                 break;
             case "KnowledgeCombingTree.ViewModels.SettingsPageViewModel.AboutPartViewModel":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("KnowledgeCombingTree.ViewModels.SettingsPageViewModel");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "AboutPartViewModel", "KnowledgeCombingTree.ViewModels.AboutPartViewModel");
+<<<<<<< HEAD
                 xamlMember.Getter = get_109_SettingsPageViewModel_AboutPartViewModel;
+=======
+                xamlMember.Getter = get_108_SettingsPageViewModel_AboutPartViewModel;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 xamlMember.SetIsReadOnly();
                 break;
             case "Template10.Converters.ValueWhenConverter.When":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Converters.ValueWhenConverter");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "When", "Object");
+<<<<<<< HEAD
                 xamlMember.Getter = get_110_ValueWhenConverter_When;
                 xamlMember.Setter = set_110_ValueWhenConverter_When;
+=======
+                xamlMember.Getter = get_109_ValueWhenConverter_When;
+                xamlMember.Setter = set_109_ValueWhenConverter_When;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 break;
             case "Template10.Converters.ValueWhenConverter.Value":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Converters.ValueWhenConverter");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "Value", "Object");
+<<<<<<< HEAD
                 xamlMember.Getter = get_111_ValueWhenConverter_Value;
                 xamlMember.Setter = set_111_ValueWhenConverter_Value;
+=======
+                xamlMember.Getter = get_110_ValueWhenConverter_Value;
+                xamlMember.Setter = set_110_ValueWhenConverter_Value;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 break;
             case "Template10.Converters.ValueWhenConverter.Otherwise":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Converters.ValueWhenConverter");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "Otherwise", "Object");
+<<<<<<< HEAD
                 xamlMember.Getter = get_112_ValueWhenConverter_Otherwise;
                 xamlMember.Setter = set_112_ValueWhenConverter_Otherwise;
+=======
+                xamlMember.Getter = get_111_ValueWhenConverter_Otherwise;
+                xamlMember.Setter = set_111_ValueWhenConverter_Otherwise;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 break;
             case "Template10.Converters.ValueWhenConverter.OtherwiseValueBack":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Converters.ValueWhenConverter");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "OtherwiseValueBack", "Object");
+<<<<<<< HEAD
                 xamlMember.Getter = get_113_ValueWhenConverter_OtherwiseValueBack;
                 xamlMember.Setter = set_113_ValueWhenConverter_OtherwiseValueBack;
+=======
+                xamlMember.Getter = get_112_ValueWhenConverter_OtherwiseValueBack;
+                xamlMember.Setter = set_112_ValueWhenConverter_OtherwiseValueBack;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 break;
             case "Template10.Converters.ValueWhenConverter.Debug":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Converters.ValueWhenConverter");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "Debug", "Boolean");
+<<<<<<< HEAD
                 xamlMember.Getter = get_114_ValueWhenConverter_Debug;
                 xamlMember.Setter = set_114_ValueWhenConverter_Debug;
+=======
+                xamlMember.Getter = get_113_ValueWhenConverter_Debug;
+                xamlMember.Setter = set_113_ValueWhenConverter_Debug;
+>>>>>>> f4cc925bf303552f6d36d66a81677eaac8385bf8
                 break;
             }
             return xamlMember;

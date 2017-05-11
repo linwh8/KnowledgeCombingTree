@@ -72,7 +72,7 @@
                 <Setter Property="VisualStateNormalMinWidth" Value="{StaticResource NormalMinWidth}" />
                 <Setter Property="VisualStateWideMinWidth" Value="{StaticResource WideMinWidth}" />
             </Style>
-
+            
             <Style TargetType="controls:PageHeader">
                 <Setter Property="Background" Value="{ThemeResource CustomColorBrush}" />
                 <Setter Property="Foreground" Value="{ThemeResource ContrastColorBrush}" />
