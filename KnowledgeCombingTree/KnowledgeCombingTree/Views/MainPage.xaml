@@ -79,6 +79,7 @@
                 <TextBox MinWidth="150"
                          MinHeight="62"
                          Header="Enter the Key Words:"
+                         Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                          TextWrapping="Wrap">
                     <Interactivity:Interaction.Behaviors>
 
