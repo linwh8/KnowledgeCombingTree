@@ -55,11 +55,11 @@
                              RelativePanel.AlignRightWithPanel="True"
                              RelativePanel.AlignTopWithPanel="True"
                              Text="Detail Page" >
-            
+
             <controls:PageHeader.PrimaryCommands>
                 <AppBarButton Icon="NewFolder"/>
             </controls:PageHeader.PrimaryCommands>
-            
+
         </controls:PageHeader>
 
 
@@ -83,7 +83,7 @@
                         <RowDefinition Height="8*" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
-                    
+
                     <!--接受拖拽的区域-->
                     <Border AllowDrop="True"
                             Drop="Border_Drop"
@@ -91,14 +91,14 @@
                             Background="{ThemeResource ToolTipForegroundThemeBrush}">
                         <TextBlock Text="Please drag the folder here" RequestedTheme="Dark"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Microsoft YaHei" />
                     </Border>
-                    
+
                     <!--文件夹显示区域-->
                     <Grid Grid.Row="1">
                         <ListView x:Name="FolderList" CanDragItems="True" DragItemsStarting="FolderList_DragItemsStarting"
-                                  ItemsSource="{x:Bind ViewModel.AllItems}" ItemClick="FolderList_ItemClick"
+                                  ItemsSource="{x:Bind ViewModel.RootItems}" ItemClick="FolderList_ItemClick"
                                   IsItemClickEnabled="True">
                             <ListView.ItemTemplate>
-                                <DataTemplate x:DataType="md:FolderItem">
+                                <DataTemplate x:DataType="md:TreeNode">
                                     <Grid Margin="0,8">
                                         <Grid  Margin="12,0">
                                             <Grid.RowDefinitions>
@@ -106,7 +106,7 @@
                                             </Grid.RowDefinitions>
                                             <TextBlock>
                                                 <Run Text="FolderPath" />
-                                                <Run Text="{x:Bind FolderPath}" />
+                                                <Run Text="{x:Bind path}" />
                                             </TextBlock>
                                         </Grid>
                                     </Grid>
@@ -124,7 +124,7 @@
                         <TextBlock Text="Please drag the folder you want to delete here" RequestedTheme="Dark" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Microsoft YaHei" />
                     </Border>
                 </Grid>
-                
+
                 <Grid Name="ItemSetting" Grid.Column="1" Visibility="Collapsed">
                     <ScrollViewer Margin="30,0,0,0">
                         <StackPanel>

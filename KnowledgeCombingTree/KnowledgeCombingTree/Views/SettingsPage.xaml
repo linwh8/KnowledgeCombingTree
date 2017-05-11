@@ -137,6 +137,7 @@
 
                 </ScrollViewer>
             </PivotItem>
+
             <!--  privacy  -->
             <PivotItem DataContext="{Binding SettingsPartViewModel}"
                        Header="Privacy statement"
@@ -177,6 +178,7 @@
                     </TextBlock>
                 </ScrollViewer>
             </PivotItem>
+
             <!--  about  -->
             <PivotItem Header="About">
                 <RelativePanel DataContext="{Binding AboutPartViewModel}">

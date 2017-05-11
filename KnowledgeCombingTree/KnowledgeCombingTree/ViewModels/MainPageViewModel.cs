@@ -10,6 +10,8 @@ namespace KnowledgeCombingTree.ViewModels
 {
     public class MainPageViewModel : ViewModelBase
     {
+
+
         public MainPageViewModel()
         {
             if (Windows.ApplicationModel.DesignMode.DesignModeEnabled)
@@ -18,7 +20,7 @@ namespace KnowledgeCombingTree.ViewModels
             }
         }
 
-        string _Value = "";
+        string _Value = "Gas";
         public string Value { get { return _Value; } set { Set(ref _Value, value); } }
 
         public override async Task OnNavigatedToAsync(object parameter, NavigationMode mode, IDictionary<string, object> suspensionState)
