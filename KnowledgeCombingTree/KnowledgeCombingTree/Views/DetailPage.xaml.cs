@@ -158,6 +158,7 @@ namespace KnowledgeCombingTree.Views
         private string CreateTree(string path, string name)
         {
             TreeNode root = new TreeNode("-1", 0, path, name, "", "");
+            ViewModel.AddTreeNode(root);
             DbService.AddItem(root);
             return root.getId();
         }
@@ -175,126 +176,15 @@ namespace KnowledgeCombingTree.Views
             DbService.UpdateItem(node);
         }
 
-        /*-----------------------------------------拖拽相关------------------------------------------*/
-        // 拖拽完成后执行的函数(拖拽接受区域)
-        private async void Border_Drop(object sender, Windows.UI.Xaml.DragEventArgs e)
+        private void AddNode_Click(object sender, RoutedEventArgs e)
         {
-            if (e.DataView.Contains(StandardDataFormats.StorageItems))
-            {
-                Debug.WriteLine("[Info] DataView Contains StorageItems");
-                var items = await e.DataView.GetStorageItemsAsync();
-                try
-                {
-                    StorageFile file = items.OfType<StorageFile>().First();
-                    TreeNode new_node = new TreeNode("-1", 0, file.Path, "", "", "");
-                    ViewModel.AddTreeNode(new_node);
-                }
-                catch
-                {
-                    StorageFolder folder = items[0] as StorageFolder;
-                    TreeNode new_node = new TreeNode("-1", 0, folder.Path, "", "", "");
-                    ViewModel.AddTreeNode(new_node);
-                }
-            }
+            ChooseAndCreateTreeRoot();
         }
 
-        // 拖拽时执行的函数(拖拽接受区域)
-        private void Border_DragOver(object sender, Windows.UI.Xaml.DragEventArgs e)
+        private void RootList_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Debug.WriteLine("[Info] DragOver");
-            // 设置操作类型
-            e.AcceptedOperation = DataPackageOperation.Copy;
-            // 设置提示文字
-            e.DragUIOverride.Caption = "Drag here can add the folder";
-            // 是否显示拖放时的文字，默认为true
-            e.DragUIOverride.IsCaptionVisible = true;
-            // 是否显示文件图标，默认为true
-            e.DragUIOverride.IsContentVisible = true;
-            // Caption前面的图标是否显示
-            e.DragUIOverride.IsGlyphVisible = true;
-
-        }
-
-        Models.TreeNode DelItem;
-
-        // 拖拽完成执行的函数(拖拽删除区域) 
-        private void DelBoder_Drop(object sender, Windows.UI.Xaml.DragEventArgs e)
-        {
-            ViewModel.RemoveTreeNode(DelItem);
-        }
-
-        // 拖拽过程中执行的函数(拖拽删除区域)
-        private void DelBoder_DragOver(object sender, Windows.UI.Xaml.DragEventArgs e)
-        {
-            e.AcceptedOperation = DataPackageOperation.Move;
-            e.DragUIOverride.Caption = "Delete";
-            e.DragUIOverride.IsContentVisible = false;
-        }
-
-        // 开始拖拽Item以准备删除
-        private void FolderList_DragItemsStarting(object sender, DragItemsStartingEventArgs e)
-        {
-            DelItem = e.Items.FirstOrDefault() as Models.TreeNode;
-        }
-
-        // ListView的点击执行函数
-        private void FolderList_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            ViewModel.SelectedItem = (Models.TreeNode)(e.ClickedItem);
-            ItemSetting.Visibility = Windows.UI.Xaml.Visibility.Visible;
-            Title.Text = ViewModel.SelectedItem.getName();
-            Details.Text = ViewModel.SelectedItem.getDescription();
-            Path.Text = ViewModel.SelectedItem.getPath();
-            //URL.Text = ViewModel.SelectedItem.URL;
-        }
-
-        // update按钮的点击执行函数
-        private void updateButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
-        {
-            UploadModification();
-            //    ViewModel.UpdateTreeNode(Title.Text, Details.Text, Path.Text, URL.Text);
-            ItemSetting.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            ItemImage.Visibility = Windows.UI.Xaml.Visibility.Visible;
-            web.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-        }
-        // cancel按钮的点击执行函数
-        private void cancelButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
-        {
-            ItemSetting.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            ItemImage.Visibility = Windows.UI.Xaml.Visibility.Visible;
-            web.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-        }
-        // openURLButton的点击执行函数
-        private async void openURLButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
-        {
-            // 建立文件
-            web.Visibility = Windows.UI.Xaml.Visibility.Visible;
-            ItemImage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            var local = ApplicationData.Current.LocalFolder;
-            var localStorageFolder = await local.CreateFolderAsync("File", CreationCollisionOption.OpenIfExists);
-            var file = await localStorageFolder.CreateFileAsync("web.html", CreationCollisionOption.GenerateUniqueName);
-            var url = URL.Text;
-
-            // 将网页转化成byte数组
-            List<Byte> allbytes = new List<byte>();
-            using (var response = await WebRequest.Create(url).GetResponseAsync())
-            {
-                using (Stream responseStream = response.GetResponseStream())
-                {
-                    byte[] buffer = new byte[4000];
-                    int bytesRead = 0;
-                    while ((bytesRead = await responseStream.ReadAsync(buffer, 0, 4000)) > 0)
-                    {
-                        allbytes.AddRange(buffer.Take(bytesRead));
-                    }
-                }
-            }
-            await FileIO.WriteBytesAsync(file, allbytes.ToArray());
-
-            // 从文件中读取内容转化成字符串，显示在WebView上
-            var webStringTemp = await FileIO.ReadTextAsync(file);
-            var webString = webStringTemp.ToString();
-            web.NavigateToString(webString);
+            var root = sender as TreeNode;
+            UpdateChildrenNodes(root);
         }
     }
 }

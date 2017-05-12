@@ -1,1 +1,1 @@
-E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree.csproj;x86
+D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree.csproj;x86
