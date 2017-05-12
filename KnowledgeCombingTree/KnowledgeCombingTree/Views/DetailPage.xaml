@@ -78,7 +78,25 @@
                 </Grid.ColumnDefinitions>
                 
                 <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="8*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <!--接受拖拽的区域-->
+                    <Border AllowDrop="True"
+                            Drop="Border_Drop"
+                            DragOver="Border_DragOver"
+                            Background="{ThemeResource ToolTipForegroundThemeBrush}">
+                        <TextBlock Text="Please drag the folder here" RequestedTheme="Dark"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Microsoft YaHei" />
+                    </Border>
+
+                    <!--文件夹显示区域-->
                     <ListView x:Name="RootList"
+                              Grid.Row="1"
+                              CanDragItems="True"
+                              DragItemsStarting="RootList_DragItemsStarting"
                               IsItemClickEnabled="True" 
                               ItemsSource="{x:Bind ViewModel.RootItems}"
                               ItemClick="RootList_ItemClick">
@@ -98,7 +116,17 @@
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
+                    
+                    <!--拖拽删除区-->
+                    <Border Grid.Row="2" x:Name="DelBoder"
+                            AllowDrop="True"
+                            Drop="DelBoder_Drop"
+                            DragOver="DelBoder_DragOver"
+                            Background="{ThemeResource ToolTipForegroundThemeBrush}">
+                        <TextBlock Text="Please drag the folder you want to delete here" RequestedTheme="Dark" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Microsoft YaHei" />
+                    </Border>
                 </Grid>
+                
                 <Grid Grid.Column="1">
                     <ListView x:Name="ChildList" IsItemClickEnabled="True" ItemsSource="{x:Bind ViewModel.ChildrenItems}">
                         <ListView.ItemTemplate>

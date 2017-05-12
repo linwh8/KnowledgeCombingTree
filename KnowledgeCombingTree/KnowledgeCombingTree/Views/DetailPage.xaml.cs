@@ -186,6 +186,69 @@ namespace KnowledgeCombingTree.Views
             var root = sender as TreeNode;
             UpdateChildrenNodes(root);
         }
+
+        /*-----------------------------------------拖拽相关------------------------------------------*/
+        // 拖拽完成后执行的函数(拖拽接受区域)
+        private async void Border_Drop(object sender, Windows.UI.Xaml.DragEventArgs e)
+        {
+            if (e.DataView.Contains(StandardDataFormats.StorageItems))
+            {
+                Debug.WriteLine("[Info] DataView Contains StorageItems");
+                var items = await e.DataView.GetStorageItemsAsync();
+                try
+                {
+                    StorageFile file = items.OfType<StorageFile>().First();
+                    TreeNode new_node = new TreeNode("-1", 0, file.Path, "", "", "");
+                    ViewModel.AddTreeNode(new_node);
+                }
+                catch
+                {
+                    StorageFolder folder = items[0] as StorageFolder;
+                    TreeNode new_node = new TreeNode("-1", 0, folder.Path, "", "", "");
+                    ViewModel.AddTreeNode(new_node);
+                }
+            }
+        }
+
+        // 拖拽时执行的函数(拖拽接受区域)
+        private void Border_DragOver(object sender, Windows.UI.Xaml.DragEventArgs e)
+        {
+            Debug.WriteLine("[Info] DragOver");
+            // 设置操作类型
+            e.AcceptedOperation = DataPackageOperation.Copy;
+            // 设置提示文字
+            e.DragUIOverride.Caption = "Drag here can add the folder";
+            // 是否显示拖放时的文字，默认为true
+            e.DragUIOverride.IsCaptionVisible = true;
+            // 是否显示文件图标，默认为true
+            e.DragUIOverride.IsContentVisible = true;
+            // Caption前面的图标是否显示
+            e.DragUIOverride.IsGlyphVisible = true;
+
+        }
+
+
+        Models.TreeNode DelItem;
+
+        // 拖拽完成执行的函数(拖拽删除区域) 
+        private void DelBoder_Drop(object sender, Windows.UI.Xaml.DragEventArgs e)
+        {
+            ViewModel.RemoveTreeNode(DelItem);
+        }
+
+        // 拖拽过程中执行的函数(拖拽删除区域)
+        private void DelBoder_DragOver(object sender, Windows.UI.Xaml.DragEventArgs e)
+        {
+            e.AcceptedOperation = DataPackageOperation.Move;
+            e.DragUIOverride.Caption = "Delete";
+            e.DragUIOverride.IsContentVisible = false;
+        }
+
+        // 开始拖拽Item以准备删除
+        private void RootList_DragItemsStarting(object sender, DragItemsStartingEventArgs e)
+        {
+            DelItem = e.Items.FirstOrDefault() as Models.TreeNode;
+        }
     }
 }
 

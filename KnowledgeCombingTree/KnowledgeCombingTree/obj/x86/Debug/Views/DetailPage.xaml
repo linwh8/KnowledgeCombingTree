@@ -57,7 +57,7 @@
                              Text="Detail Page" >
 
             <controls:PageHeader.PrimaryCommands>
-                <AppBarButton x:ConnectionId='14' Icon="NewFolder" Name="AddNode"                      />
+                <AppBarButton x:ConnectionId='16' Icon="NewFolder" Name="AddNode"                      />
             </controls:PageHeader.PrimaryCommands>
 
         </controls:PageHeader>
@@ -78,27 +78,55 @@
                 </Grid.ColumnDefinitions>
                 
                 <Grid>
-                    <ListView x:ConnectionId='11' x:Name="RootList"
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="8*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <!--������ק������-->
+                    <Border x:ConnectionId='11' AllowDrop="True"
+                                              
+                                                      
+                            Background="{ThemeResource ToolTipForegroundThemeBrush}">
+                        <TextBlock Text="Please drag the folder here" RequestedTheme="Dark"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Microsoft YaHei" />
+                    </Border>
+
+                    <!--�ļ�����ʾ����-->
+                    <ListView x:ConnectionId='12' x:Name="RootList"
+                              Grid.Row="1"
+                              CanDragItems="True"
+                                                                            
                               IsItemClickEnabled="True" 
                                                                         
                                                             >
                         <ListView.ItemTemplate>
                             <DataTemplate                         >
-                                <Grid x:ConnectionId='12' Margin="0,8">
+                                <Grid x:ConnectionId='14' Margin="0,8">
                                     <Grid  Margin="12,0">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="*" />
                                         </Grid.RowDefinitions>
                                         <TextBlock>
                                                 <Run Text="FolderPath" />
-                                                <Run x:ConnectionId='13'                      />
+                                                <Run x:ConnectionId='15'                      />
                                         </TextBlock>
                                     </Grid>
                                 </Grid>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
+                    
+                    <!--��קɾ����-->
+                    <Border x:ConnectionId='13' Grid.Row="2" x:Name="DelBoder"
+                            AllowDrop="True"
+                                                
+                                                        
+                            Background="{ThemeResource ToolTipForegroundThemeBrush}">
+                        <TextBlock Text="Please drag the folder you want to delete here" RequestedTheme="Dark" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Microsoft YaHei" />
+                    </Border>
                 </Grid>
+                
                 <Grid Grid.Column="1">
                     <ListView x:ConnectionId='8' x:Name="ChildList" IsItemClickEnabled="True"                                               >
                         <ListView.ItemTemplate>

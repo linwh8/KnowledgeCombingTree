@@ -28,13 +28,13 @@
     <AppXManifest Include="D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-12T13:05:50.827</Modified>
+      <Modified>2017-05-12T13:22:34.718</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\KnowledgeCombingTree.exe">
       <PackagePath>entrypoint\KnowledgeCombingTree.exe</PackagePath>
-      <Modified>2017-05-12T13:05:49.794</Modified>
+      <Modified>2017-05-12T13:21:55.286</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\67517\.nuget\packages\Microsoft.CSharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -564,7 +564,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\KnowledgeCombingTree.xr.xml">
       <PackagePath>KnowledgeCombingTree.xr.xml</PackagePath>
-      <Modified>2017-05-12T13:02:48.686</Modified>
+      <Modified>2017-05-12T13:21:54.965</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -605,11 +605,11 @@
     <AppxPackagedFile Include="D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-12T13:05:50.456</Modified>
+      <Modified>2017-05-12T13:22:34.363</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\Core\KnowledgeCombingTree.exe">
       <PackagePath>KnowledgeCombingTree.exe</PackagePath>
-      <Modified>2017-05-12T13:05:50.822</Modified>
+      <Modified>2017-05-12T13:22:34.715</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

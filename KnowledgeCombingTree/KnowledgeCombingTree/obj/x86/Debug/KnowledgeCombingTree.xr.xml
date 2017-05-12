@@ -85,8 +85,8 @@
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="Children" />
-      <RootProperty Name="Margin" />
       <RootProperty Name="RowDefinitions" />
+      <RootProperty Name="Margin" />
       <RootProperty Name="Background" />
       <RootMethod Name="GetColumn" />
       <RootMethod Name="SetColumn" />
@@ -112,6 +112,9 @@
       <RootProperty Name="Foreground" />
       <RootProperty Name="Text" />
       <RootProperty Name="Inlines" />
+      <RootProperty Name="RequestedTheme" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="FontFamily" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="LineHeight" />
       <RootProperty Name="TextWrapping" />
@@ -180,6 +183,8 @@
       <RootProperty Name="IsItemClickEnabled" />
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="ItemTemplate" />
+      <RootProperty Name="CanDragItems" />
+      <RootEvent Name="DragItemsStarting" />
       <RootEvent Name="ItemClick" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
@@ -190,6 +195,18 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Documents.Run">
       <RootProperty Name="Text" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Border">
+      <RootProperty Name="AllowDrop" />
+      <RootProperty Name="Background" />
+      <RootProperty Name="Child" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="BorderBrush" />
+      <RootProperty Name="BorderThickness" />
+      <RootProperty Name="IsHitTestVisible" />
+      <RootEvent Name="Drop" />
+      <RootEvent Name="DragOver" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">
       <RootProperty Name="Name" />
@@ -257,15 +274,6 @@
       <RootProperty Name="Header" />
       <RootProperty Name="Content" />
       <RootProperty Name="Padding" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Border">
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="BorderBrush" />
-      <RootProperty Name="BorderThickness" />
-      <RootProperty Name="IsHitTestVisible" />
-      <RootProperty Name="Background" />
-      <RootProperty Name="Child" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
       <RootProperty Name="Margin" />
