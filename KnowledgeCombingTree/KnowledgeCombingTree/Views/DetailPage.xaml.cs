@@ -36,6 +36,8 @@ namespace KnowledgeCombingTree.Views
 
             //            ViewModel.SelectedItem = null;
             ViewModel.RootItems = DbService.GetItemsByParentId("-1");
+
+            this.DataContextChanged += (s, e) => Bindings.Update();
         }
 
 
@@ -79,7 +81,11 @@ namespace KnowledgeCombingTree.Views
         // @param: 根节点
         private void UpdateChildrenNodes(TreeNode root)
         {
-            ViewModel.ChildrenItems = DbService.GetItemsByParentId(root.getId());
+            ViewModel.ChildrenItems.Clear();
+            foreach (var node in DbService.GetItemsByParentId(root.getId()))
+            {
+                ViewModel.ChildrenItems.Add(node);
+            }
         }
 
         // 添加一个根节点：
@@ -298,6 +304,13 @@ namespace KnowledgeCombingTree.Views
         private void RootList_DragItemsStarting(object sender, DragItemsStartingEventArgs e)
         {
             DelItem = e.Items.FirstOrDefault() as Models.TreeNode;
+        }
+
+        private void RootList_DoubleTapped(object sender, Windows.UI.Xaml.Input.DoubleTappedRoutedEventArgs e)
+        {
+            TreeNode clickedItem = (TreeNode)e.OriginalSource;
+            ViewModel.SelectedItem = clickedItem;
+            //Create
         }
     }
 }

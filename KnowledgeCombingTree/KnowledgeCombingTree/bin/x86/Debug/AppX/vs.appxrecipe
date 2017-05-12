@@ -28,13 +28,13 @@
     <AppXManifest Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-12T14:42:30.858</Modified>
+      <Modified>2017-05-12T16:42:28.552</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\KnowledgeCombingTree.exe">
       <PackagePath>entrypoint\KnowledgeCombingTree.exe</PackagePath>
-      <Modified>2017-05-12T14:42:29.759</Modified>
+      <Modified>2017-05-12T16:42:27.276</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\48953\.nuget\packages\Microsoft.CSharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -564,7 +564,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\KnowledgeCombingTree.xr.xml">
       <PackagePath>KnowledgeCombingTree.xr.xml</PackagePath>
-      <Modified>2017-05-12T14:12:45.338</Modified>
+      <Modified>2017-05-12T15:01:15.599</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -605,11 +605,11 @@
     <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-12T14:42:30.286</Modified>
+      <Modified>2017-05-12T16:42:27.981</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\Core\KnowledgeCombingTree.exe">
       <PackagePath>KnowledgeCombingTree.exe</PackagePath>
-      <Modified>2017-05-12T14:42:30.852</Modified>
+      <Modified>2017-05-12T16:42:28.545</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
