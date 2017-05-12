@@ -21,6 +21,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Net;
 using System.IO;
+using Windows.Storage.Search;
 
 namespace KnowledgeCombingTree.Views
 {
@@ -33,7 +34,8 @@ namespace KnowledgeCombingTree.Views
             InitializeComponent();
             NavigationCacheMode = NavigationCacheMode.Disabled;
 
-//            ViewModel.SelectedItem = null;
+            //            ViewModel.SelectedItem = null;
+            ViewModel.RootItems = DbService.GetItemsByParentId("-1");
         }
 
 
@@ -55,11 +57,29 @@ namespace KnowledgeCombingTree.Views
             }
         }
 
+        // 用folderpicker选择一个文件夹(目录)，自动扫描其所有子目录并生成子节点存入数据库
+        // 自动生成一棵树
+        private async void CreateTreeAuto()
+        {
+            StorageFolder folder = await ChooseFolder();
+            if (folder != null)
+            {
+                // 选择了一个目录，创建一个根节点
+                string pid = CreateTree(folder.Path, folder.Name);
+                // 接下来遍历找出所有子目录
+                TraverseSubFolders(folder, pid);
+            }
+            else
+            {
+                var i = new MessageDialog("选择文件夹失败").ShowAsync();
+            }
+        }
+
         // 选中一棵树的根节点时调用此函数，用于更新子节点列表
         // @param: 根节点
         private void UpdateChildrenNodes(TreeNode root)
         {
-            ViewModel.ChildrenItems = DbService.GetItemsByParentId(root.getParentId());
+            ViewModel.ChildrenItems = DbService.GetItemsByParentId(root.getId());
         }
 
         // 添加一个根节点：
@@ -163,12 +183,41 @@ namespace KnowledgeCombingTree.Views
             return root.getId();
         }
 
+        public async void TraverseSubFolders(StorageFolder folder, string pid)
+        {
+            // Get the files in the subfolders of the user's Pictures folder
+            // details: https://docs.microsoft.com/en-us/uwp/api/windows.storage.storagefolder
+            IReadOnlyList<StorageFolder> groupedItems = await folder.GetFoldersAsync(CommonFolderQuery.DefaultQuery);
+
+            // Iterate over the results and print the list of folders
+            // and files to the Visual Studio Output window.
+            foreach (StorageFolder subfolder in groupedItems)
+            {
+                Debug.WriteLine(subfolder.Name);
+
+                // 创建子节点
+                CreateChildNode(pid, folder.Path, subfolder.Name);
+
+                // To iterate over the files in each folder, uncomment the following lines. 
+                // foreach(StorageFile file in await folder.GetFilesAsync())
+                //    Debug.WriteLine(" " + file.Name);
+            }
+        }
+
+        private void CreateChildNode(string pid, string path, string name)
+        {
+            TreeNode node = new TreeNode(pid, 1, path + "\\" + name, name, "", "");
+            DbService.AddItem(node);
+        }
+
         private TreeNode CreateAndGetChildNode(string pid, string path, string name)
         {
             TreeNode node = new TreeNode(pid, 1, path + "\\" + name, name, "", "");
             DbService.AddItem(node);
             return node;
         }
+
+        
 
         /*-----------------------------------operations on datebase--------------------------------*/
         private void UpdateNode(TreeNode node)
@@ -178,12 +227,13 @@ namespace KnowledgeCombingTree.Views
 
         private void AddNode_Click(object sender, RoutedEventArgs e)
         {
-            ChooseAndCreateTreeRoot();
+            //ChooseAndCreateTreeRoot();
+            CreateTreeAuto();
         }
 
         private void RootList_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var root = sender as TreeNode;
+            var root = (TreeNode)e.ClickedItem;
             UpdateChildrenNodes(root);
         }
 

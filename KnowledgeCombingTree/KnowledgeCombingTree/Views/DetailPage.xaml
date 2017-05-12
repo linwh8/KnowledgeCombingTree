@@ -128,7 +128,9 @@
                 </Grid>
                 
                 <Grid Grid.Column="1">
-                    <ListView x:Name="ChildList" IsItemClickEnabled="True" ItemsSource="{x:Bind ViewModel.ChildrenItems}">
+                    <ListView x:Name="ChildList"
+                              IsItemClickEnabled="True"
+                              ItemsSource="{x:Bind ViewModel.ChildrenItems}">
                         <ListView.ItemTemplate>
                             <DataTemplate x:DataType="md:TreeNode">
                                 <Grid Margin="0,8">
