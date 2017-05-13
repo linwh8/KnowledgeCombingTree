@@ -127,7 +127,7 @@
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
-                    
+
                 </Grid>
 
                 <!--�ӽڵ���ʾ����-->
@@ -181,9 +181,9 @@
                         <ToggleButton x:ConnectionId='15'                                                                   Margin="10" />
                     </StackPanel>
                     <StackPanel Grid.Row="2" Margin="10">
-                        <TextBox x:ConnectionId='10' Name="path" Header="Path" IsReadOnly="True" Margin="10" TextWrapping="Wrap" MinHeight="60" IsEnabled="False"/>
-                        <TextBox x:ConnectionId='11' Name="name" Header="Name" Margin="10" TextWrapping="Wrap" MinHeight="60" IsEnabled="False"/>
-                        <TextBox x:ConnectionId='12' Name="description" Header="Description" Margin="10" TextWrapping="Wrap" MinHeight="60" IsEnabled="False"/>
+                        <TextBox x:ConnectionId='10' Name="path" Header="Path" IsReadOnly="True" Margin="10" TextWrapping="Wrap" MinHeight="60" IsEnabled="False"                                                        />
+                        <TextBox x:ConnectionId='11' Name="name" Header="Name" Margin="10" TextWrapping="Wrap" MinHeight="60" IsEnabled="False"                                                         />
+                        <TextBox x:ConnectionId='12' Name="description" Header="Description" Margin="10" TextWrapping="Wrap" MinHeight="60" IsEnabled="False"                                                                />
                         <StackPanel Orientation="Horizontal" Margin="10,40,0,0">
                             <Button x:ConnectionId='13' Name="Update" Content="Update" Margin="0,0,10,0" IsEnabled="False"                     />
                             <Button x:ConnectionId='14' Name="Cancel" Content="Cancel" Margin="10,0,0,0"                     />

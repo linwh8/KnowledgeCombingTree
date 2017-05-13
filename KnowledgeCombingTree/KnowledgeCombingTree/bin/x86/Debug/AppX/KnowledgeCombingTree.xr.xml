@@ -206,8 +206,8 @@
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="MinHeight" />
       <RootProperty Name="IsEnabled" />
-      <RootProperty Name="MinWidth" />
       <RootProperty Name="Text" />
+      <RootProperty Name="MinWidth" />
       <RootProperty Name="Width" />
       <RootProperty Name="HorizontalAlignment" />
     </RootType>

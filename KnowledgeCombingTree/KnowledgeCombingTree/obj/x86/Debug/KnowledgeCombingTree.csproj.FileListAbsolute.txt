@@ -132,7 +132,6 @@ E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree
 E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\System.Xml.XmlDocument.dll
 E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\System.Xml.XmlSerializer.dll
 E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\Template10Library.dll
-E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x86\Debug\KnowledgeCombingTree.csprojResolveAssemblyReference.cache
 E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x86\Debug\App.g.i.cs
 E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x86\Debug\App.g.cs
 E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x86\Debug\Views\Busy.g.i.cs
@@ -763,3 +762,4 @@ D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombi
 D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x86\Debug\Template10Library.pri.xml
 D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x86\Debug\SQLitePCL.Ext.pri.xml
 D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x86\Debug\ProjectArchitectures.txt
+E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x86\Debug\KnowledgeCombingTree.csprojResolveAssemblyReference.cache

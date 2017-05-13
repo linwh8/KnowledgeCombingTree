@@ -127,7 +127,7 @@
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
-                    
+
                 </Grid>
 
                 <!--子节点显示区域-->
@@ -181,9 +181,9 @@
                         <ToggleButton Checked="ToggleButton_Checked" Unchecked="ToggleButton_Unchecked" Margin="10" />
                     </StackPanel>
                     <StackPanel Grid.Row="2" Margin="10">
-                        <TextBox Name="path" Header="Path" IsReadOnly="True" Margin="10" TextWrapping="Wrap" MinHeight="60" IsEnabled="False"/>
-                        <TextBox Name="name" Header="Name" Margin="10" TextWrapping="Wrap" MinHeight="60" IsEnabled="False"/>
-                        <TextBox Name="description" Header="Description" Margin="10" TextWrapping="Wrap" MinHeight="60" IsEnabled="False"/>
+                        <TextBox Name="path" Header="Path" IsReadOnly="True" Margin="10" TextWrapping="Wrap" MinHeight="60" IsEnabled="False" Text="{x:Bind ViewModel.SelectedItem.path,Mode=TwoWay}"/>
+                        <TextBox Name="name" Header="Name" Margin="10" TextWrapping="Wrap" MinHeight="60" IsEnabled="False" Text="{x:Bind ViewModel.SelectedItem.name, Mode=TwoWay}"/>
+                        <TextBox Name="description" Header="Description" Margin="10" TextWrapping="Wrap" MinHeight="60" IsEnabled="False" Text="{x:Bind ViewModel.SelectedItem.description, Mode=TwoWay}"/>
                         <StackPanel Orientation="Horizontal" Margin="10,40,0,0">
                             <Button Name="Update" Content="Update" Margin="0,0,10,0" IsEnabled="False" Click="Update_Click"/>
                             <Button Name="Cancel" Content="Cancel" Margin="10,0,0,0" Click="Cancel_Click"/>

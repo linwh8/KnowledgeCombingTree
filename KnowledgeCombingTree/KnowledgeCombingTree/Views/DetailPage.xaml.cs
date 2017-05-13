@@ -23,6 +23,7 @@ using System.Net;
 using System.IO;
 using Windows.Storage.Search;
 using Windows.UI;
+using Windows.Storage.AccessCache;
 
 namespace KnowledgeCombingTree.Views
 {
@@ -52,7 +53,9 @@ namespace KnowledgeCombingTree.Views
             try
             {
                 StorageFolder folder = await StorageFolder.GetFolderFromPathAsync(sPath);
-                await Launcher.LaunchFolderAsync(folder);
+                var tmp = StorageApplicationPermissions.FutureAccessList.Add(folder);
+                var target = await StorageApplicationPermissions.FutureAccessList.GetFolderAsync(tmp);
+                await Launcher.LaunchFolderAsync(target);
             }
             catch (Exception ex)
             {
@@ -114,8 +117,8 @@ namespace KnowledgeCombingTree.Views
         {
             if (ViewModel.SelectedItem != null)
             {
-                ViewModel.SelectedItem.name = name.Text;
-                ViewModel.SelectedItem.description = description.Text;
+                //ViewModel.SelectedItem.name = name.Text;
+                //ViewModel.SelectedItem.description = description.Text;
                 UpdateNode(ViewModel.SelectedItem);
                 ViewModel.SelectedItem = null;
             }
@@ -222,7 +225,7 @@ namespace KnowledgeCombingTree.Views
 
         private TreeNode CreateAndGetChildNode(string pid, string path, string name)
         {
-            TreeNode node = new TreeNode(pid, 1, path + "\\" + name, name, "", "");
+            TreeNode node = new TreeNode(pid, 1, path, name, "", "");
             DbService.AddItem(node);
             return node;
         }
