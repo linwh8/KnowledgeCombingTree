@@ -134,7 +134,7 @@ namespace KnowledgeCombingTree.Services.DatabaseServices
                 statement.Bind(1, id);
                 if (SQLiteResult.ROW == statement.Step())
                 {
-                    flag = (long)statement[0] == 0 ? false : true;
+                    flag = (string)statement[0] == "" ? false : true;
                 }
             }
             return flag;

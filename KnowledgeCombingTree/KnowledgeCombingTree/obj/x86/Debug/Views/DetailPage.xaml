@@ -58,11 +58,11 @@
                              Text="Detail Page" >
 
             <controls:PageHeader.PrimaryCommands>
-                <AppBarButton x:ConnectionId='17' Icon="NewFolder" Name="AddNode"                      
+                <AppBarButton x:ConnectionId='24' Icon="NewFolder" Name="AddNode"                      
                                AllowDrop="True"
                                                 
                                                         />
-                <AppBarButton x:ConnectionId='18' Icon="Delete" Name="Delete" AllowDrop="True"
+                <AppBarButton x:ConnectionId='25' Icon="Delete" Name="Delete" AllowDrop="True"
                                            
                                                     />
             </controls:PageHeader.PrimaryCommands>
@@ -80,11 +80,11 @@
                       VerticalScrollBarVisibility="Auto">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto" />
-                    <ColumnDefinition Width="auto" />
-                    <ColumnDefinition Width="60" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="2*" />
                 </Grid.ColumnDefinitions>
-                
+
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="8*" />
@@ -92,7 +92,7 @@
                     </Grid.RowDefinitions>
 
                     <!--���ڵ���ʾ����-->
-                    <ListView x:ConnectionId='13' x:Name="RootList"
+                    <ListView x:ConnectionId='20' x:Name="RootList"
                               CanDragItems="True"
                               AllowDrop="True"
                                                 
@@ -101,26 +101,27 @@
                               IsItemClickEnabled="True" 
                                                                         
                                                                   
-                                                            >
+                                                            
+                                                                >
                         <ListView.ItemTemplate>
                             <DataTemplate                         >
-                                <Grid x:ConnectionId='14' Margin="0,8">
+                                <Grid x:ConnectionId='21' Margin="0,8">
                                     <Grid  Margin="12,0">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="*" />
                                             <RowDefinition Height="*" />
                                         </Grid.RowDefinitions>
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="2*" />
-                                            <ColumnDefinition Width="6*" />
+                                            <ColumnDefinition Width="3*" />
+                                            <ColumnDefinition Width="8*" />
                                         </Grid.ColumnDefinitions>
                                         <Image Source="ms-appx:///Assets/Director.png"
                                                Width="40" 
                                                Height="40" 
                                                Grid.RowSpan="2" 
                                                Margin="10"/>
-                                        <TextBlock x:ConnectionId='15' Grid.Column="1"                       FontWeight="Bold"/>
-                                        <TextBlock x:ConnectionId='16' Grid.Column="1" Grid.Row="1"                      />
+                                        <TextBlock x:ConnectionId='22' Grid.Column="1"                       FontWeight="Bold" Name="rootItemName"/>
+                                        <TextBlock x:ConnectionId='23' Grid.Column="1" Grid.Row="1"                      />
                                     </Grid>
                                 </Grid>
                             </DataTemplate>
@@ -130,8 +131,8 @@
                 </Grid>
 
                 <!--�ӽڵ���ʾ����-->
-                <Grid Grid.Column="1">
-                    <ListView x:ConnectionId='9' x:Name="ChildList"
+                <Grid x:ConnectionId='8' Grid.Column="1" Name="ChildListGrid">
+                    <ListView x:ConnectionId='16' x:Name="ChildList"
                               IsItemClickEnabled="True"
                               CanDragItems="True"
                               AllowDrop="True"
@@ -143,7 +144,7 @@
                               >
                         <ListView.ItemTemplate>
                             <DataTemplate                         >
-                                <Grid x:ConnectionId='10' Margin="0,8">
+                                <Grid x:ConnectionId='17' Margin="0,8">
                                     <Grid  Margin="12,0">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="*" />
@@ -158,8 +159,8 @@
                                                Height="30" 
                                                Grid.RowSpan="2" 
                                                Margin="10"/>
-                                        <TextBlock x:ConnectionId='11' Grid.Column="1"                       FontWeight="Bold" TextWrapping="Wrap"/>
-                                        <TextBlock x:ConnectionId='12' Grid.Column="1" Grid.Row="1"                      TextWrapping="WrapWholeWords"/>
+                                        <TextBlock x:ConnectionId='18' Grid.Column="1"                       FontWeight="Bold" TextWrapping="Wrap" Name="childItemName"/>
+                                        <TextBlock x:ConnectionId='19' Grid.Column="1" Grid.Row="1"                      TextWrapping="WrapWholeWords"/>
                                     </Grid>
                                 </Grid>
                             </DataTemplate>
@@ -167,17 +168,28 @@
                     </ListView>
                 </Grid>
 
-                <Image x:ConnectionId='8' Source="ms-appx:///Assets/trashBin.png"
-                       AllowDrop="True"
-                                           
-                                                   
-                       Grid.Column="2"
-                       Width="40"
-                       Height="40"
-                       VerticalAlignment="Bottom"
-                       HorizontalAlignment="Center"
-                       Margin="10"/>
+                <Grid x:ConnectionId='9' Grid.Column="2" Margin="10" Visibility="Collapsed" Name="InfoGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="4*"/>
+                    </Grid.RowDefinitions>
 
+                    <Image Source="ms-appx:///Assets/Director.png"/>
+                    <StackPanel Grid.Row="1" Margin="10">
+                        <TextBlock Text="Edit" Margin="10"/>
+                        <ToggleButton x:ConnectionId='15'                                                                   Margin="10" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Margin="10">
+                        <TextBox x:ConnectionId='10' Name="path" Header="Path" IsReadOnly="True" Margin="10" TextWrapping="Wrap" MinHeight="60" IsEnabled="False"/>
+                        <TextBox x:ConnectionId='11' Name="name" Header="Name" Margin="10" TextWrapping="Wrap" MinHeight="60" IsEnabled="False"/>
+                        <TextBox x:ConnectionId='12' Name="description" Header="Description" Margin="10" TextWrapping="Wrap" MinHeight="60" IsEnabled="False"/>
+                        <StackPanel Orientation="Horizontal" Margin="10,40,0,0">
+                            <Button x:ConnectionId='13' Name="Update" Content="Update" Margin="0,0,10,0" IsEnabled="False"                     />
+                            <Button x:ConnectionId='14' Name="Cancel" Content="Cancel" Margin="10,0,0,0"                     />
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
             </Grid>
         </ScrollViewer>
 

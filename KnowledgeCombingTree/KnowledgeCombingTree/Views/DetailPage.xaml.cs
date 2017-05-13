@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.IO;
 using Windows.Storage.Search;
+using Windows.UI;
 
 namespace KnowledgeCombingTree.Views
 {
@@ -104,6 +105,7 @@ namespace KnowledgeCombingTree.Views
         {
             TreeNode new_node = await ChooseAndCreateChildNode(parent_node);
             ViewModel.SelectedItem = new_node;
+            ViewModel.ChildrenItems.Add(new_node);
             UploadModification();
         }
 
@@ -112,6 +114,8 @@ namespace KnowledgeCombingTree.Views
         {
             if (ViewModel.SelectedItem != null)
             {
+                ViewModel.SelectedItem.name = name.Text;
+                ViewModel.SelectedItem.description = description.Text;
                 UpdateNode(ViewModel.SelectedItem);
                 ViewModel.SelectedItem = null;
             }
@@ -162,7 +166,7 @@ namespace KnowledgeCombingTree.Views
         private async Task<TreeNode> ChooseAndCreateChildNode(TreeNode parent_node)
         {
             StorageFolder folder = await ChooseFolder();
-            TreeNode node = CreateAndGetChildNode(parent_node.getId(), parent_node.getPath(), parent_node.getName());
+            TreeNode node = CreateAndGetChildNode(parent_node.getId(), folder.Path, folder.Name);
             return node;
         }
 
@@ -311,39 +315,7 @@ namespace KnowledgeCombingTree.Views
             e.DragUIOverride.IsContentVisible = false;
         }
 
-        // 开始拖拽Item以准备删除
-        private void RootList_DragItemsStarting(object sender, DragItemsStartingEventArgs e)
-        {
-            DelItem = e.Items.FirstOrDefault() as Models.TreeNode;
-        }
-
-        private void RootList_DoubleTapped(object sender, Windows.UI.Xaml.Input.DoubleTappedRoutedEventArgs e)
-        {
-            TreeNode clickedItem = (TreeNode)e.OriginalSource;
-            ViewModel.SelectedItem = clickedItem;
-            //Create
-        }
-
-
-        private void AddNode_Click(object sender, RoutedEventArgs e)
-        {
-            //ChooseAndCreateTreeRoot();
-            CreateTreeAuto();
-        }
-
-        private void RootList_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            var root = (TreeNode)e.ClickedItem;
-            ViewModel.SelectedItem = (TreeNode)e.ClickedItem;
-            UpdateChildrenNodes(root);
-        }
-
-        private void ChildList_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            var child = (TreeNode)e.ClickedItem;
-            OpenFolder(child.path);
-        }
-
+        // 子列表拖拽实现
         private async void ChildList_Drop(object sender, DragEventArgs e)
         {
             if (e.DataView.Contains(StandardDataFormats.StorageItems))
@@ -360,7 +332,8 @@ namespace KnowledgeCombingTree.Views
                         ViewModel.AddTreeNode(new_node);
                         DbService.AddItem(new_node);
                     }
-                    else {
+                    else
+                    {
                         var i = new MessageDialog("选择文件失败").ShowAsync();
                     }
                 }
@@ -369,7 +342,7 @@ namespace KnowledgeCombingTree.Views
                     StorageFolder folder = items[0] as StorageFolder;
                     if (folder != null)
                     {
-                        TreeNode new_node = new TreeNode(ViewModel.SelectedItem.getId(), 1,folder.Path + "\\" + folder.Name, folder.Name, "", "");
+                        TreeNode new_node = new TreeNode(ViewModel.SelectedItem.getId(), 1, folder.Path + "\\" + folder.Name, folder.Name, "", "");
                         ViewModel.AddTreeNode(new_node);
                         DbService.AddItem(new_node);
                     }
@@ -378,6 +351,108 @@ namespace KnowledgeCombingTree.Views
                         var i = new MessageDialog("选择文件夹失败").ShowAsync();
                     }
                 }
+            }
+        }
+
+        // 开始拖拽Item以准备删除
+        private void RootList_DragItemsStarting(object sender, DragItemsStartingEventArgs e)
+        {
+            DelItem = e.Items.FirstOrDefault() as Models.TreeNode;
+        }
+
+        /*-----------------------------------------拖拽相关------------------------------------------*/
+        private void RootList_DoubleTapped(object sender, Windows.UI.Xaml.Input.DoubleTappedRoutedEventArgs e)
+        {
+            TreeNode clickedItem = (TreeNode)e.OriginalSource;
+            ViewModel.SelectedItem = clickedItem;
+            //Create
+        }
+
+        // 增加项目到根目录
+        private void AddNode_Click(object sender, RoutedEventArgs e)
+        {
+            //ChooseAndCreateTreeRoot();
+            CreateTreeAuto();
+        }
+
+        // RootList的ItemClick处理函数
+        private void RootList_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var root = (TreeNode)e.ClickedItem;
+            ViewModel.SelectedItem = root;
+            UpdateChildrenNodes(root);
+            path.Text = root.getPath();
+            name.Text = root.getName();
+            description.Text = root.getDescription();
+            InfoGrid.Visibility = Visibility.Visible;
+        }
+
+        // ChildList的ItemClick处理函数
+        private void ChildList_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var child = (TreeNode)e.ClickedItem;
+            ViewModel.SelectedItem = (TreeNode)e.ClickedItem;
+            path.Text = child.getPath();
+            name.Text = child.getName();
+            description.Text = child.getDescription();
+            InfoGrid.Visibility = Visibility.Visible;
+            OpenFolder(child.path);
+        }
+
+        // RootList 的Item 鼠标右击处理函数
+        private void RootList_RightTapped(object sender, Windows.UI.Xaml.Input.RightTappedRoutedEventArgs e)
+        {
+            if (ViewModel.SelectedItem == null) return;
+            MenuFlyout rootFlyout = new MenuFlyout();
+            MenuFlyoutItem firstItem = new MenuFlyoutItem { Text = "AddChild" };
+            MenuFlyoutItem secondItem = new MenuFlyoutItem { Text = "DeleteAllChildren"};
+            firstItem.Click += AddChild;
+            //secondItem.Click +=;
+            rootFlyout.Items.Add(firstItem);
+            rootFlyout.Items.Add(secondItem);
+            rootFlyout.ShowAt(sender as UIElement, e.GetPosition(sender as UIElement));
+        }
+
+        // 按钮打开时可以编辑
+        private void ToggleButton_Checked(object sender, RoutedEventArgs e)
+        {
+            //name.IsReadOnly = false;
+            //description.IsReadOnly = false;
+            name.IsEnabled = true;
+            description.IsEnabled = true;
+            path.IsEnabled = true;
+            Update.IsEnabled = true;
+            //name.Background = new SolidColorBrush(Colors.White);
+            //description.Background = new SolidColorBrush(Colors.White);
+        }
+
+        // 按钮关闭时不可以编辑
+        private void ToggleButton_Unchecked(object sender, RoutedEventArgs e)
+        {
+            //name.IsReadOnly = true;
+            //description.IsReadOnly = true;
+            name.IsEnabled = false;
+            description.IsEnabled = false;
+            path.IsEnabled = false;
+            Update.IsEnabled = false;
+            //name.Background = new SolidColorBrush(Colors.LightGray);
+            //description.Background = new SolidColorBrush(Colors.LightGray);
+        }
+
+        private void Update_Click(object sender, RoutedEventArgs e)
+        {
+            UploadModification();
+        }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            InfoGrid.Visibility = Visibility.Collapsed;
+        }
+
+        private void AddChild(object sender, RoutedEventArgs e)
+        {
+            if (ViewModel.SelectedItem != null) {
+                AddChildNode((TreeNode)ViewModel.SelectedItem);
             }
         }
     }

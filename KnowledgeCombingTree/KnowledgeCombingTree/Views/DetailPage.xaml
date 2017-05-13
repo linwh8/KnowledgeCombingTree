@@ -80,11 +80,11 @@
                       VerticalScrollBarVisibility="Auto">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto" />
-                    <ColumnDefinition Width="auto" />
-                    <ColumnDefinition Width="60" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="2*" />
                 </Grid.ColumnDefinitions>
-                
+
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="8*" />
@@ -101,7 +101,8 @@
                               IsItemClickEnabled="True" 
                               ItemsSource="{x:Bind ViewModel.RootItems}"
                               DoubleTapped="RootList_DoubleTapped"
-                              ItemClick="RootList_ItemClick">
+                              ItemClick="RootList_ItemClick"
+                              RightTapped="RootList_RightTapped">
                         <ListView.ItemTemplate>
                             <DataTemplate x:DataType="md:TreeNode">
                                 <Grid Margin="0,8">
@@ -111,15 +112,15 @@
                                             <RowDefinition Height="*" />
                                         </Grid.RowDefinitions>
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="2*" />
-                                            <ColumnDefinition Width="6*" />
+                                            <ColumnDefinition Width="3*" />
+                                            <ColumnDefinition Width="8*" />
                                         </Grid.ColumnDefinitions>
                                         <Image Source="ms-appx:///Assets/Director.png"
                                                Width="40" 
                                                Height="40" 
                                                Grid.RowSpan="2" 
                                                Margin="10"/>
-                                        <TextBlock Grid.Column="1"  Text="{x:Bind name}" FontWeight="Bold"/>
+                                        <TextBlock Grid.Column="1"  Text="{x:Bind name}" FontWeight="Bold" Name="rootItemName"/>
                                         <TextBlock Grid.Column="1" Grid.Row="1" Text="{x:Bind path}" />
                                     </Grid>
                                 </Grid>
@@ -130,7 +131,7 @@
                 </Grid>
 
                 <!--子节点显示区域-->
-                <Grid Grid.Column="1">
+                <Grid Grid.Column="1" Name="ChildListGrid">
                     <ListView x:Name="ChildList"
                               IsItemClickEnabled="True"
                               CanDragItems="True"
@@ -158,7 +159,7 @@
                                                Height="30" 
                                                Grid.RowSpan="2" 
                                                Margin="10"/>
-                                        <TextBlock Grid.Column="1"  Text="{x:Bind name}" FontWeight="Bold" TextWrapping="Wrap"/>
+                                        <TextBlock Grid.Column="1"  Text="{x:Bind name}" FontWeight="Bold" TextWrapping="Wrap" Name="childItemName"/>
                                         <TextBlock Grid.Column="1" Grid.Row="1" Text="{x:Bind path}" TextWrapping="WrapWholeWords"/>
                                     </Grid>
                                 </Grid>
@@ -167,17 +168,28 @@
                     </ListView>
                 </Grid>
 
-                <Image Source="ms-appx:///Assets/trashBin.png"
-                       AllowDrop="True"
-                       Drop="DelBoder_Drop"
-                       DragOver="DelBoder_DragOver"
-                       Grid.Column="2"
-                       Width="40"
-                       Height="40"
-                       VerticalAlignment="Bottom"
-                       HorizontalAlignment="Center"
-                       Margin="10"/>
+                <Grid Grid.Column="2" Margin="10" Visibility="Collapsed" Name="InfoGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="4*"/>
+                    </Grid.RowDefinitions>
 
+                    <Image Source="ms-appx:///Assets/Director.png"/>
+                    <StackPanel Grid.Row="1" Margin="10">
+                        <TextBlock Text="Edit" Margin="10"/>
+                        <ToggleButton Checked="ToggleButton_Checked" Unchecked="ToggleButton_Unchecked" Margin="10" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Margin="10">
+                        <TextBox Name="path" Header="Path" IsReadOnly="True" Margin="10" TextWrapping="Wrap" MinHeight="60" IsEnabled="False"/>
+                        <TextBox Name="name" Header="Name" Margin="10" TextWrapping="Wrap" MinHeight="60" IsEnabled="False"/>
+                        <TextBox Name="description" Header="Description" Margin="10" TextWrapping="Wrap" MinHeight="60" IsEnabled="False"/>
+                        <StackPanel Orientation="Horizontal" Margin="10,40,0,0">
+                            <Button Name="Update" Content="Update" Margin="0,0,10,0" IsEnabled="False" Click="Update_Click"/>
+                            <Button Name="Cancel" Content="Cancel" Margin="10,0,0,0" Click="Cancel_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
             </Grid>
         </ScrollViewer>
 
