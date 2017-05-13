@@ -64,7 +64,10 @@ namespace KnowledgeCombingTree.ViewModels
 
         public void AddTreeNode(Models.TreeNode item)
         {
-            this.rootItems.Add(item);
+            if (item.getLevel() == 0)
+                this.rootItems.Add(item);
+            else
+                this.childrenItems.Add(item);
         }
 
         public void UpdateTreeNode(string name, string description, string image)
@@ -86,7 +89,10 @@ namespace KnowledgeCombingTree.ViewModels
         public void RemoveTreeNode(Models.TreeNode item)
         {
             // DIY
-            this.rootItems.Remove(item);
+            if (item.getLevel() == 0)
+                this.rootItems.Remove(item);
+            else
+                this.childrenItems.Remove(item);
             // set selectedItem to null after remove
         }
 

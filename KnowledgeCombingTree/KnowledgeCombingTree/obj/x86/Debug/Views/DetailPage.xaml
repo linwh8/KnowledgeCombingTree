@@ -17,6 +17,7 @@
         <vm:DetailPageViewModel x:ConnectionId='2' x:Name="ViewModel" />
     </Page.DataContext>
 
+
     <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
         <VisualStateManager.VisualStateGroups>
@@ -57,7 +58,13 @@
                              Text="Detail Page" >
 
             <controls:PageHeader.PrimaryCommands>
-                <AppBarButton x:ConnectionId='16' Icon="NewFolder" Name="AddNode"                      />
+                <AppBarButton x:ConnectionId='17' Icon="NewFolder" Name="AddNode"                      
+                               AllowDrop="True"
+                                                
+                                                        />
+                <AppBarButton x:ConnectionId='18' Icon="Delete" Name="Delete" AllowDrop="True"
+                                           
+                                                    />
             </controls:PageHeader.PrimaryCommands>
 
         </controls:PageHeader>
@@ -74,28 +81,22 @@
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="60" />
                 </Grid.ColumnDefinitions>
                 
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
                         <RowDefinition Height="8*" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
 
-                    <!--������ק������-->
-                    <Border x:ConnectionId='11' AllowDrop="True"
-                                              
-                                                      
-                            Background="{ThemeResource ToolTipForegroundThemeBrush}">
-                        <TextBlock Text="Please drag the folder here" RequestedTheme="Dark"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Microsoft YaHei" />
-                    </Border>
-
-                    <!--�ļ�����ʾ����-->
-                    <ListView x:ConnectionId='12' x:Name="RootList"
-                              Grid.Row="1"
+                    <!--���ڵ���ʾ����-->
+                    <ListView x:ConnectionId='13' x:Name="RootList"
                               CanDragItems="True"
+                              AllowDrop="True"
+                                                
+                                                        
                                                                             
                               IsItemClickEnabled="True" 
                                                                         
@@ -107,48 +108,75 @@
                                     <Grid  Margin="12,0">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="*" />
+                                            <RowDefinition Height="*" />
                                         </Grid.RowDefinitions>
-                                        <TextBlock>
-                                                <Run Text="FolderPath" />
-                                                <Run x:ConnectionId='15'                      />
-                                        </TextBlock>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="2*" />
+                                            <ColumnDefinition Width="6*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image Source="ms-appx:///Assets/Director.png"
+                                               Width="40" 
+                                               Height="40" 
+                                               Grid.RowSpan="2" 
+                                               Margin="10"/>
+                                        <TextBlock x:ConnectionId='15' Grid.Column="1"                       FontWeight="Bold"/>
+                                        <TextBlock x:ConnectionId='16' Grid.Column="1" Grid.Row="1"                      />
                                     </Grid>
                                 </Grid>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
                     
-                    <!--��קɾ����-->
-                    <Border x:ConnectionId='13' Grid.Row="2" x:Name="DelBoder"
-                            AllowDrop="True"
-                                                
-                                                        
-                            Background="{ThemeResource ToolTipForegroundThemeBrush}">
-                        <TextBlock Text="Please drag the folder you want to delete here" RequestedTheme="Dark" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Microsoft YaHei" />
-                    </Border>
                 </Grid>
-                
+
+                <!--�ӽڵ���ʾ����-->
                 <Grid Grid.Column="1">
-                    <ListView x:ConnectionId='8' x:Name="ChildList"
+                    <ListView x:ConnectionId='9' x:Name="ChildList"
                               IsItemClickEnabled="True"
-                                                                            >
+                              CanDragItems="True"
+                              AllowDrop="True"
+                                                   
+                                                        
+                                                                            
+                                                                            
+                                                             
+                              >
                         <ListView.ItemTemplate>
                             <DataTemplate                         >
-                                <Grid x:ConnectionId='9' Margin="0,8">
+                                <Grid x:ConnectionId='10' Margin="0,8">
                                     <Grid  Margin="12,0">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="*" />
+                                            <RowDefinition Height="*" />
                                         </Grid.RowDefinitions>
-                                        <TextBlock>
-                                                <Run Text="FolderPath" />
-                                                <Run x:ConnectionId='10'                      />
-                                        </TextBlock>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="2*" />
+                                            <ColumnDefinition Width="6*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image Source="ms-appx:///Assets/Director.png"
+                                               Width="30" 
+                                               Height="30" 
+                                               Grid.RowSpan="2" 
+                                               Margin="10"/>
+                                        <TextBlock x:ConnectionId='11' Grid.Column="1"                       FontWeight="Bold" TextWrapping="Wrap"/>
+                                        <TextBlock x:ConnectionId='12' Grid.Column="1" Grid.Row="1"                      TextWrapping="WrapWholeWords"/>
                                     </Grid>
                                 </Grid>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
                 </Grid>
+
+                <Image x:ConnectionId='8' Source="ms-appx:///Assets/trashBin.png"
+                       AllowDrop="True"
+                                           
+                                                   
+                       Grid.Column="2"
+                       Width="40"
+                       Height="40"
+                       VerticalAlignment="Bottom"
+                       HorizontalAlignment="Center"
+                       Margin="10"/>
 
             </Grid>
         </ScrollViewer>

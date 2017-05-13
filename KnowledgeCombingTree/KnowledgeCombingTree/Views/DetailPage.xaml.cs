@@ -231,18 +231,6 @@ namespace KnowledgeCombingTree.Views
             DbService.UpdateItem(node);
         }
 
-        private void AddNode_Click(object sender, RoutedEventArgs e)
-        {
-            //ChooseAndCreateTreeRoot();
-            CreateTreeAuto();
-        }
-
-        private void RootList_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            var root = (TreeNode)e.ClickedItem;
-            UpdateChildrenNodes(root);
-        }
-
         /*-----------------------------------------拖拽相关------------------------------------------*/
         // 拖拽完成后执行的函数(拖拽接受区域)
         private async void Border_Drop(object sender, Windows.UI.Xaml.DragEventArgs e)
@@ -254,14 +242,23 @@ namespace KnowledgeCombingTree.Views
                 try
                 {
                     StorageFile file = items.OfType<StorageFile>().First();
-                    TreeNode new_node = new TreeNode("-1", 0, file.Path, "", "", "");
-                    ViewModel.AddTreeNode(new_node);
+                    //TreeNode new_node = new TreeNode("-1", 0, file.Path, "", "", "");
+                    //ViewModel.AddTreeNode(new_node);
                 }
                 catch
                 {
                     StorageFolder folder = items[0] as StorageFolder;
-                    TreeNode new_node = new TreeNode("-1", 0, folder.Path, "", "", "");
-                    ViewModel.AddTreeNode(new_node);
+                    if (folder != null)
+                    {
+                        // 选择了一个目录，创建一个根节点
+                        string pid = CreateTree(folder.Path, folder.Name);
+                        // 接下来遍历找出所有子目录
+                        TraverseSubFolders(folder, pid);
+                    }
+                    else
+                    {
+                        var i = new MessageDialog("选择文件夹失败").ShowAsync();
+                    }
                 }
             }
         }
@@ -289,6 +286,20 @@ namespace KnowledgeCombingTree.Views
         // 拖拽完成执行的函数(拖拽删除区域) 
         private void DelBoder_Drop(object sender, Windows.UI.Xaml.DragEventArgs e)
         {
+            /*
+                         ViewModel.ChildrenItems.Clear();
+            foreach (var node in DbService.GetItemsByParentId(root.getId()))
+            {
+                ViewModel.ChildrenItems.Add(node);
+            }
+             */
+            if (DelItem.getLevel() == 0) {
+                foreach (var node in ViewModel.ChildrenItems) {
+                    DbService.DeleteItem(node.getId());
+                }
+                ViewModel.ChildrenItems.Clear();
+            }
+            DbService.DeleteItem(DelItem.getId());
             ViewModel.RemoveTreeNode(DelItem);
         }
 
@@ -311,6 +322,63 @@ namespace KnowledgeCombingTree.Views
             TreeNode clickedItem = (TreeNode)e.OriginalSource;
             ViewModel.SelectedItem = clickedItem;
             //Create
+        }
+
+
+        private void AddNode_Click(object sender, RoutedEventArgs e)
+        {
+            //ChooseAndCreateTreeRoot();
+            CreateTreeAuto();
+        }
+
+        private void RootList_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var root = (TreeNode)e.ClickedItem;
+            ViewModel.SelectedItem = (TreeNode)e.ClickedItem;
+            UpdateChildrenNodes(root);
+        }
+
+        private void ChildList_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var child = (TreeNode)e.ClickedItem;
+            OpenFolder(child.path);
+        }
+
+        private async void ChildList_Drop(object sender, DragEventArgs e)
+        {
+            if (e.DataView.Contains(StandardDataFormats.StorageItems))
+            {
+                Debug.WriteLine("[Info] DataView Contains StorageItems");
+                var items = await e.DataView.GetStorageItemsAsync();
+                try
+                {
+                    StorageFile file = items.OfType<StorageFile>().First();
+                    //             TreeNode node = new TreeNode(pid, 1, path + "\\" + name, name, "", "");
+                    if (file != null)
+                    {
+                        TreeNode new_node = new TreeNode(ViewModel.SelectedItem.getId(), 1, file.Path + "\\" + file.Name, file.Name, "", "");
+                        ViewModel.AddTreeNode(new_node);
+                        DbService.AddItem(new_node);
+                    }
+                    else {
+                        var i = new MessageDialog("选择文件失败").ShowAsync();
+                    }
+                }
+                catch
+                {
+                    StorageFolder folder = items[0] as StorageFolder;
+                    if (folder != null)
+                    {
+                        TreeNode new_node = new TreeNode(ViewModel.SelectedItem.getId(), 1,folder.Path + "\\" + folder.Name, folder.Name, "", "");
+                        ViewModel.AddTreeNode(new_node);
+                        DbService.AddItem(new_node);
+                    }
+                    else
+                    {
+                        var i = new MessageDialog("选择文件夹失败").ShowAsync();
+                    }
+                }
+            }
         }
     }
 }
