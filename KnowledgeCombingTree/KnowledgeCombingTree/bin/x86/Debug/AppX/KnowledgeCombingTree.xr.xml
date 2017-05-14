@@ -9,7 +9,6 @@
     <RootPropertyPathName Name="Version" />
     <RootPropertyPathName Name="Publisher" />
     <RootPropertyPathName Name="DisplayName" />
-    <RootPropertyPathName Name="Logo" />
     <RootPropertyPathName Name="SettingsPartViewModel" />
     <RootPropertyPathName Name="BusyText" />
     <RootPropertyPathName Name="IsFullScreen" />
@@ -190,7 +189,6 @@
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
       <RootProperty Name="Margin" />
-      <RootProperty Name="Stretch" />
       <RootEvent Name="ImageOpened" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ToggleSwitch">
@@ -307,7 +305,6 @@
       <RootProperty Name="BorderThickness" />
       <RootProperty Name="IsHitTestVisible" />
       <RootProperty Name="Background" />
-      <RootProperty Name="Child" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Documents.Run">
       <RootProperty Name="Text" />
