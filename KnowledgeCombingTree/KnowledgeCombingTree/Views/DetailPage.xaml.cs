@@ -48,13 +48,13 @@ namespace KnowledgeCombingTree.Views
         /*----------------------------------- api --------------------------------*/
         // 用文件资源管理器打开一个目录
         // @param: 要打开的目录的路径
-        private async void OpenFolder(string sPath)
+        private async void OpenFolder(string feature_id)
         {
             try
             {
-                StorageFolder folder = await StorageFolder.GetFolderFromPathAsync(sPath);
-                var tmp = StorageApplicationPermissions.FutureAccessList.Add(folder);
-                var target = await StorageApplicationPermissions.FutureAccessList.GetFolderAsync(tmp);
+                //StorageFolder folder = await StorageFolder.GetFolderFromPathAsync(sPath);
+                //var tmp = AddInFeatureAccessList(folder);
+                var target = await StorageApplicationPermissions.FutureAccessList.GetFolderAsync(feature_id);
                 await Launcher.LaunchFolderAsync(target);
             }
             catch (Exception ex)
@@ -64,14 +64,16 @@ namespace KnowledgeCombingTree.Views
         }
 
         // 用folderpicker选择一个文件夹(目录)，自动扫描其所有子目录并生成子节点存入数据库
+        // 并且将这些目录全部添加到featureAccessList以便能够打这些目录
         // 自动生成一棵树
         private async void CreateTreeAuto()
         {
             StorageFolder folder = await ChooseFolder();
             if (folder != null)
             {
+                var feature_id = AddInFeatureAccessList(folder);
                 // 选择了一个目录，创建一个根节点
-                string pid = CreateTree(folder.Path, folder.Name);
+                string pid = CreateTree(folder.Path, folder.Name, feature_id);
                 // 接下来遍历找出所有子目录
                 TraverseSubFolders(folder, pid);
             }
@@ -96,7 +98,8 @@ namespace KnowledgeCombingTree.Views
         private async void ChooseAndCreateTreeRoot()
         {
             StorageFolder folder = await ChooseFolder();
-            string pid = CreateTree(folder.Path, folder.Name);
+            var feature_id = AddInFeatureAccessList(folder);
+            string pid = CreateTree(folder.Path, folder.Name, feature_id);
         }
 
         // 添加一个子节点：
@@ -124,43 +127,6 @@ namespace KnowledgeCombingTree.Views
             }
         }
 
-        // 让用户可以从本地选择并上传图片,更新节点的image属性以及更新UI中的图片
-        private async void EditNodeImage(TreeNode node)
-        {
-            var picker = new FileOpenPicker
-            {
-                SuggestedStartLocation = PickerLocationId.PicturesLibrary,
-                // 筛选图片格式，非以下格式无法上传
-                FileTypeFilter = { ".jpg", ".png" }
-            };
-            var file = await picker.PickSingleFileAsync();
-            if (file != null)
-            {
-                using (IRandomAccessStream fileStream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read))
-                {
-                    // 选择图片成功后用该图片替换掉UI上的旧图片：设置Source属性
-                    // Set the image source to the selected bitmap 
-                    BitmapImage bitmapImage = new BitmapImage();
-                    //bitmapImage.DecodePixelWidth = 600; //match the target Image.Width, not shown
-                    await bitmapImage.SetSourceAsync(fileStream);
-                    // image为xaml文件中定义的某一个节点的一个Image标签的Name属性的值
-                    //image.Source = bitmapImage;
-                    //image.Stretch = Stretch.Fill;
-                }
-
-                string postfix = file.Name.Substring(file.Name.Length - 4);
-                string id = Guid.NewGuid().ToString();
-                node.setImage("ms-appdata:///Local/" + id + postfix);
-                // 将文件储存到用户的目录下
-                await file.CopyAsync(Windows.Storage.ApplicationData.Current.LocalFolder, id + postfix, Windows.Storage.NameCollisionOption.ReplaceExisting);
-            }
-            else
-            {
-                var i = new MessageDialog("取消成功").ShowAsync();
-                return;
-            }
-        }
-
         /*-------------------------------some driver functions-----------------------------------*/
 
         // 创建一个子节点
@@ -169,7 +135,8 @@ namespace KnowledgeCombingTree.Views
         private async Task<TreeNode> ChooseAndCreateChildNode(TreeNode parent_node)
         {
             StorageFolder folder = await ChooseFolder();
-            TreeNode node = CreateAndGetChildNode(parent_node.getId(), folder.Path, folder.Name);
+            var feature_id = AddInFeatureAccessList(folder);
+            TreeNode node = CreateAndGetChildNode(parent_node.getId(), folder.Path, folder.Name, feature_id);
             return node;
         }
 
@@ -188,9 +155,9 @@ namespace KnowledgeCombingTree.Views
         }
 
         // 创建一个根节点
-        private string CreateTree(string path, string name)
+        private string CreateTree(string path, string name, string feature_id)
         {
-            TreeNode root = new TreeNode("-1", 0, path, name, "", "");
+            TreeNode root = new TreeNode("-1", 0, path, name, "", feature_id);
             ViewModel.AddTreeNode(root);
             DbService.AddItem(root);
             return root.getId();
@@ -206,10 +173,11 @@ namespace KnowledgeCombingTree.Views
             // and files to the Visual Studio Output window.
             foreach (StorageFolder subfolder in groupedItems)
             {
-                Debug.WriteLine(subfolder.Name);
+                //Debug.WriteLine(subfolder.Name);
 
+                var feature_id = AddInFeatureAccessList(subfolder);
                 // 创建子节点
-                CreateChildNode(pid, folder.Path, subfolder.Name);
+                CreateChildNode(pid, folder.Path, subfolder.Name, feature_id);
 
                 // To iterate over the files in each folder, uncomment the following lines. 
                 // foreach(StorageFile file in await folder.GetFilesAsync())
@@ -217,20 +185,30 @@ namespace KnowledgeCombingTree.Views
             }
         }
 
-        private void CreateChildNode(string pid, string path, string name)
+        private void CreateChildNode(string pid, string path, string name, string feature_id)
         {
-            TreeNode node = new TreeNode(pid, 1, path + "\\" + name, name, "", "");
+            TreeNode node = new TreeNode(pid, 1, path + "\\" + name, name, "", feature_id);
             DbService.AddItem(node);
         }
 
-        private TreeNode CreateAndGetChildNode(string pid, string path, string name)
+        private TreeNode CreateAndGetChildNode(string pid, string path, string name, string feature_id)
         {
-            TreeNode node = new TreeNode(pid, 1, path, name, "", "");
+            TreeNode node = new TreeNode(pid, 1, path, name, "", feature_id);
             DbService.AddItem(node);
             return node;
         }
 
-        
+        /*-----------------------------------featureAccessList, 文件夹权限相关------------------------------------*/
+        private string AddInFeatureAccessList(StorageFolder folder)
+        {
+            var feature_id = StorageApplicationPermissions.FutureAccessList.Add(folder);
+            return feature_id;
+        }
+
+        private void RemoveFromFeatureAccessList(string feature_id)
+        {
+            StorageApplicationPermissions.FutureAccessList.Remove(feature_id);
+        }
 
         /*-----------------------------------operations on datebase--------------------------------*/
         private void UpdateNode(TreeNode node)
@@ -257,8 +235,9 @@ namespace KnowledgeCombingTree.Views
                     StorageFolder folder = items[0] as StorageFolder;
                     if (folder != null)
                     {
+                        var feature_id = AddInFeatureAccessList(folder);
                         // 选择了一个目录，创建一个根节点
-                        string pid = CreateTree(folder.Path, folder.Name);
+                        string pid = CreateTree(folder.Path, folder.Name, feature_id);
                         // 接下来遍历找出所有子目录
                         TraverseSubFolders(folder, pid);
                     }
@@ -291,23 +270,47 @@ namespace KnowledgeCombingTree.Views
         Models.TreeNode DelItem;
 
         // 拖拽完成执行的函数(拖拽删除区域) 
-        private void DelBoder_Drop(object sender, Windows.UI.Xaml.DragEventArgs e)
+        private async void DelBoder_Drop(object sender, Windows.UI.Xaml.DragEventArgs e)
         {
-            /*
-                         ViewModel.ChildrenItems.Clear();
-            foreach (var node in DbService.GetItemsByParentId(root.getId()))
+            var msgDialog = DelItem.getParentId() == "-1" ?
+                            new Windows.UI.Popups.MessageDialog("确定删除该节点(包括其子节点)？") { Title = "删除提示" } :
+                            new Windows.UI.Popups.MessageDialog("确定删除该节点？") { Title = "删除提示" };
+            msgDialog.Commands.Add(new Windows.UI.Popups.UICommand("确定", uiCommand => { this.DeleteItem(); }));
+            msgDialog.Commands.Add(new Windows.UI.Popups.UICommand("取消", uiCommand => { this.CancelDelete(); }));
+            await msgDialog.ShowAsync();
+        }
+
+        private void DeleteItem()
+        {
+            if (DelItem.getParentId() == "-1")
             {
-                ViewModel.ChildrenItems.Add(node);
-            }
-             */
-            if (DelItem.getLevel() == 0) {
-                foreach (var node in ViewModel.ChildrenItems) {
-                    DbService.DeleteItem(node.getId());
+                if (ViewModel.ChildrenItems.Count > 0 && ViewModel.ChildrenItems.ElementAt(0).getParentId() == DelItem.getId())
+                {
+                    foreach (var item in ViewModel.ChildrenItems)
+                    {
+                        RemoveFromFeatureAccessList(item.getFeature_id());
+                    }
+                    ViewModel.ChildrenItems.Clear();
                 }
-                ViewModel.ChildrenItems.Clear();
+                else
+                {
+                    ObservableCollection<TreeNode> delNodes = DbService.GetItemsByParentId(DelItem.getId());
+                    foreach (var item in delNodes)
+                    {
+                        RemoveFromFeatureAccessList(item.getFeature_id());
+                    }
+                }
+                DbService.DeleteChildrenItemsByParent_id(DelItem.getId());
             }
+            RemoveFromFeatureAccessList(DelItem.getFeature_id());
             DbService.DeleteItem(DelItem.getId());
             ViewModel.RemoveTreeNode(DelItem);
+            var i = new MessageDialog("删除成功").ShowAsync();
+        }
+
+        private void CancelDelete()
+        {
+            var i = new MessageDialog("取消成功").ShowAsync();
         }
 
         // 拖拽过程中执行的函数(拖拽删除区域)
@@ -399,7 +402,7 @@ namespace KnowledgeCombingTree.Views
             name.Text = child.getName();
             description.Text = child.getDescription();
             InfoGrid.Visibility = Visibility.Visible;
-            OpenFolder(child.path);
+            OpenFolder(child.getFeature_id());
         }
 
         // RootList 的Item 鼠标右击处理函数

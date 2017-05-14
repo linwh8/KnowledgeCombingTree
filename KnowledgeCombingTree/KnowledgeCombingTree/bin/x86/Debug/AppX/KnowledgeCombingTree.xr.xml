@@ -4,7 +4,6 @@
     <RootInterface FullName="Windows.UI.Xaml.Data.IValueConverter" />
   </Roots.Interfaces>
   <Roots.PropertyPathNames>
-    <RootPropertyPathName Name="Value" />
     <RootPropertyPathName Name="AboutPartViewModel" />
     <RootPropertyPathName Name="Version" />
     <RootPropertyPathName Name="Publisher" />
@@ -216,6 +215,7 @@
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="MinWidth" />
       <RootProperty Name="Header" />
+      <RootProperty Name="PlaceholderText" />
       <RootProperty Name="Width" />
       <RootProperty Name="HorizontalAlignment" />
     </RootType>
@@ -233,6 +233,7 @@
       <RootProperty Name="AllowDrop" />
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="ItemTemplate" />
+      <RootProperty Name="Name" />
       <RootEvent Name="Drop" />
       <RootEvent Name="DragOver" />
       <RootEvent Name="DragItemsStarting" />
@@ -263,12 +264,6 @@
       <RootMethod Name="GetBehaviors" />
       <RootMethod Name="SetBehaviors" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Data.Binding">
-      <RootProperty Name="Mode" />
-      <RootProperty Name="UpdateSourceTrigger" />
-      <RootProperty Name="ElementName" />
-      <RootProperty Name="Converter" />
-    </RootType>
     <RootType FullName="Template10.Behaviors.KeyBehavior">
       <RootProperty Name="Key" />
       <RootProperty Name="Actions" />
@@ -280,6 +275,12 @@
     <RootType FullName="Microsoft.Xaml.Interactions.Core.CallMethodAction">
       <RootProperty Name="MethodName" />
       <RootProperty Name="TargetObject" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Data.Binding">
+      <RootProperty Name="Mode" />
+      <RootProperty Name="UpdateSourceTrigger" />
+      <RootProperty Name="ElementName" />
+      <RootProperty Name="Converter" />
     </RootType>
     <RootType FullName="KnowledgeCombingTree.Views.MainPage" />
     <RootType FullName="KnowledgeCombingTree.ViewModels.SettingsPageViewModel" />

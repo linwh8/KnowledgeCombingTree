@@ -18,27 +18,28 @@ namespace KnowledgeCombingTree.Services.DatabaseServices
                                                       path           VARCHAR(60) NOT NULL,
                                                       name           VARCHAR(20) NOT NULL,
                                                       description    VARCHAR(200),
-                                                      image          VARCHAR(60) NOT NULL
+                                                      feature_id          VARCHAR(60) NOT NULL
                                                      );";
-        private static string SELECT_ITEM = @"SELECT id, parent_id, level, path, name, description, image
+        private static string SELECT_ITEM = @"SELECT id, parent_id, level, path, name, description, feature_id
                                                 FROM treenodes
                                                 WHERE id = ?";
         private static string SELECT_ITEMS = @"SELECT id FROM treenodes";
-        private static string SELECT_ITEMS_BY_ID = @"SELECT id, parent_id, level, path, name, description, image
+        private static string SELECT_ITEMS_BY_ID = @"SELECT id, parent_id, level, path, name, description, feature_id
                                                     FROM treenodes
                                                     WHERE id = ?";
-        private static string SELECT_ITEMS_BY_PARENT_ID = @"SELECT id, parent_id, level, path, name, description, image
+        private static string SELECT_ITEMS_BY_PARENT_ID = @"SELECT id, parent_id, level, path, name, description, feature_id
                                                     FROM treenodes
                                                     WHERE parent_id = ?";
-        private static string ADD_ITEM = @"INSERT INTO treenodes (id, parent_id, level, path, name, description, image)
+        private static string ADD_ITEM = @"INSERT INTO treenodes (id, parent_id, level, path, name, description, feature_id)
                                                 VALUES(?, ?, ?, ?, ?, ?, ?)";
         private static string UPDATE_ITEM = @"UPDATE treenodes
-                                                SET level = ?, path = ?, name = ?, description = ?, image = ?
+                                                SET level = ?, path = ?, name = ?, description = ?, feature_id = ?
                                                 WHERE id = ?";
         private static string DELETE_ITEM = @"DELETE FROM treenodes WHERE id = ?";
+        private static string DELETE_CHILDREN_ITEMS_BY_PARENT_ID = @"DELETE FROM treenodes WHERE parent_id = ?";
         private static string EXIST = @"SELECT id FROM treenodes WHERE id = ?";
 
-        private static string TEXT_SEARCH = @"SELECT id, parent_id, level, path, name, description, image
+        private static string TEXT_SEARCH = @"SELECT id, parent_id, level, path, name, description, feature_id
                                                     FROM treenodes
                                                     WHERE (name LIKE ?) OR (description LIKE ?) OR (path LIKE ?)";
 
@@ -153,7 +154,7 @@ namespace KnowledgeCombingTree.Services.DatabaseServices
                 statement.Bind(4, item.getPath());
                 statement.Bind(5, item.getName());
                 statement.Bind(6, item.getDescription());
-                statement.Bind(7, item.getImage());
+                statement.Bind(7, item.getFeature_id());
                 statement.Step();
             }
 
@@ -174,7 +175,7 @@ namespace KnowledgeCombingTree.Services.DatabaseServices
                     statement.Bind(2, item.getPath());
                     statement.Bind(3, item.getName());
                     statement.Bind(4, item.getDescription());
-                    statement.Bind(5, item.getImage());
+                    statement.Bind(5, item.getFeature_id());
                     statement.Bind(6, item.getId());
                     statement.Step();
                 }
@@ -186,6 +187,15 @@ namespace KnowledgeCombingTree.Services.DatabaseServices
             using (var statement = conn.Prepare(DELETE_ITEM))
             {
                 statement.Bind(1, id);
+                statement.Step();
+            }
+        }
+
+        public static void DeleteChildrenItemsByParent_id(string parent_id)
+        {
+            using (var statement = conn.Prepare(DELETE_CHILDREN_ITEMS_BY_PARENT_ID))
+            {
+                statement.Bind(1, parent_id);
                 statement.Step();
             }
         }

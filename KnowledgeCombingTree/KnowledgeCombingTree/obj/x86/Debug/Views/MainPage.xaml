@@ -9,6 +9,7 @@
       xmlns:local="using:KnowledgeCombingTree.Views"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:vm="using:KnowledgeCombingTree.ViewModels"
+      xmlns:md="using:KnowledgeCombingTree.Models"
       mc:Ignorable="d">
 
     <Page.DataContext>
@@ -57,12 +58,12 @@
 
             <!--  secondary commands  -->
             <controls:PageHeader.PrimaryCommands>
-                <AppBarButton x:ConnectionId='12' Content="&#xE72D;" FontFamily="Segoe MDL2 Assets" Margin="30, 0, 0, 0"                            Width="Auto"/>
+                <AppBarButton x:ConnectionId='17' Content="&#xE72D;" FontFamily="Segoe MDL2 Assets" Margin="30, 0, 0, 0"                            Width="Auto"/>
             </controls:PageHeader.PrimaryCommands>
             <controls:PageHeader.SecondaryCommands>
-                <AppBarButton x:ConnectionId='13'                                         Label="Settings" />
-                <AppBarButton x:ConnectionId='14'                                        Label="Privacy" />
-                <AppBarButton x:ConnectionId='15'                                      Label="About" />
+                <AppBarButton x:ConnectionId='18'                                         Label="Settings" />
+                <AppBarButton x:ConnectionId='19'                                        Label="Privacy" />
+                <AppBarButton x:ConnectionId='20'                                      Label="About" />
             </controls:PageHeader.SecondaryCommands>
 
         </controls:PageHeader>
@@ -76,11 +77,11 @@
 
             <controls:Resizer x:ConnectionId='8' x:Name="parameterResizer" Margin="16,16,16,0">
 
-                <TextBox x:ConnectionId='11' Name="SearchTextBox"
+                <TextBox x:ConnectionId='16' Name="SearchTextBox"
                          MinWidth="150"
                          MinHeight="62"
                          Header="Enter the Key Words:"
-                         Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         PlaceholderText="Key Words"
                          TextWrapping="Wrap">
                     <Interactivity:Interaction.Behaviors>
 
@@ -105,11 +106,44 @@
                     RelativePanel.AlignBottomWith="parameterResizer"
                     RelativePanel.RightOf="parameterResizer" />
 
-            <TextBlock x:ConnectionId='10' x:Name="stateTextBox"
+            <Button x:ConnectionId='10' x:Name="submitButton2"
+                                                    
+                    Content="DeepSearch"
+                    RelativePanel.AlignBottomWith="parameterResizer"
+                    RelativePanel.RightOf="submitButton" />
+
+            <TextBlock x:ConnectionId='11' x:Name="stateTextBox"
                        Margin="16,16,0,0"
                        RelativePanel.AlignLeftWith="parameterResizer"
                        RelativePanel.Below="parameterResizer"
                        Text="Current Visual State" />
+
+            <ListView x:ConnectionId='12' Name="ResultBox"
+                      IsItemClickEnabled="True"
+                                                     
+                                                                    >
+                <ListView.ItemTemplate>
+                    <DataTemplate                         >
+                        <Grid x:ConnectionId='13'  Margin="12,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="8*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Source="ms-appx:///Assets/Directory_new.jpg"
+                                               Width="40" 
+                                               Height="40" 
+                                               Grid.RowSpan="2" 
+                                               Margin="10"/>
+                            <TextBlock x:ConnectionId='14' Grid.Column="1"                       FontWeight="Bold" Name="rootItemName"/>
+                            <TextBlock x:ConnectionId='15' Grid.Column="1" Grid.Row="1"                      />
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
         </RelativePanel>
 

@@ -70,19 +70,17 @@ namespace KnowledgeCombingTree.ViewModels
                 this.childrenItems.Add(item);
         }
 
-        public void UpdateTreeNode(string name, string description, string image)
+        public void UpdateTreeNode(string name, string description)
         {
             this.SelectedItem.setName(name);
             this.SelectedItem.setDescription(description);
-            this.SelectedItem.setImage(image);
             this.SelectedItem = null;
         }
-        public void UpdateTreeNodeWithPath(string path, string name, string description, string image)
+        public void UpdateTreeNodeWithPath(string path, string name, string description)
         {
             this.SelectedItem.setPath(path);
             this.SelectedItem.setName(name);
             this.SelectedItem.setDescription(description);
-            this.SelectedItem.setImage(image);
             this.SelectedItem = null;
         }
 

@@ -49,7 +49,7 @@ namespace KnowledgeCombingTree.Views
 
         private void SecondSraechButton_Click(object sender, RoutedEventArgs e)
         {
-            var text = SecondSearchTextBox.Text;
+            var text = SearchTextBox.Text;
             List<TreeNode> delNodes = new List<TreeNode>();
             foreach (var item in ViewModel.SearchedItems)
             {
@@ -62,6 +62,12 @@ namespace KnowledgeCombingTree.Views
             {
                 ViewModel.SearchedItems.Remove(delItem);
             }
+        }
+
+        // 点击某一项之后执行的函数
+        private void ResultBox_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
         }
 
         // 用folderpicker选择一个文件夹(目录)，自动扫描其所有子目录并生成子节点存入数据库

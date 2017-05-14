@@ -16,7 +16,7 @@ namespace KnowledgeCombingTree.Models
         public string name;
         public string description;
         // 保存图片路径，若为空则保存为默认图片
-        private string image;
+        private string feature_id;
 
         public TreeNode(string p_id, long l, string p, string n, string d, string i)
         {
@@ -26,7 +26,7 @@ namespace KnowledgeCombingTree.Models
             path = p;
             name = n;
             description = d;
-            image = (i == "" ? "default.png" : i);
+            feature_id = (i == "" ? "default.png" : i);
         }
 
         public TreeNode(string _id, string p_id, long l, string p, string n, string d, string i)
@@ -37,7 +37,7 @@ namespace KnowledgeCombingTree.Models
             path = p;
             name = n;
             description = d;
-            image = (i == "" ? "default.png" : i);
+            feature_id = (i == "" ? "default.png" : i);
         }
 
         public string getId()
@@ -95,14 +95,14 @@ namespace KnowledgeCombingTree.Models
             return description;
         }
 
-        public void setImage(string i)
+        public void setFeature_id(string i)
         {
-            image = i;
+            feature_id = i;
         }
 
-        public string getImage()
+        public string getFeature_id()
         {
-            return image;
+            return feature_id;
         }
     }
 }
