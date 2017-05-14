@@ -773,3 +773,6 @@ E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree
 E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x86\Debug\Views\InternetPage.g.cs
 E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x86\Debug\Views\InternetPage.xaml
 E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x86\Debug\Views\InternetPage.xbf
+E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\NotificationsExtensions.winmd
+E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\NotificationsExtensions.Win10.dll
+E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\NotificationsExtensions.Win10.pdb

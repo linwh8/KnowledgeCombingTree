@@ -12,31 +12,53 @@ using System.Diagnostics;
 using Windows.System;
 using Windows.UI.Popups;
 using KnowledgeCombingTree.Services.DatabaseServices;
+using KnowledgeCombingTree.Services.TileServices;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using System.Linq;
 using Windows.UI.Xaml.Navigation;
 using Windows.Storage.AccessCache;
+using Windows.UI.Notifications;
+using Windows.ApplicationModel.DataTransfer;
+using Windows.Data.Xml.Dom;
 
 namespace KnowledgeCombingTree.Views
 {
     public sealed partial class MainPage : Page
     {
-        // 储存了所有的根节点
-        // 将该根节点列表进行数据绑定实现UI
-        //private ObservableCollection<TreeNode> roots { set; get; }
+        private int itemCount = 0;
 
         public MainPage()
         {
             InitializeComponent();
             NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled;
 
+            // 启用通知队列, 队列容量为5, FIFO
+            TileUpdateManager.CreateTileUpdaterForApplication().EnableNotificationQueue(true);
+
             //InitialHistoryAccessList();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            DataTransferManager.GetForCurrentView().DataRequested += DataTransferManager_DataRequested;
+
             InitialHistoryAccessList();
+
+            int count = ViewModel.HistoryItems.Count;
+            if (count > itemCount)
+            {
+                for (int i = itemCount; i < count; ++i)
+                {
+                    UpdatePrimaryTile(ViewModel.HistoryItems[i]);
+                }
+            }
+            itemCount = count;
+        }
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            DataTransferManager.GetForCurrentView().DataRequested -= DataTransferManager_DataRequested;
         }
 
         private async void InitialHistoryAccessList()
@@ -63,9 +85,10 @@ namespace KnowledgeCombingTree.Views
         }
 
         /*-------------------------------- UI相关函数 ------------------------------------*/
+        // 应用分享按钮
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
-
+            DataTransferManager.ShowShareUI();
         }
 
         private void submitButton_Click(object sender, RoutedEventArgs e)
@@ -83,6 +106,7 @@ namespace KnowledgeCombingTree.Views
             }
         }
 
+        // 过滤从数据库中搜索得到的数据
         private void SecondSreachButton_Click(object sender, RoutedEventArgs e)
         {
             var text = SearchTextBox.Text;
@@ -116,6 +140,7 @@ namespace KnowledgeCombingTree.Views
             InfoGrid.Visibility = Visibility.Visible;
         }
 
+        // 双击在文件资源管理器中打开目录
         private void HistoryAccessBox_DoubleTapped(object sender, Windows.UI.Xaml.Input.DoubleTappedRoutedEventArgs e)
         {
             TreeNode item = (TreeNode)HistoryAccessBox.SelectedItems[0];
@@ -132,6 +157,40 @@ namespace KnowledgeCombingTree.Views
             {
                 ViewModel.HistoryItems.Insert(0, node);
             }
+        }
+
+        /*--------------------磁贴------------------*/
+        private void UpdatePrimaryTile(TreeNode item)
+        {
+            var content = TileService.CreateTile(item);
+            var updater = TileUpdateManager.CreateTileUpdaterForApplication();
+            TileNotification notification = new TileNotification(content.GetXml());
+            updater.Update(notification);
+        }
+        /*-------------------共享---------------------*/
+        private void DataTransferManager_DataRequested(DataTransferManager sender, DataRequestedEventArgs args)
+        {
+            DataRequest request = args.Request;
+            var deferral = args.Request.GetDeferral();
+
+            XmlDocument document = new XmlDocument();
+            document.LoadXml(System.IO.File.ReadAllText("Share.xml"));
+
+            XmlNodeList textElements = document.GetElementsByTagName("text");
+            request.Data.SetText(textElements[0].InnerText); // You must set a Title on the Data Package. If you do not, the Share operation silently fails.
+
+            XmlNodeList textElements2 = document.GetElementsByTagName("title");
+            request.Data.Properties.Title = textElements2[0].InnerText;
+            XmlNodeList textElements3 = document.GetElementsByTagName("description");
+            request.Data.Properties.Description = textElements3[0].InnerText;
+
+            // read image in assets
+            //var photoFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/pic.jpg"));
+            //request.Data.SetStorageItems(new List<StorageFile> { photoFile });
+            // share a web link
+            //request.Data.SetWebLink(new Uri("http://seattletimes.com/ABPub/2006/01/10/2002732410.jpg"));
+
+            deferral.Complete(); // You need to use deferrals when there is an async operation in the request. 
         }
 
         /*----------------------------------- api --------------------------------------*/
@@ -204,8 +263,8 @@ namespace KnowledgeCombingTree.Views
             return folder;
         }
 
-        // @param: StorageFolder
         // 扫描所有子目录并将其保存如数据库
+        // @param: StorageFolder, parent's id
         public async void TraverseSubFolders(StorageFolder folder, string pid)
         {
             // Get the files in the subfolders of the user's Pictures folder
@@ -247,12 +306,13 @@ namespace KnowledgeCombingTree.Views
             return node;
         }
 
+        // 编辑结束，提交按钮
         private void Update_Click(object sender, RoutedEventArgs e)
         {
             UploadModification();
             InfoGrid.Visibility = Visibility.Collapsed;
         }
-
+        // 取消按钮
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
             InfoGrid.Visibility = Visibility.Collapsed;

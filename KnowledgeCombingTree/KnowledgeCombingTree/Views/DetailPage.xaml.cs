@@ -499,8 +499,6 @@ namespace KnowledgeCombingTree.Views
                 Update.IsEnabled = false;
             }
         }
-
-        
     }
 }
 

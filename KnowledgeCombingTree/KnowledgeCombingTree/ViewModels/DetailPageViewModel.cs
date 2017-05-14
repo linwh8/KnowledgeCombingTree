@@ -87,7 +87,7 @@ namespace KnowledgeCombingTree.ViewModels
         public void RemoveTreeNode(Models.TreeNode item)
         {
             // DIY
-            if (item.getLevel() == 0)
+            if (item.getParentId() == "-1")
                 this.rootItems.Remove(item);
             else
                 this.childrenItems.Remove(item);

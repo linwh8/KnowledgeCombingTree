@@ -16,7 +16,7 @@
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
-    <RegisteredManifestChecksum>FAA3EA8CF8A286E2E309E0A361F0F14DAB3696F40BF748165CAF61350194EFE1</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>6BA6D3369DD5F47B145EAED4FC189B9FC8E378E8968856AF9BA6B064F460501E</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>6fbb16e7-57e8-4a27-bfc5-bd2652b4aff0_1.0.0.0_x86__4xx88nz50dyqw</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>6fbb16e7-57e8-4a27-bfc5-bd2652b4aff0_4xx88nz50dyqw!App</RegisteredUserModeAppID>
     <RegisteredPackageID>6fbb16e7-57e8-4a27-bfc5-bd2652b4aff0</RegisteredPackageID>
@@ -28,13 +28,13 @@
     <AppXManifest Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-14T14:38:43.403</Modified>
+      <Modified>2017-05-14T17:08:02.939</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\KnowledgeCombingTree.exe">
       <PackagePath>entrypoint\KnowledgeCombingTree.exe</PackagePath>
-      <Modified>2017-05-14T14:38:42.533</Modified>
+      <Modified>2017-05-14T17:08:02.005</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\48953\.nuget\packages\Microsoft.CSharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -103,6 +103,10 @@
     <AppxPackagedFile Include="C:\Users\48953\.nuget\packages\Newtonsoft.Json\9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
       <Modified>2016-06-13T15:06:14.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\48953\.nuget\packages\NotificationsExtensions.Win10\14332.0.2\lib\uap10.0\NotificationsExtensions.Win10.dll">
+      <PackagePath>NotificationsExtensions.Win10.dll</PackagePath>
+      <Modified>2016-07-05T06:08:02.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\48953\.nuget\packages\runtime.any.System.Collections\4.0.11\lib\netcore50\System.Collections.dll">
       <PackagePath>System.Collections.dll</PackagePath>
@@ -512,6 +516,10 @@
       <PackagePath>Template10Library.dll</PackagePath>
       <Modified>2016-10-17T03:42:00.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\48953\.nuget\packages\NotificationsExtensions\1.0.0\lib\portable-wpa81+win81\NotificationsExtensions.winmd">
+      <PackagePath>NotificationsExtensions.winmd</PackagePath>
+      <Modified>2014-08-21T12:08:44.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UAP\v0.8.0.0\ExtensionSDKs\SQLite.UWP.2015\3.17.0\Redist\Debug\x86\sqlite3.dll">
       <PackagePath>sqlite3.dll</PackagePath>
       <Modified>2017-03-29T16:15:40.934</Modified>
@@ -528,9 +536,13 @@
       <PackagePath>Assets\Director.png</PackagePath>
       <Modified>2017-05-14T04:15:15.014</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\Assets\logo.png">
+      <PackagePath>Assets\logo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-05-14T14:51:54.398</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\Assets\Square150x150Logo.png">
       <PackagePath>Assets\Square150x150Logo.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-05-14T04:15:15.030</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\Assets\trashBin.png">
@@ -548,17 +560,14 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-05-14T04:15:15.030</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-05-14T04:15:15.030</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-05-14T04:15:15.030</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\Assets\StoreLogo.png">
@@ -575,6 +584,10 @@
       <PackagePath>Assets\Directory_new.jpg</PackagePath>
       <Modified>2017-05-14T04:15:15.014</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\Assets\tilebg.jpg">
+      <PackagePath>Assets\tilebg.jpg</PackagePath>
+      <Modified>2017-05-14T15:30:55.883</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\Help.htm">
       <PackagePath>Help.htm</PackagePath>
       <Modified>2017-05-14T04:15:15.030</Modified>
@@ -583,9 +596,13 @@
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2017-05-14T04:15:15.030</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\Share.xml">
+      <PackagePath>Share.xml</PackagePath>
+      <Modified>2017-05-14T15:26:19.275</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\KnowledgeCombingTree.xr.xml">
       <PackagePath>KnowledgeCombingTree.xr.xml</PackagePath>
-      <Modified>2017-05-14T12:48:44.088</Modified>
+      <Modified>2017-05-14T15:59:28.016</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -626,11 +643,11 @@
     <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-14T14:37:11.392</Modified>
+      <Modified>2017-05-14T16:30:53.673</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\Core\KnowledgeCombingTree.exe">
       <PackagePath>KnowledgeCombingTree.exe</PackagePath>
-      <Modified>2017-05-14T14:38:43.393</Modified>
+      <Modified>2017-05-14T17:08:02.928</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -76,6 +76,9 @@
     <AppxPackagedFile Include="C:\Users\48953\.nuget\packages\Newtonsoft.Json\9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\48953\.nuget\packages\NotificationsExtensions.Win10\14332.0.2\lib\uap10.0\NotificationsExtensions.Win10.dll">
+      <PackagePath>NotificationsExtensions.Win10.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\48953\.nuget\packages\runtime.any.System.Collections\4.0.11\lib\netcore50\System.Collections.dll">
       <PackagePath>System.Collections.dll</PackagePath>
     </AppxPackagedFile>
@@ -382,6 +385,9 @@
     <AppxPackagedFile Include="C:\Users\48953\.nuget\packages\Template10\1.1.12\lib\uap10.0\Template10Library.dll">
       <PackagePath>Template10Library.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\48953\.nuget\packages\NotificationsExtensions\1.0.0\lib\portable-wpa81+win81\NotificationsExtensions.winmd">
+      <PackagePath>NotificationsExtensions.winmd</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UAP\v0.8.0.0\ExtensionSDKs\SQLite.UWP.2015\3.17.0\Redist\Debug\x86\sqlite3.dll">
       <PackagePath>sqlite3.dll</PackagePath>
     </AppxPackagedFile>
@@ -394,9 +400,12 @@
     <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\Assets\Director.png">
       <PackagePath>Assets\Director.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\Assets\logo.png">
+      <PackagePath>Assets\logo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\Assets\Square150x150Logo.png">
       <PackagePath>Assets\Square150x150Logo.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\Assets\trashBin.png">
       <PackagePath>Assets\trashBin.png</PackagePath>
@@ -410,15 +419,12 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
@@ -431,11 +437,17 @@
     <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\Assets\Directory_new.jpg">
       <PackagePath>Assets\Directory_new.jpg</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\Assets\tilebg.jpg">
+      <PackagePath>Assets\tilebg.jpg</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\Help.htm">
       <PackagePath>Help.htm</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\Share.xml">
+      <PackagePath>Share.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\KnowledgeCombingTree.xr.xml">
       <PackagePath>KnowledgeCombingTree.xr.xml</PackagePath>

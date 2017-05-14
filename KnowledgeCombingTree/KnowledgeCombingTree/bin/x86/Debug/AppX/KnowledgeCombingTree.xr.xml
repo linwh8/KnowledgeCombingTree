@@ -176,7 +176,6 @@
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
       <RootProperty Name="Content" />
       <RootProperty Name="VerticalScrollBarVisibility" />
-      <RootProperty Name="Padding" />
       <RootProperty Name="Margin" />
       <RootProperty Name="HorizontalContentAlignment" />
     </RootType>

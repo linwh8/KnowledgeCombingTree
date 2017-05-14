@@ -3,6 +3,8 @@
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
     "Microsoft.Xaml.Behaviors.Uwp.Managed": "1.1.0",
     "Newtonsoft.Json": "9.0.1",
+    "NotificationsExtensions": "1.0.0",
+    "NotificationsExtensions.Win10": "14332.0.2",
     "SQLitePCL": "3.8.7.2",
     "Template10": "1.1.12"
   },

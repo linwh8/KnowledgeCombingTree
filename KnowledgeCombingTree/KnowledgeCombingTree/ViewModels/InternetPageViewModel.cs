@@ -22,5 +22,14 @@ namespace KnowledgeCombingTree.ViewModels
         {
 
         }
+
+        public void RemoveTreeNode(Models.TreeNode item)
+        {
+            if (item.getParentId() == "-1")
+                this.rootItems.Remove(item);
+            else
+                this.childrenItems.Remove(item);
+            // set selectedItem to null after remove
+        }
     }
 }
