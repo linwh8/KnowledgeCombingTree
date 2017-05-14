@@ -13,6 +13,8 @@ namespace KnowledgeCombingTree.ViewModels
     {
         private ObservableCollection<Models.TreeNode> searchedItems = new ObservableCollection<Models.TreeNode>();
         public ObservableCollection<Models.TreeNode> SearchedItems { get { return this.searchedItems; } set { this.searchedItems = value; } }
+        private ObservableCollection<Models.TreeNode> historyItems = new ObservableCollection<Models.TreeNode>();
+        public ObservableCollection<Models.TreeNode> HistoryItems { get { return this.historyItems; } set { this.historyItems = value; } }
         private Models.TreeNode selectedItem = null;
         public Models.TreeNode SelectedItem { get { return selectedItem; } set { this.selectedItem = value; } }
         public MainPageViewModel()

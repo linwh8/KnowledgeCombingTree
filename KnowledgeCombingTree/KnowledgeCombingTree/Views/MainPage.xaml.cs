@@ -15,6 +15,8 @@ using KnowledgeCombingTree.Services.DatabaseServices;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using System.Linq;
+using Windows.UI.Xaml.Navigation;
+using Windows.Storage.AccessCache;
 
 namespace KnowledgeCombingTree.Views
 {
@@ -29,9 +31,38 @@ namespace KnowledgeCombingTree.Views
             InitializeComponent();
             NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled;
 
-            //roots = DbService.GetRootItems("-1");
+            //InitialHistoryAccessList();
         }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            InitialHistoryAccessList();
+        }
+
+        private async void InitialHistoryAccessList()
+        {
+            ViewModel.HistoryItems.Clear();
+            var mru = Windows.Storage.AccessCache.StorageApplicationPermissions.MostRecentlyUsedList;
+            foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
+            {
+                string mruToken = entry.Token;
+                string mruMetadata = entry.Metadata;
+                Windows.Storage.IStorageItem item = await mru.GetItemAsync(mruToken);
+                // The type of item will tell you whether it's a file or a folder.
+                foreach (TreeNode node in DbService.GetItemsByPath(item.Path))
+                {
+                    ViewModel.HistoryItems.Insert(0, node);
+                }
+            }
+            foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
+            {
+                string mruToken = entry.Token;
+                string mruMetadata = entry.Metadata;
+                Windows.Storage.IStorageItem item = await mru.GetItemAsync(mruToken);
+            }
+        }
+
+        /*-------------------------------- UI相关函数 ------------------------------------*/
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
 
@@ -85,6 +116,43 @@ namespace KnowledgeCombingTree.Views
             InfoGrid.Visibility = Visibility.Visible;
         }
 
+        private void HistoryAccessBox_DoubleTapped(object sender, Windows.UI.Xaml.Input.DoubleTappedRoutedEventArgs e)
+        {
+            TreeNode item = (TreeNode)HistoryAccessBox.SelectedItems[0];
+            OpenFolder(item.getFeature_id());
+        }
+
+        private async void ResultBox_DoubleTapped(object sender, Windows.UI.Xaml.Input.DoubleTappedRoutedEventArgs e)
+        {
+            TreeNode item = (TreeNode)ResultBox.SelectedItems[0];
+            OpenFolder(item.getFeature_id());
+            var target = await StorageApplicationPermissions.FutureAccessList.GetFolderAsync(item.getFeature_id());
+            StorageApplicationPermissions.MostRecentlyUsedList.Add(target);
+            foreach (TreeNode node in DbService.GetItemsByPath(target.Path))
+            {
+                ViewModel.HistoryItems.Insert(0, node);
+            }
+        }
+
+        /*----------------------------------- api --------------------------------------*/
+        // 用文件资源管理器打开一个目录
+        // @param: 要打开的目录的路径
+        private async void OpenFolder(string feature_id)
+        {
+            try
+            {
+                //StorageFolder folder = await StorageFolder.GetFolderFromPathAsync(sPath);
+                //var tmp = AddInFeatureAccessList(folder);
+                var target = await StorageApplicationPermissions.FutureAccessList.GetFolderAsync(feature_id);
+                await Launcher.LaunchFolderAsync(target);
+
+            }
+            catch (Exception ex)
+            {
+                var i = new MessageDialog(ex.ToString()).ShowAsync();
+            }
+        }
+
         // 用folderpicker选择一个文件夹(目录)，自动扫描其所有子目录并生成子节点存入数据库
         // 自动生成一棵树
         private async void test_Click(object sender, RoutedEventArgs e)
@@ -100,22 +168,6 @@ namespace KnowledgeCombingTree.Views
             else
             {
                 var i = new MessageDialog("选择文件夹失败").ShowAsync();
-            }
-        }
-
-        // 用文件资源管理器打开一个目录
-        private async void test2_Click(object sender, RoutedEventArgs e)
-        {
-            string sPath = @"E:\学习资料\现操\week10";  // 要打开的路径
-
-            try
-            {
-                StorageFolder folder = await StorageFolder.GetFolderFromPathAsync(sPath);
-                await Launcher.LaunchFolderAsync(folder);
-            }
-            catch (Exception ex)
-            {
-                var i = new MessageDialog(ex.ToString()).ShowAsync();
             }
         }
 
@@ -239,5 +291,6 @@ namespace KnowledgeCombingTree.Views
                 Update.IsEnabled = false;
             }
         }
+
     }
 }

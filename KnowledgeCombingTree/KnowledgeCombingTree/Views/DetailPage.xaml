@@ -143,6 +143,7 @@
                               ItemsSource="{x:Bind ViewModel.ChildrenItems}"
                               DragItemsStarting="RootList_DragItemsStarting"
                               ItemClick="ChildList_ItemClick"
+                              DoubleTapped="ChildList_DoubleTapped"
                               >
                             <ListView.ItemTemplate>
                                 <DataTemplate x:DataType="md:TreeNode">

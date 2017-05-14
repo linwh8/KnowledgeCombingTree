@@ -845,6 +845,7 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Template10.Mvvm.ViewModelBase"));
                 userType.Activator = Activate_61_MainPageViewModel;
                 userType.AddMemberName("SearchedItems");
+                userType.AddMemberName("HistoryItems");
                 userType.AddMemberName("SelectedItem");
                 userType.AddMemberName("Value");
                 userType.SetIsLocalType();
@@ -1870,82 +1871,92 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
             var that = (global::KnowledgeCombingTree.ViewModels.MainPageViewModel)instance;
             that.SearchedItems = (global::System.Collections.ObjectModel.ObservableCollection<global::KnowledgeCombingTree.Models.TreeNode>)Value;
         }
-        private object get_93_MainPageViewModel_SelectedItem(object instance)
+        private object get_93_MainPageViewModel_HistoryItems(object instance)
+        {
+            var that = (global::KnowledgeCombingTree.ViewModels.MainPageViewModel)instance;
+            return that.HistoryItems;
+        }
+        private void set_93_MainPageViewModel_HistoryItems(object instance, object Value)
+        {
+            var that = (global::KnowledgeCombingTree.ViewModels.MainPageViewModel)instance;
+            that.HistoryItems = (global::System.Collections.ObjectModel.ObservableCollection<global::KnowledgeCombingTree.Models.TreeNode>)Value;
+        }
+        private object get_94_MainPageViewModel_SelectedItem(object instance)
         {
             var that = (global::KnowledgeCombingTree.ViewModels.MainPageViewModel)instance;
             return that.SelectedItem;
         }
-        private void set_93_MainPageViewModel_SelectedItem(object instance, object Value)
+        private void set_94_MainPageViewModel_SelectedItem(object instance, object Value)
         {
             var that = (global::KnowledgeCombingTree.ViewModels.MainPageViewModel)instance;
             that.SelectedItem = (global::KnowledgeCombingTree.Models.TreeNode)Value;
         }
-        private object get_94_MainPageViewModel_Value(object instance)
+        private object get_95_MainPageViewModel_Value(object instance)
         {
             var that = (global::KnowledgeCombingTree.ViewModels.MainPageViewModel)instance;
             return that.Value;
         }
-        private void set_94_MainPageViewModel_Value(object instance, object Value)
+        private void set_95_MainPageViewModel_Value(object instance, object Value)
         {
             var that = (global::KnowledgeCombingTree.ViewModels.MainPageViewModel)instance;
             that.Value = (global::System.String)Value;
         }
-        private object get_95_SettingsPageViewModel_SettingsPartViewModel(object instance)
+        private object get_96_SettingsPageViewModel_SettingsPartViewModel(object instance)
         {
             var that = (global::KnowledgeCombingTree.ViewModels.SettingsPageViewModel)instance;
             return that.SettingsPartViewModel;
         }
-        private object get_96_SettingsPageViewModel_AboutPartViewModel(object instance)
+        private object get_97_SettingsPageViewModel_AboutPartViewModel(object instance)
         {
             var that = (global::KnowledgeCombingTree.ViewModels.SettingsPageViewModel)instance;
             return that.AboutPartViewModel;
         }
-        private object get_97_ValueWhenConverter_When(object instance)
+        private object get_98_ValueWhenConverter_When(object instance)
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             return that.When;
         }
-        private void set_97_ValueWhenConverter_When(object instance, object Value)
+        private void set_98_ValueWhenConverter_When(object instance, object Value)
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             that.When = (global::System.Object)Value;
         }
-        private object get_98_ValueWhenConverter_Value(object instance)
+        private object get_99_ValueWhenConverter_Value(object instance)
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             return that.Value;
         }
-        private void set_98_ValueWhenConverter_Value(object instance, object Value)
+        private void set_99_ValueWhenConverter_Value(object instance, object Value)
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             that.Value = (global::System.Object)Value;
         }
-        private object get_99_ValueWhenConverter_Otherwise(object instance)
+        private object get_100_ValueWhenConverter_Otherwise(object instance)
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             return that.Otherwise;
         }
-        private void set_99_ValueWhenConverter_Otherwise(object instance, object Value)
+        private void set_100_ValueWhenConverter_Otherwise(object instance, object Value)
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             that.Otherwise = (global::System.Object)Value;
         }
-        private object get_100_ValueWhenConverter_OtherwiseValueBack(object instance)
+        private object get_101_ValueWhenConverter_OtherwiseValueBack(object instance)
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             return that.OtherwiseValueBack;
         }
-        private void set_100_ValueWhenConverter_OtherwiseValueBack(object instance, object Value)
+        private void set_101_ValueWhenConverter_OtherwiseValueBack(object instance, object Value)
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             that.OtherwiseValueBack = (global::System.Object)Value;
         }
-        private object get_101_ValueWhenConverter_Debug(object instance)
+        private object get_102_ValueWhenConverter_Debug(object instance)
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             return that.Debug;
         }
-        private void set_101_ValueWhenConverter_Debug(object instance, object Value)
+        private void set_102_ValueWhenConverter_Debug(object instance, object Value)
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             that.Debug = (global::System.Boolean)Value;
@@ -2581,59 +2592,65 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
                 xamlMember.Getter = get_92_MainPageViewModel_SearchedItems;
                 xamlMember.Setter = set_92_MainPageViewModel_SearchedItems;
                 break;
+            case "KnowledgeCombingTree.ViewModels.MainPageViewModel.HistoryItems":
+                userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("KnowledgeCombingTree.ViewModels.MainPageViewModel");
+                xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "HistoryItems", "System.Collections.ObjectModel.ObservableCollection`1<KnowledgeCombingTree.Models.TreeNode>");
+                xamlMember.Getter = get_93_MainPageViewModel_HistoryItems;
+                xamlMember.Setter = set_93_MainPageViewModel_HistoryItems;
+                break;
             case "KnowledgeCombingTree.ViewModels.MainPageViewModel.SelectedItem":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("KnowledgeCombingTree.ViewModels.MainPageViewModel");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "SelectedItem", "KnowledgeCombingTree.Models.TreeNode");
-                xamlMember.Getter = get_93_MainPageViewModel_SelectedItem;
-                xamlMember.Setter = set_93_MainPageViewModel_SelectedItem;
+                xamlMember.Getter = get_94_MainPageViewModel_SelectedItem;
+                xamlMember.Setter = set_94_MainPageViewModel_SelectedItem;
                 break;
             case "KnowledgeCombingTree.ViewModels.MainPageViewModel.Value":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("KnowledgeCombingTree.ViewModels.MainPageViewModel");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "Value", "String");
-                xamlMember.Getter = get_94_MainPageViewModel_Value;
-                xamlMember.Setter = set_94_MainPageViewModel_Value;
+                xamlMember.Getter = get_95_MainPageViewModel_Value;
+                xamlMember.Setter = set_95_MainPageViewModel_Value;
                 break;
             case "KnowledgeCombingTree.ViewModels.SettingsPageViewModel.SettingsPartViewModel":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("KnowledgeCombingTree.ViewModels.SettingsPageViewModel");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "SettingsPartViewModel", "KnowledgeCombingTree.ViewModels.SettingsPartViewModel");
-                xamlMember.Getter = get_95_SettingsPageViewModel_SettingsPartViewModel;
+                xamlMember.Getter = get_96_SettingsPageViewModel_SettingsPartViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "KnowledgeCombingTree.ViewModels.SettingsPageViewModel.AboutPartViewModel":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("KnowledgeCombingTree.ViewModels.SettingsPageViewModel");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "AboutPartViewModel", "KnowledgeCombingTree.ViewModels.AboutPartViewModel");
-                xamlMember.Getter = get_96_SettingsPageViewModel_AboutPartViewModel;
+                xamlMember.Getter = get_97_SettingsPageViewModel_AboutPartViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Template10.Converters.ValueWhenConverter.When":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Converters.ValueWhenConverter");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "When", "Object");
-                xamlMember.Getter = get_97_ValueWhenConverter_When;
-                xamlMember.Setter = set_97_ValueWhenConverter_When;
+                xamlMember.Getter = get_98_ValueWhenConverter_When;
+                xamlMember.Setter = set_98_ValueWhenConverter_When;
                 break;
             case "Template10.Converters.ValueWhenConverter.Value":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Converters.ValueWhenConverter");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "Value", "Object");
-                xamlMember.Getter = get_98_ValueWhenConverter_Value;
-                xamlMember.Setter = set_98_ValueWhenConverter_Value;
+                xamlMember.Getter = get_99_ValueWhenConverter_Value;
+                xamlMember.Setter = set_99_ValueWhenConverter_Value;
                 break;
             case "Template10.Converters.ValueWhenConverter.Otherwise":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Converters.ValueWhenConverter");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "Otherwise", "Object");
-                xamlMember.Getter = get_99_ValueWhenConverter_Otherwise;
-                xamlMember.Setter = set_99_ValueWhenConverter_Otherwise;
+                xamlMember.Getter = get_100_ValueWhenConverter_Otherwise;
+                xamlMember.Setter = set_100_ValueWhenConverter_Otherwise;
                 break;
             case "Template10.Converters.ValueWhenConverter.OtherwiseValueBack":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Converters.ValueWhenConverter");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "OtherwiseValueBack", "Object");
-                xamlMember.Getter = get_100_ValueWhenConverter_OtherwiseValueBack;
-                xamlMember.Setter = set_100_ValueWhenConverter_OtherwiseValueBack;
+                xamlMember.Getter = get_101_ValueWhenConverter_OtherwiseValueBack;
+                xamlMember.Setter = set_101_ValueWhenConverter_OtherwiseValueBack;
                 break;
             case "Template10.Converters.ValueWhenConverter.Debug":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Converters.ValueWhenConverter");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "Debug", "Boolean");
-                xamlMember.Getter = get_101_ValueWhenConverter_Debug;
-                xamlMember.Setter = set_101_ValueWhenConverter_Debug;
+                xamlMember.Getter = get_102_ValueWhenConverter_Debug;
+                xamlMember.Setter = set_102_ValueWhenConverter_Debug;
                 break;
             }
             return xamlMember;

@@ -36,10 +36,7 @@ namespace KnowledgeCombingTree.Views
             InitializeComponent();
             NavigationCacheMode = NavigationCacheMode.Disabled;
 
-            //            ViewModel.SelectedItem = null;
             ViewModel.RootItems = DbService.GetItemsByParentId("-1");
-
-            this.DataContextChanged += (s, e) => Bindings.Update();
         }
 
 
@@ -56,6 +53,8 @@ namespace KnowledgeCombingTree.Views
                 //var tmp = AddInFeatureAccessList(folder);
                 var target = await StorageApplicationPermissions.FutureAccessList.GetFolderAsync(feature_id);
                 await Launcher.LaunchFolderAsync(target);
+
+                StorageApplicationPermissions.MostRecentlyUsedList.Add(target);
             }
             catch (Exception ex)
             {
@@ -103,16 +102,23 @@ namespace KnowledgeCombingTree.Views
         }
 
         // 添加一个子节点：
-        // 1. 选择一个路径，生成一个节点，此时description为"",image为"default.png"
+        // 1. 选择一个路径，生成一个节点，此时description为""
         // 2. 设置ViewModel.SelectedItem为该新建节点，进行编辑
         // 3. 编辑完成之后提交修改，将ViewModel.SelectedItem重新设置为null
         // @param: 父节点
         private async void AddChildNode(TreeNode parent_node)
         {
-            TreeNode new_node = await ChooseAndCreateChildNode(parent_node);
-            ViewModel.SelectedItem = new_node;
-            ViewModel.ChildrenItems.Add(new_node);
-            UploadModification();
+            try
+            {
+                TreeNode new_node = await ChooseAndCreateChildNode(parent_node);
+                ViewModel.SelectedItem = new_node;
+                ViewModel.ChildrenItems.Add(new_node);
+                UploadModification();
+            }
+            catch (Exception e)
+            {
+                var i = new MessageDialog("创建子节点失败").ShowAsync();
+            }
         }
 
         // 点击某个节点的修改按钮后，将该节点进行双向数据绑定，以下函数则用于提交修改
@@ -417,7 +423,13 @@ namespace KnowledgeCombingTree.Views
             name.Text = child.getName();
             description.Text = child.getDescription();
             InfoGrid.Visibility = Visibility.Visible;
-            OpenFolder(child.getFeature_id());
+        }
+
+        // ChildList的Item双击处理函数
+        private void ChildList_DoubleTapped(object sender, Windows.UI.Xaml.Input.DoubleTappedRoutedEventArgs e)
+        {
+            TreeNode item = (TreeNode)ChildList.SelectedItems[0];
+            OpenFolder(item.getFeature_id());
         }
 
         // RootList 的Item 鼠标右击处理函数
@@ -459,11 +471,13 @@ namespace KnowledgeCombingTree.Views
         {
             UploadModification();
             InfoGrid.Visibility = Visibility.Collapsed;
+            toggleSwitch1.IsOn = false;
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
             InfoGrid.Visibility = Visibility.Collapsed;
+            toggleSwitch1.IsOn = false;
         }
 
         private void AddChild(object sender, RoutedEventArgs e)
@@ -487,6 +501,8 @@ namespace KnowledgeCombingTree.Views
                 Update.IsEnabled = false;
             }
         }
+
+        
     }
 }
 
