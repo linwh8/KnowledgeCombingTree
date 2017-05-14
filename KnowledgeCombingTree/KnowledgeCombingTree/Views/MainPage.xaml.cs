@@ -40,16 +40,22 @@ namespace KnowledgeCombingTree.Views
         private void submitButton_Click(object sender, RoutedEventArgs e)
         {
             var text = SearchTextBox.Text;
+            if (text == "") return;
             ViewModel.SearchedItems.Clear();
             foreach (var item in DbService.SearchText(text))
             {
                 ViewModel.SearchedItems.Add(item);
             }
+            if (ViewModel.SearchedItems.Count == 0)
+            {
+                var i = new MessageDialog("搜索不到数据").ShowAsync();
+            }
         }
 
-        private void SecondSraechButton_Click(object sender, RoutedEventArgs e)
+        private void SecondSreachButton_Click(object sender, RoutedEventArgs e)
         {
             var text = SearchTextBox.Text;
+            if (text == "") return;
             List<TreeNode> delNodes = new List<TreeNode>();
             foreach (var item in ViewModel.SearchedItems)
             {
@@ -57,6 +63,10 @@ namespace KnowledgeCombingTree.Views
                 {
                     delNodes.Add(item);
                 }
+            }
+            if (delNodes.Count == ViewModel.SearchedItems.Count)
+            {
+                var i = new MessageDialog("筛选不到数据").ShowAsync();
             }
             foreach (var delItem in delNodes)
             {
@@ -67,7 +77,12 @@ namespace KnowledgeCombingTree.Views
         // 点击某一项之后执行的函数
         private void ResultBox_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            var root = (TreeNode)e.ClickedItem;
+            ViewModel.SelectedItem = root;
+            path.Text = root.getPath();
+            name.Text = root.getName();
+            description.Text = root.getDescription();
+            InfoGrid.Visibility = Visibility.Visible;
         }
 
         // 用folderpicker选择一个文件夹(目录)，自动扫描其所有子目录并生成子节点存入数据库
@@ -180,6 +195,49 @@ namespace KnowledgeCombingTree.Views
             return node;
         }
 
-        
+        private void Update_Click(object sender, RoutedEventArgs e)
+        {
+            UploadModification();
+            InfoGrid.Visibility = Visibility.Collapsed;
+        }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            InfoGrid.Visibility = Visibility.Collapsed;
+        }
+
+        // 点击某个节点的修改按钮后，将该节点进行双向数据绑定，以下函数则用于提交修改
+        private void UploadModification()
+        {
+            if (ViewModel.SelectedItem != null)
+            {
+                //ViewModel.SelectedItem.name = name.Text;
+                //ViewModel.SelectedItem.description = description.Text;
+                UpdateNode(ViewModel.SelectedItem);
+                ViewModel.SelectedItem = null;
+            }
+        }
+
+        /*-----------------------------------operations on datebase--------------------------------*/
+        private void UpdateNode(TreeNode node)
+        {
+            DbService.UpdateItem(node);
+        }
+
+        private void toggleSwitch1_Toggled(object sender, RoutedEventArgs e)
+        {
+            if (toggleSwitch1.IsOn)
+            {
+                name.IsReadOnly = false;
+                description.IsReadOnly = false;
+                Update.IsEnabled = true;
+            }
+            else
+            {
+                name.IsReadOnly = true;
+                description.IsReadOnly = true;
+                Update.IsEnabled = false;
+            }
+        }
     }
 }

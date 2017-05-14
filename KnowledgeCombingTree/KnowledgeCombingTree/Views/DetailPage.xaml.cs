@@ -207,7 +207,14 @@ namespace KnowledgeCombingTree.Views
 
         private void RemoveFromFeatureAccessList(string feature_id)
         {
-            StorageApplicationPermissions.FutureAccessList.Remove(feature_id);
+            try
+            {
+                StorageApplicationPermissions.FutureAccessList.Remove(feature_id);
+            }
+            catch (Exception e)
+            {
+                var i = new MessageDialog(e.ToString()).ShowAsync();
+            }
         }
 
         /*-----------------------------------operations on datebase--------------------------------*/
@@ -229,6 +236,7 @@ namespace KnowledgeCombingTree.Views
                     StorageFile file = items.OfType<StorageFile>().First();
                     //TreeNode new_node = new TreeNode("-1", 0, file.Path, "", "", "");
                     //ViewModel.AddTreeNode(new_node);
+                    var i = new MessageDialog("只能添加文件夹").ShowAsync();
                 }
                 catch
                 {
@@ -282,6 +290,12 @@ namespace KnowledgeCombingTree.Views
 
         private void DeleteItem()
         {
+            if (DelItem.getId() == ViewModel.SelectedItem.getId())
+            {
+                // 如果删除的节点是SelectedItem，则删除之后应该把编辑栏隐藏
+                InfoGrid.Visibility = Visibility.Collapsed;
+            }
+
             if (DelItem.getParentId() == "-1")
             {
                 if (ViewModel.ChildrenItems.Count > 0 && ViewModel.ChildrenItems.ElementAt(0).getParentId() == DelItem.getId())
@@ -332,16 +346,17 @@ namespace KnowledgeCombingTree.Views
                 {
                     StorageFile file = items.OfType<StorageFile>().First();
                     //             TreeNode node = new TreeNode(pid, 1, path + "\\" + name, name, "", "");
-                    if (file != null)
-                    {
-                        TreeNode new_node = new TreeNode(ViewModel.SelectedItem.getId(), 1, file.Path + "\\" + file.Name, file.Name, "", "");
-                        ViewModel.AddTreeNode(new_node);
-                        DbService.AddItem(new_node);
-                    }
-                    else
-                    {
-                        var i = new MessageDialog("选择文件失败").ShowAsync();
-                    }
+                    //if (file != null)
+                    //{
+                    //    TreeNode new_node = new TreeNode(ViewModel.SelectedItem.getId(), 1, file.Path + "\\" + file.Name, file.Name, "", "");
+                    //    ViewModel.AddTreeNode(new_node);
+                    //    DbService.AddItem(new_node);
+                    //}
+                    //else
+                    //{
+                    //    var i = new MessageDialog("选择文件失败").ShowAsync();
+                    //}
+                    var i = new MessageDialog("只能添加文件夹").ShowAsync();
                 }
                 catch
                 {
@@ -369,8 +384,8 @@ namespace KnowledgeCombingTree.Views
         /*-----------------------------------------拖拽相关------------------------------------------*/
         private void RootList_DoubleTapped(object sender, Windows.UI.Xaml.Input.DoubleTappedRoutedEventArgs e)
         {
-            TreeNode clickedItem = (TreeNode)e.OriginalSource;
-            ViewModel.SelectedItem = clickedItem;
+            //TreeNode clickedItem = (TreeNode)e.OriginalSource;
+            //ViewModel.SelectedItem = clickedItem;
             //Create
         }
 
@@ -413,10 +428,31 @@ namespace KnowledgeCombingTree.Views
             MenuFlyoutItem firstItem = new MenuFlyoutItem { Text = "AddChild" };
             MenuFlyoutItem secondItem = new MenuFlyoutItem { Text = "DeleteAllChildren"};
             firstItem.Click += AddChild;
-            //secondItem.Click +=;
+            secondItem.Click += DeleteChildrenItems;
             rootFlyout.Items.Add(firstItem);
             rootFlyout.Items.Add(secondItem);
             rootFlyout.ShowAt(sender as UIElement, e.GetPosition(sender as UIElement));
+        }
+
+        private async void DeleteChildrenItems(object sender, RoutedEventArgs e)
+        {
+            var msgDialog = new MessageDialog("确定删除该节点的所有子节点？") { Title = "删除提示" };
+            msgDialog.Commands.Add(new UICommand("确定", uiCommand => { this.DeleteChildrenItems(); }));
+            msgDialog.Commands.Add(new UICommand("取消", uiCommand => { this.CancelDelete(); }));
+            await msgDialog.ShowAsync();
+        }
+
+        private void DeleteChildrenItems()
+        {
+            // 由于只有点击根节点之后才能够按右键以选择删除所有子节点，所以此时ViewModel.ChildrenItems一定是该节点的子节点列表
+            foreach (var item in ViewModel.ChildrenItems)
+            {
+                RemoveFromFeatureAccessList(item.getFeature_id());
+            }
+            ViewModel.ChildrenItems.Clear();
+            // 根据parent id从数据库中删除子节点
+            DbService.DeleteChildrenItemsByParent_id(ViewModel.SelectedItem.getId());
+            var i = new MessageDialog("删除成功").ShowAsync();
         }
 
         private void Update_Click(object sender, RoutedEventArgs e)

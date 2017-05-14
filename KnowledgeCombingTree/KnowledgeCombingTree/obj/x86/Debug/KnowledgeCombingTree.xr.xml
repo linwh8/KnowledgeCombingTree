@@ -83,6 +83,7 @@
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="Children" />
+      <RootProperty Name="Padding" />
       <RootProperty Name="RowDefinitions" />
       <RootProperty Name="Name" />
       <RootProperty Name="Margin" />
@@ -147,14 +148,12 @@
       <RootMethod Name="SetAlignBottomWithPanel" />
       <RootMethod Name="GetBelow" />
       <RootMethod Name="SetBelow" />
+      <RootMethod Name="GetAlignRightWith" />
+      <RootMethod Name="SetAlignRightWith" />
       <RootMethod Name="GetAlignBottomWith" />
       <RootMethod Name="SetAlignBottomWith" />
       <RootMethod Name="GetRightOf" />
       <RootMethod Name="SetRightOf" />
-      <RootMethod Name="GetAlignLeftWith" />
-      <RootMethod Name="SetAlignLeftWith" />
-      <RootMethod Name="GetAlignRightWith" />
-      <RootMethod Name="SetAlignRightWith" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.VisualStateManager">
       <RootMethod Name="GetVisualStateGroups" />
@@ -169,16 +168,16 @@
     <RootType FullName="Windows.UI.Xaml.AdaptiveTrigger">
       <RootProperty Name="MinWindowWidth" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
-      <RootProperty Name="Padding" />
-      <RootProperty Name="VerticalScrollBarVisibility" />
-      <RootProperty Name="Content" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="HorizontalContentAlignment" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.Animation.EntranceNavigationTransitionInfo">
       <RootMethod Name="GetIsTargetElement" />
       <RootMethod Name="SetIsTargetElement" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
+      <RootProperty Name="Content" />
+      <RootProperty Name="VerticalScrollBarVisibility" />
+      <RootProperty Name="Padding" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="HorizontalContentAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
       <RootProperty Name="Height" />
@@ -224,6 +223,7 @@
       <RootProperty Name="Content" />
       <RootProperty Name="Margin" />
       <RootProperty Name="IsEnabled" />
+      <RootProperty Name="BorderBrush" />
       <RootProperty Name="Command" />
       <RootEvent Name="Click" />
     </RootType>
@@ -234,6 +234,7 @@
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="ItemTemplate" />
       <RootProperty Name="Name" />
+      <RootProperty Name="Margin" />
       <RootEvent Name="Drop" />
       <RootEvent Name="DragOver" />
       <RootEvent Name="DragItemsStarting" />
@@ -260,28 +261,6 @@
     <RootType FullName="KnowledgeCombingTree.Views.DetailPage" />
     <RootType FullName="KnowledgeCombingTree.Views.InternetPage" />
     <RootType FullName="KnowledgeCombingTree.ViewModels.MainPageViewModel" />
-    <RootType FullName="Microsoft.Xaml.Interactivity.Interaction">
-      <RootMethod Name="GetBehaviors" />
-      <RootMethod Name="SetBehaviors" />
-    </RootType>
-    <RootType FullName="Template10.Behaviors.KeyBehavior">
-      <RootProperty Name="Key" />
-      <RootProperty Name="Actions" />
-    </RootType>
-    <RootType FullName="Microsoft.Xaml.Interactions.Core.EventTriggerBehavior">
-      <RootProperty Name="Actions" />
-    </RootType>
-    <RootType FullName="Template10.Behaviors.FocusAction" />
-    <RootType FullName="Microsoft.Xaml.Interactions.Core.CallMethodAction">
-      <RootProperty Name="MethodName" />
-      <RootProperty Name="TargetObject" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Data.Binding">
-      <RootProperty Name="Mode" />
-      <RootProperty Name="UpdateSourceTrigger" />
-      <RootProperty Name="ElementName" />
-      <RootProperty Name="Converter" />
-    </RootType>
     <RootType FullName="KnowledgeCombingTree.Views.MainPage" />
     <RootType FullName="KnowledgeCombingTree.ViewModels.SettingsPageViewModel" />
     <RootType FullName="Template10.Converters.ValueWhenConverter">
@@ -298,6 +277,12 @@
       <RootProperty Name="Header" />
       <RootProperty Name="Content" />
       <RootProperty Name="Padding" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Data.Binding">
+      <RootProperty Name="Mode" />
+      <RootProperty Name="UpdateSourceTrigger" />
+      <RootProperty Name="ElementName" />
+      <RootProperty Name="Converter" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Border">
       <RootProperty Name="HorizontalAlignment" />

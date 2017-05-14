@@ -58,95 +58,124 @@
 
             <!--  secondary commands  -->
             <controls:PageHeader.PrimaryCommands>
-                <AppBarButton x:ConnectionId='17' Content="&#xE72D;" FontFamily="Segoe MDL2 Assets" Margin="30, 0, 0, 0"                            Width="Auto"/>
+                <AppBarButton x:ConnectionId='24' Content="&#xE72D;" FontFamily="Segoe MDL2 Assets" Margin="30, 0, 0, 0"                            Width="Auto"/>
             </controls:PageHeader.PrimaryCommands>
             <controls:PageHeader.SecondaryCommands>
-                <AppBarButton x:ConnectionId='18'                                         Label="Settings" />
-                <AppBarButton x:ConnectionId='19'                                        Label="Privacy" />
-                <AppBarButton x:ConnectionId='20'                                      Label="About" />
+                <AppBarButton x:ConnectionId='25'                                         Label="Settings" />
+                <AppBarButton x:ConnectionId='26'                                        Label="Privacy" />
+                <AppBarButton x:ConnectionId='27'                                      Label="About" />
             </controls:PageHeader.SecondaryCommands>
 
         </controls:PageHeader>
 
-        <RelativePanel EntranceNavigationTransitionInfo.IsTargetElement="True"
-                       RelativePanel.AlignBottomWithPanel="True"
-                       RelativePanel.AlignLeftWithPanel="True"
-                       RelativePanel.AlignRightWithPanel="True"
-                       RelativePanel.Below="pageHeader">
+        <ScrollViewer EntranceNavigationTransitionInfo.IsTargetElement="True"
+                      Padding="12,8,0,0"
+                      RelativePanel.AlignBottomWithPanel="True"
+                      RelativePanel.AlignLeftWithPanel="True"
+                      RelativePanel.AlignRightWithPanel="True"
+                      RelativePanel.Below="pageHeader"
+                      VerticalScrollBarVisibility="Auto">
 
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="4*" />
+                </Grid.ColumnDefinitions>
 
-            <controls:Resizer x:ConnectionId='8' x:Name="parameterResizer" Margin="16,16,16,0">
+                <StackPanel>
 
-                <TextBox x:ConnectionId='16' Name="SearchTextBox"
+                    <StackPanel Orientation="Horizontal">
+                        <controls:Resizer x:ConnectionId='20' x:Name="parameterResizer" Margin="16,16,16,0">
+
+                            <TextBox x:ConnectionId='23' Name="SearchTextBox"
                          MinWidth="150"
                          MinHeight="62"
                          Header="Enter the Key Words:"
                          PlaceholderText="Key Words"
                          TextWrapping="Wrap">
-                    <Interactivity:Interaction.Behaviors>
+                            </TextBox>
 
-                        <!--  enable submit on enter key  -->
-                        <Behaviors:KeyBehavior Key="Enter">
-                            <Core:CallMethodAction MethodName="GotoDetailsPage" TargetObject="{Binding}" />
-                        </Behaviors:KeyBehavior>
+                        </controls:Resizer>
 
-                        <!--  focus on textbox when page loads  -->
-                        <Core:EventTriggerBehavior>
-                            <Behaviors:FocusAction />
-                        </Core:EventTriggerBehavior>
+                        <StackPanel Margin="16,16,16,0">
+                            <Button x:ConnectionId='21' x:Name="submitButton"
+                                    BorderBrush="Gray"
+                                                              
+                                    Content="Search"/>
 
-                    </Interactivity:Interaction.Behaviors>
-                </TextBox>
+                            <Button x:ConnectionId='22' x:Name="submitButton2"
+                                    BorderBrush="Gray"
+                                                                    
+                                    Content="DeepSearch"/>
+                        </StackPanel>
 
-            </controls:Resizer>
+                    </StackPanel>
 
-            <Button x:ConnectionId='9' x:Name="submitButton"
-                                              
-                    Content="Search"
-                    RelativePanel.AlignBottomWith="parameterResizer"
-                    RelativePanel.RightOf="parameterResizer" />
-
-            <Button x:ConnectionId='10' x:Name="submitButton2"
-                                                    
-                    Content="DeepSearch"
-                    RelativePanel.AlignBottomWith="parameterResizer"
-                    RelativePanel.RightOf="submitButton" />
-
-            <TextBlock x:ConnectionId='11' x:Name="stateTextBox"
+                    <TextBlock x:ConnectionId='15' x:Name="stateTextBox"
                        Margin="16,16,0,0"
-                       RelativePanel.AlignLeftWith="parameterResizer"
-                       RelativePanel.Below="parameterResizer"
                        Text="Current Visual State" />
 
-            <ListView x:ConnectionId='12' Name="ResultBox"
+                    <ListView x:ConnectionId='16' Name="ResultBox"
+                      Margin="10"
                       IsItemClickEnabled="True"
                                                      
                                                                     >
-                <ListView.ItemTemplate>
-                    <DataTemplate                         >
-                        <Grid x:ConnectionId='13'  Margin="12,0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="3*" />
-                                <ColumnDefinition Width="8*" />
-                            </Grid.ColumnDefinitions>
-                            <Image Source="ms-appx:///Assets/Directory_new.jpg"
+                        <ListView.ItemTemplate>
+                            <DataTemplate                         >
+                                <Grid x:ConnectionId='17'  Margin="12,0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="3*" />
+                                        <ColumnDefinition Width="8*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="ms-appx:///Assets/Directory_new.jpg"
                                                Width="40" 
                                                Height="40" 
                                                Grid.RowSpan="2" 
                                                Margin="10"/>
-                            <TextBlock x:ConnectionId='14' Grid.Column="1"                       FontWeight="Bold" Name="rootItemName"/>
-                            <TextBlock x:ConnectionId='15' Grid.Column="1" Grid.Row="1"                      />
-                        </Grid>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                                    <TextBlock x:ConnectionId='18' Grid.Column="1"                       FontWeight="Bold" Name="rootItemName"/>
+                                    <TextBlock x:ConnectionId='19' Grid.Column="1" Grid.Row="1"                      />
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
 
-        </RelativePanel>
+                </StackPanel>
 
+                <Grid x:ConnectionId='8' Grid.Column="1" Margin="10" Visibility="Collapsed" Name="InfoGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="4*"/>
+                    </Grid.RowDefinitions>
+
+                    <Image Source="ms-appx:///Assets/Directory_new.jpg"/>
+                    <ToggleSwitch x:ConnectionId='9' x:Name="toggleSwitch1" 
+                                  Header="Edit Toggle" 
+                                  OnContent="On" OffContent="Off" 
+                                                                  
+                                  Margin="10" Grid.Row="1"
+                                  FontWeight="Bold"
+                                  />
+                    <StackPanel Grid.Row="2" Margin="10">
+                        <TextBlock Text="Path" FontWeight="Bold"/>
+                        <TextBox x:ConnectionId='10' Name="path" IsReadOnly="True" Margin="0,10,0,10" TextWrapping="Wrap" MinHeight="30"                                                         BorderBrush="Transparent"/>
+                        <TextBlock Text="Name" FontWeight="Bold"/>
+                        <TextBox x:ConnectionId='11' Name="name" IsReadOnly="True" Margin="0,10,0,10" TextWrapping="Wrap" MinHeight="30"                                                          BorderBrush="Transparent"/>
+                        <TextBlock Text="Description" FontWeight="Bold"/>
+                        <TextBox x:ConnectionId='12' Name="description" IsReadOnly="True" Margin="0,10,0,10" TextWrapping="Wrap" MinHeight="30"                                                                 BorderBrush="Transparent"/>
+                        <StackPanel Orientation="Horizontal" Margin="10,40,0,0">
+                            <Button x:ConnectionId='13' Name="Update" Content="Update" Margin="0,0,10,0" IsEnabled="False"                     />
+                            <Button x:ConnectionId='14' Name="Cancel" Content="Cancel" Margin="10,0,0,0"                     />
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+
+        </ScrollViewer>
     </RelativePanel>
 </Page>
 

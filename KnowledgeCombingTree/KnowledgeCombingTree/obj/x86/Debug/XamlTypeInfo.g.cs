@@ -156,7 +156,7 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[81];
+            _typeNameTable = new string[70];
             _typeNameTable[0] = "Template10.Common.BootStrapper";
             _typeNameTable[1] = "Windows.UI.Xaml.Application";
             _typeNameTable[2] = "Template10.Common.StateItems";
@@ -219,27 +219,16 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
             _typeNameTable[59] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[60] = "KnowledgeCombingTree.Views.InternetPage";
             _typeNameTable[61] = "KnowledgeCombingTree.ViewModels.MainPageViewModel";
-            _typeNameTable[62] = "Microsoft.Xaml.Interactivity.Interaction";
-            _typeNameTable[63] = "Microsoft.Xaml.Interactivity.BehaviorCollection";
-            _typeNameTable[64] = "Windows.UI.Xaml.DependencyObjectCollection";
-            _typeNameTable[65] = "Template10.Behaviors.KeyBehavior";
-            _typeNameTable[66] = "Microsoft.Xaml.Interactivity.ActionCollection";
-            _typeNameTable[67] = "Windows.System.VirtualKey";
-            _typeNameTable[68] = "Template10.Behaviors.KeyBehavior.Kinds";
-            _typeNameTable[69] = "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior";
-            _typeNameTable[70] = "Microsoft.Xaml.Interactivity.Behavior";
-            _typeNameTable[71] = "Template10.Behaviors.FocusAction";
-            _typeNameTable[72] = "Microsoft.Xaml.Interactions.Core.CallMethodAction";
-            _typeNameTable[73] = "KnowledgeCombingTree.Views.MainPage";
-            _typeNameTable[74] = "KnowledgeCombingTree.ViewModels.SettingsPageViewModel";
-            _typeNameTable[75] = "KnowledgeCombingTree.ViewModels.SettingsPartViewModel";
-            _typeNameTable[76] = "KnowledgeCombingTree.ViewModels.AboutPartViewModel";
-            _typeNameTable[77] = "Template10.Converters.ValueWhenConverter";
-            _typeNameTable[78] = "KnowledgeCombingTree.Views.SettingsPage";
-            _typeNameTable[79] = "KnowledgeCombingTree.Views.Shell";
-            _typeNameTable[80] = "KnowledgeCombingTree.Views.Splash";
+            _typeNameTable[62] = "KnowledgeCombingTree.Views.MainPage";
+            _typeNameTable[63] = "KnowledgeCombingTree.ViewModels.SettingsPageViewModel";
+            _typeNameTable[64] = "KnowledgeCombingTree.ViewModels.SettingsPartViewModel";
+            _typeNameTable[65] = "KnowledgeCombingTree.ViewModels.AboutPartViewModel";
+            _typeNameTable[66] = "Template10.Converters.ValueWhenConverter";
+            _typeNameTable[67] = "KnowledgeCombingTree.Views.SettingsPage";
+            _typeNameTable[68] = "KnowledgeCombingTree.Views.Shell";
+            _typeNameTable[69] = "KnowledgeCombingTree.Views.Splash";
 
-            _typeTable = new global::System.Type[81];
+            _typeTable = new global::System.Type[70];
             _typeTable[0] = typeof(global::Template10.Common.BootStrapper);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Application);
             _typeTable[2] = typeof(global::Template10.Common.StateItems);
@@ -302,25 +291,14 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
             _typeTable[59] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[60] = typeof(global::KnowledgeCombingTree.Views.InternetPage);
             _typeTable[61] = typeof(global::KnowledgeCombingTree.ViewModels.MainPageViewModel);
-            _typeTable[62] = typeof(global::Microsoft.Xaml.Interactivity.Interaction);
-            _typeTable[63] = typeof(global::Microsoft.Xaml.Interactivity.BehaviorCollection);
-            _typeTable[64] = typeof(global::Windows.UI.Xaml.DependencyObjectCollection);
-            _typeTable[65] = typeof(global::Template10.Behaviors.KeyBehavior);
-            _typeTable[66] = typeof(global::Microsoft.Xaml.Interactivity.ActionCollection);
-            _typeTable[67] = typeof(global::Windows.System.VirtualKey);
-            _typeTable[68] = typeof(global::Template10.Behaviors.KeyBehavior.Kinds);
-            _typeTable[69] = typeof(global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior);
-            _typeTable[70] = typeof(global::Microsoft.Xaml.Interactivity.Behavior);
-            _typeTable[71] = typeof(global::Template10.Behaviors.FocusAction);
-            _typeTable[72] = typeof(global::Microsoft.Xaml.Interactions.Core.CallMethodAction);
-            _typeTable[73] = typeof(global::KnowledgeCombingTree.Views.MainPage);
-            _typeTable[74] = typeof(global::KnowledgeCombingTree.ViewModels.SettingsPageViewModel);
-            _typeTable[75] = typeof(global::KnowledgeCombingTree.ViewModels.SettingsPartViewModel);
-            _typeTable[76] = typeof(global::KnowledgeCombingTree.ViewModels.AboutPartViewModel);
-            _typeTable[77] = typeof(global::Template10.Converters.ValueWhenConverter);
-            _typeTable[78] = typeof(global::KnowledgeCombingTree.Views.SettingsPage);
-            _typeTable[79] = typeof(global::KnowledgeCombingTree.Views.Shell);
-            _typeTable[80] = typeof(global::KnowledgeCombingTree.Views.Splash);
+            _typeTable[62] = typeof(global::KnowledgeCombingTree.Views.MainPage);
+            _typeTable[63] = typeof(global::KnowledgeCombingTree.ViewModels.SettingsPageViewModel);
+            _typeTable[64] = typeof(global::KnowledgeCombingTree.ViewModels.SettingsPartViewModel);
+            _typeTable[65] = typeof(global::KnowledgeCombingTree.ViewModels.AboutPartViewModel);
+            _typeTable[66] = typeof(global::Template10.Converters.ValueWhenConverter);
+            _typeTable[67] = typeof(global::KnowledgeCombingTree.Views.SettingsPage);
+            _typeTable[68] = typeof(global::KnowledgeCombingTree.Views.Shell);
+            _typeTable[69] = typeof(global::KnowledgeCombingTree.Views.Splash);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -371,19 +349,13 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
         private object Activate_58_DetailPage() { return new global::KnowledgeCombingTree.Views.DetailPage(); }
         private object Activate_60_InternetPage() { return new global::KnowledgeCombingTree.Views.InternetPage(); }
         private object Activate_61_MainPageViewModel() { return new global::KnowledgeCombingTree.ViewModels.MainPageViewModel(); }
-        private object Activate_63_BehaviorCollection() { return new global::Microsoft.Xaml.Interactivity.BehaviorCollection(); }
-        private object Activate_65_KeyBehavior() { return new global::Template10.Behaviors.KeyBehavior(); }
-        private object Activate_66_ActionCollection() { return new global::Microsoft.Xaml.Interactivity.ActionCollection(); }
-        private object Activate_69_EventTriggerBehavior() { return new global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior(); }
-        private object Activate_71_FocusAction() { return new global::Template10.Behaviors.FocusAction(); }
-        private object Activate_72_CallMethodAction() { return new global::Microsoft.Xaml.Interactions.Core.CallMethodAction(); }
-        private object Activate_73_MainPage() { return new global::KnowledgeCombingTree.Views.MainPage(); }
-        private object Activate_74_SettingsPageViewModel() { return new global::KnowledgeCombingTree.ViewModels.SettingsPageViewModel(); }
-        private object Activate_75_SettingsPartViewModel() { return new global::KnowledgeCombingTree.ViewModels.SettingsPartViewModel(); }
-        private object Activate_76_AboutPartViewModel() { return new global::KnowledgeCombingTree.ViewModels.AboutPartViewModel(); }
-        private object Activate_77_ValueWhenConverter() { return new global::Template10.Converters.ValueWhenConverter(); }
-        private object Activate_78_SettingsPage() { return new global::KnowledgeCombingTree.Views.SettingsPage(); }
-        private object Activate_79_Shell() { return new global::KnowledgeCombingTree.Views.Shell(); }
+        private object Activate_62_MainPage() { return new global::KnowledgeCombingTree.Views.MainPage(); }
+        private object Activate_63_SettingsPageViewModel() { return new global::KnowledgeCombingTree.ViewModels.SettingsPageViewModel(); }
+        private object Activate_64_SettingsPartViewModel() { return new global::KnowledgeCombingTree.ViewModels.SettingsPartViewModel(); }
+        private object Activate_65_AboutPartViewModel() { return new global::KnowledgeCombingTree.ViewModels.AboutPartViewModel(); }
+        private object Activate_66_ValueWhenConverter() { return new global::Template10.Converters.ValueWhenConverter(); }
+        private object Activate_67_SettingsPage() { return new global::KnowledgeCombingTree.Views.SettingsPage(); }
+        private object Activate_68_Shell() { return new global::KnowledgeCombingTree.Views.Shell(); }
         private void MapAdd_2_StateItems(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.String, global::System.Object>)instance;
@@ -420,18 +392,6 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
         {
             var collection = (global::System.Collections.Generic.ICollection<global::KnowledgeCombingTree.Models.TreeNode>)instance;
             var newItem = (global::KnowledgeCombingTree.Models.TreeNode)item;
-            collection.Add(newItem);
-        }
-        private void VectorAdd_63_BehaviorCollection(object instance, object item)
-        {
-            var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
-            var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
-            collection.Add(newItem);
-        }
-        private void VectorAdd_66_ActionCollection(object instance, object item)
-        {
-            var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
-            var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
             collection.Add(newItem);
         }
 
@@ -885,295 +845,45 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Template10.Mvvm.ViewModelBase"));
                 userType.Activator = Activate_61_MainPageViewModel;
                 userType.AddMemberName("SearchedItems");
+                userType.AddMemberName("SelectedItem");
                 userType.AddMemberName("Value");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 62:   //  Microsoft.Xaml.Interactivity.Interaction
-                userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.AddMemberName("Behaviors");
-                xamlType = userType;
-                break;
-
-            case 63:   //  Microsoft.Xaml.Interactivity.BehaviorCollection
-                userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
-                userType.CollectionAdd = VectorAdd_63_BehaviorCollection;
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 64:   //  Windows.UI.Xaml.DependencyObjectCollection
-                xamlType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 65:   //  Template10.Behaviors.KeyBehavior
-                userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_65_KeyBehavior;
-                userType.SetContentPropertyName("Template10.Behaviors.KeyBehavior.Actions");
-                userType.AddMemberName("Actions");
-                userType.AddMemberName("Key");
-                userType.AddMemberName("AssociatedObject");
-                userType.AddMemberName("AndControl");
-                userType.AddMemberName("AndAlt");
-                userType.AddMemberName("AndShift");
-                userType.AddMemberName("Event");
-                xamlType = userType;
-                break;
-
-            case 66:   //  Microsoft.Xaml.Interactivity.ActionCollection
-                userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
-                userType.CollectionAdd = VectorAdd_66_ActionCollection;
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 67:   //  Windows.System.VirtualKey
-                userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.AddEnumValue("None", global::Windows.System.VirtualKey.None);
-                userType.AddEnumValue("LeftButton", global::Windows.System.VirtualKey.LeftButton);
-                userType.AddEnumValue("RightButton", global::Windows.System.VirtualKey.RightButton);
-                userType.AddEnumValue("Cancel", global::Windows.System.VirtualKey.Cancel);
-                userType.AddEnumValue("MiddleButton", global::Windows.System.VirtualKey.MiddleButton);
-                userType.AddEnumValue("XButton1", global::Windows.System.VirtualKey.XButton1);
-                userType.AddEnumValue("XButton2", global::Windows.System.VirtualKey.XButton2);
-                userType.AddEnumValue("Back", global::Windows.System.VirtualKey.Back);
-                userType.AddEnumValue("Tab", global::Windows.System.VirtualKey.Tab);
-                userType.AddEnumValue("Clear", global::Windows.System.VirtualKey.Clear);
-                userType.AddEnumValue("Enter", global::Windows.System.VirtualKey.Enter);
-                userType.AddEnumValue("Shift", global::Windows.System.VirtualKey.Shift);
-                userType.AddEnumValue("Control", global::Windows.System.VirtualKey.Control);
-                userType.AddEnumValue("Menu", global::Windows.System.VirtualKey.Menu);
-                userType.AddEnumValue("Pause", global::Windows.System.VirtualKey.Pause);
-                userType.AddEnumValue("CapitalLock", global::Windows.System.VirtualKey.CapitalLock);
-                userType.AddEnumValue("Kana", global::Windows.System.VirtualKey.Kana);
-                userType.AddEnumValue("Hangul", global::Windows.System.VirtualKey.Hangul);
-                userType.AddEnumValue("Junja", global::Windows.System.VirtualKey.Junja);
-                userType.AddEnumValue("Final", global::Windows.System.VirtualKey.Final);
-                userType.AddEnumValue("Hanja", global::Windows.System.VirtualKey.Hanja);
-                userType.AddEnumValue("Kanji", global::Windows.System.VirtualKey.Kanji);
-                userType.AddEnumValue("Escape", global::Windows.System.VirtualKey.Escape);
-                userType.AddEnumValue("Convert", global::Windows.System.VirtualKey.Convert);
-                userType.AddEnumValue("NonConvert", global::Windows.System.VirtualKey.NonConvert);
-                userType.AddEnumValue("Accept", global::Windows.System.VirtualKey.Accept);
-                userType.AddEnumValue("ModeChange", global::Windows.System.VirtualKey.ModeChange);
-                userType.AddEnumValue("Space", global::Windows.System.VirtualKey.Space);
-                userType.AddEnumValue("PageUp", global::Windows.System.VirtualKey.PageUp);
-                userType.AddEnumValue("PageDown", global::Windows.System.VirtualKey.PageDown);
-                userType.AddEnumValue("End", global::Windows.System.VirtualKey.End);
-                userType.AddEnumValue("Home", global::Windows.System.VirtualKey.Home);
-                userType.AddEnumValue("Left", global::Windows.System.VirtualKey.Left);
-                userType.AddEnumValue("Up", global::Windows.System.VirtualKey.Up);
-                userType.AddEnumValue("Right", global::Windows.System.VirtualKey.Right);
-                userType.AddEnumValue("Down", global::Windows.System.VirtualKey.Down);
-                userType.AddEnumValue("Select", global::Windows.System.VirtualKey.Select);
-                userType.AddEnumValue("Print", global::Windows.System.VirtualKey.Print);
-                userType.AddEnumValue("Execute", global::Windows.System.VirtualKey.Execute);
-                userType.AddEnumValue("Snapshot", global::Windows.System.VirtualKey.Snapshot);
-                userType.AddEnumValue("Insert", global::Windows.System.VirtualKey.Insert);
-                userType.AddEnumValue("Delete", global::Windows.System.VirtualKey.Delete);
-                userType.AddEnumValue("Help", global::Windows.System.VirtualKey.Help);
-                userType.AddEnumValue("Number0", global::Windows.System.VirtualKey.Number0);
-                userType.AddEnumValue("Number1", global::Windows.System.VirtualKey.Number1);
-                userType.AddEnumValue("Number2", global::Windows.System.VirtualKey.Number2);
-                userType.AddEnumValue("Number3", global::Windows.System.VirtualKey.Number3);
-                userType.AddEnumValue("Number4", global::Windows.System.VirtualKey.Number4);
-                userType.AddEnumValue("Number5", global::Windows.System.VirtualKey.Number5);
-                userType.AddEnumValue("Number6", global::Windows.System.VirtualKey.Number6);
-                userType.AddEnumValue("Number7", global::Windows.System.VirtualKey.Number7);
-                userType.AddEnumValue("Number8", global::Windows.System.VirtualKey.Number8);
-                userType.AddEnumValue("Number9", global::Windows.System.VirtualKey.Number9);
-                userType.AddEnumValue("A", global::Windows.System.VirtualKey.A);
-                userType.AddEnumValue("B", global::Windows.System.VirtualKey.B);
-                userType.AddEnumValue("C", global::Windows.System.VirtualKey.C);
-                userType.AddEnumValue("D", global::Windows.System.VirtualKey.D);
-                userType.AddEnumValue("E", global::Windows.System.VirtualKey.E);
-                userType.AddEnumValue("F", global::Windows.System.VirtualKey.F);
-                userType.AddEnumValue("G", global::Windows.System.VirtualKey.G);
-                userType.AddEnumValue("H", global::Windows.System.VirtualKey.H);
-                userType.AddEnumValue("I", global::Windows.System.VirtualKey.I);
-                userType.AddEnumValue("J", global::Windows.System.VirtualKey.J);
-                userType.AddEnumValue("K", global::Windows.System.VirtualKey.K);
-                userType.AddEnumValue("L", global::Windows.System.VirtualKey.L);
-                userType.AddEnumValue("M", global::Windows.System.VirtualKey.M);
-                userType.AddEnumValue("N", global::Windows.System.VirtualKey.N);
-                userType.AddEnumValue("O", global::Windows.System.VirtualKey.O);
-                userType.AddEnumValue("P", global::Windows.System.VirtualKey.P);
-                userType.AddEnumValue("Q", global::Windows.System.VirtualKey.Q);
-                userType.AddEnumValue("R", global::Windows.System.VirtualKey.R);
-                userType.AddEnumValue("S", global::Windows.System.VirtualKey.S);
-                userType.AddEnumValue("T", global::Windows.System.VirtualKey.T);
-                userType.AddEnumValue("U", global::Windows.System.VirtualKey.U);
-                userType.AddEnumValue("V", global::Windows.System.VirtualKey.V);
-                userType.AddEnumValue("W", global::Windows.System.VirtualKey.W);
-                userType.AddEnumValue("X", global::Windows.System.VirtualKey.X);
-                userType.AddEnumValue("Y", global::Windows.System.VirtualKey.Y);
-                userType.AddEnumValue("Z", global::Windows.System.VirtualKey.Z);
-                userType.AddEnumValue("LeftWindows", global::Windows.System.VirtualKey.LeftWindows);
-                userType.AddEnumValue("RightWindows", global::Windows.System.VirtualKey.RightWindows);
-                userType.AddEnumValue("Application", global::Windows.System.VirtualKey.Application);
-                userType.AddEnumValue("Sleep", global::Windows.System.VirtualKey.Sleep);
-                userType.AddEnumValue("NumberPad0", global::Windows.System.VirtualKey.NumberPad0);
-                userType.AddEnumValue("NumberPad1", global::Windows.System.VirtualKey.NumberPad1);
-                userType.AddEnumValue("NumberPad2", global::Windows.System.VirtualKey.NumberPad2);
-                userType.AddEnumValue("NumberPad3", global::Windows.System.VirtualKey.NumberPad3);
-                userType.AddEnumValue("NumberPad4", global::Windows.System.VirtualKey.NumberPad4);
-                userType.AddEnumValue("NumberPad5", global::Windows.System.VirtualKey.NumberPad5);
-                userType.AddEnumValue("NumberPad6", global::Windows.System.VirtualKey.NumberPad6);
-                userType.AddEnumValue("NumberPad7", global::Windows.System.VirtualKey.NumberPad7);
-                userType.AddEnumValue("NumberPad8", global::Windows.System.VirtualKey.NumberPad8);
-                userType.AddEnumValue("NumberPad9", global::Windows.System.VirtualKey.NumberPad9);
-                userType.AddEnumValue("Multiply", global::Windows.System.VirtualKey.Multiply);
-                userType.AddEnumValue("Add", global::Windows.System.VirtualKey.Add);
-                userType.AddEnumValue("Separator", global::Windows.System.VirtualKey.Separator);
-                userType.AddEnumValue("Subtract", global::Windows.System.VirtualKey.Subtract);
-                userType.AddEnumValue("Decimal", global::Windows.System.VirtualKey.Decimal);
-                userType.AddEnumValue("Divide", global::Windows.System.VirtualKey.Divide);
-                userType.AddEnumValue("F1", global::Windows.System.VirtualKey.F1);
-                userType.AddEnumValue("F2", global::Windows.System.VirtualKey.F2);
-                userType.AddEnumValue("F3", global::Windows.System.VirtualKey.F3);
-                userType.AddEnumValue("F4", global::Windows.System.VirtualKey.F4);
-                userType.AddEnumValue("F5", global::Windows.System.VirtualKey.F5);
-                userType.AddEnumValue("F6", global::Windows.System.VirtualKey.F6);
-                userType.AddEnumValue("F7", global::Windows.System.VirtualKey.F7);
-                userType.AddEnumValue("F8", global::Windows.System.VirtualKey.F8);
-                userType.AddEnumValue("F9", global::Windows.System.VirtualKey.F9);
-                userType.AddEnumValue("F10", global::Windows.System.VirtualKey.F10);
-                userType.AddEnumValue("F11", global::Windows.System.VirtualKey.F11);
-                userType.AddEnumValue("F12", global::Windows.System.VirtualKey.F12);
-                userType.AddEnumValue("F13", global::Windows.System.VirtualKey.F13);
-                userType.AddEnumValue("F14", global::Windows.System.VirtualKey.F14);
-                userType.AddEnumValue("F15", global::Windows.System.VirtualKey.F15);
-                userType.AddEnumValue("F16", global::Windows.System.VirtualKey.F16);
-                userType.AddEnumValue("F17", global::Windows.System.VirtualKey.F17);
-                userType.AddEnumValue("F18", global::Windows.System.VirtualKey.F18);
-                userType.AddEnumValue("F19", global::Windows.System.VirtualKey.F19);
-                userType.AddEnumValue("F20", global::Windows.System.VirtualKey.F20);
-                userType.AddEnumValue("F21", global::Windows.System.VirtualKey.F21);
-                userType.AddEnumValue("F22", global::Windows.System.VirtualKey.F22);
-                userType.AddEnumValue("F23", global::Windows.System.VirtualKey.F23);
-                userType.AddEnumValue("F24", global::Windows.System.VirtualKey.F24);
-                userType.AddEnumValue("NavigationView", global::Windows.System.VirtualKey.NavigationView);
-                userType.AddEnumValue("NavigationMenu", global::Windows.System.VirtualKey.NavigationMenu);
-                userType.AddEnumValue("NavigationUp", global::Windows.System.VirtualKey.NavigationUp);
-                userType.AddEnumValue("NavigationDown", global::Windows.System.VirtualKey.NavigationDown);
-                userType.AddEnumValue("NavigationLeft", global::Windows.System.VirtualKey.NavigationLeft);
-                userType.AddEnumValue("NavigationRight", global::Windows.System.VirtualKey.NavigationRight);
-                userType.AddEnumValue("NavigationAccept", global::Windows.System.VirtualKey.NavigationAccept);
-                userType.AddEnumValue("NavigationCancel", global::Windows.System.VirtualKey.NavigationCancel);
-                userType.AddEnumValue("NumberKeyLock", global::Windows.System.VirtualKey.NumberKeyLock);
-                userType.AddEnumValue("Scroll", global::Windows.System.VirtualKey.Scroll);
-                userType.AddEnumValue("LeftShift", global::Windows.System.VirtualKey.LeftShift);
-                userType.AddEnumValue("RightShift", global::Windows.System.VirtualKey.RightShift);
-                userType.AddEnumValue("LeftControl", global::Windows.System.VirtualKey.LeftControl);
-                userType.AddEnumValue("RightControl", global::Windows.System.VirtualKey.RightControl);
-                userType.AddEnumValue("LeftMenu", global::Windows.System.VirtualKey.LeftMenu);
-                userType.AddEnumValue("RightMenu", global::Windows.System.VirtualKey.RightMenu);
-                userType.AddEnumValue("GoBack", global::Windows.System.VirtualKey.GoBack);
-                userType.AddEnumValue("GoForward", global::Windows.System.VirtualKey.GoForward);
-                userType.AddEnumValue("Refresh", global::Windows.System.VirtualKey.Refresh);
-                userType.AddEnumValue("Stop", global::Windows.System.VirtualKey.Stop);
-                userType.AddEnumValue("Search", global::Windows.System.VirtualKey.Search);
-                userType.AddEnumValue("Favorites", global::Windows.System.VirtualKey.Favorites);
-                userType.AddEnumValue("GoHome", global::Windows.System.VirtualKey.GoHome);
-                userType.AddEnumValue("GamepadA", global::Windows.System.VirtualKey.GamepadA);
-                userType.AddEnumValue("GamepadB", global::Windows.System.VirtualKey.GamepadB);
-                userType.AddEnumValue("GamepadX", global::Windows.System.VirtualKey.GamepadX);
-                userType.AddEnumValue("GamepadY", global::Windows.System.VirtualKey.GamepadY);
-                userType.AddEnumValue("GamepadRightShoulder", global::Windows.System.VirtualKey.GamepadRightShoulder);
-                userType.AddEnumValue("GamepadLeftShoulder", global::Windows.System.VirtualKey.GamepadLeftShoulder);
-                userType.AddEnumValue("GamepadLeftTrigger", global::Windows.System.VirtualKey.GamepadLeftTrigger);
-                userType.AddEnumValue("GamepadRightTrigger", global::Windows.System.VirtualKey.GamepadRightTrigger);
-                userType.AddEnumValue("GamepadDPadUp", global::Windows.System.VirtualKey.GamepadDPadUp);
-                userType.AddEnumValue("GamepadDPadDown", global::Windows.System.VirtualKey.GamepadDPadDown);
-                userType.AddEnumValue("GamepadDPadLeft", global::Windows.System.VirtualKey.GamepadDPadLeft);
-                userType.AddEnumValue("GamepadDPadRight", global::Windows.System.VirtualKey.GamepadDPadRight);
-                userType.AddEnumValue("GamepadMenu", global::Windows.System.VirtualKey.GamepadMenu);
-                userType.AddEnumValue("GamepadView", global::Windows.System.VirtualKey.GamepadView);
-                userType.AddEnumValue("GamepadLeftThumbstickButton", global::Windows.System.VirtualKey.GamepadLeftThumbstickButton);
-                userType.AddEnumValue("GamepadRightThumbstickButton", global::Windows.System.VirtualKey.GamepadRightThumbstickButton);
-                userType.AddEnumValue("GamepadLeftThumbstickUp", global::Windows.System.VirtualKey.GamepadLeftThumbstickUp);
-                userType.AddEnumValue("GamepadLeftThumbstickDown", global::Windows.System.VirtualKey.GamepadLeftThumbstickDown);
-                userType.AddEnumValue("GamepadLeftThumbstickRight", global::Windows.System.VirtualKey.GamepadLeftThumbstickRight);
-                userType.AddEnumValue("GamepadLeftThumbstickLeft", global::Windows.System.VirtualKey.GamepadLeftThumbstickLeft);
-                userType.AddEnumValue("GamepadRightThumbstickUp", global::Windows.System.VirtualKey.GamepadRightThumbstickUp);
-                userType.AddEnumValue("GamepadRightThumbstickDown", global::Windows.System.VirtualKey.GamepadRightThumbstickDown);
-                userType.AddEnumValue("GamepadRightThumbstickRight", global::Windows.System.VirtualKey.GamepadRightThumbstickRight);
-                userType.AddEnumValue("GamepadRightThumbstickLeft", global::Windows.System.VirtualKey.GamepadRightThumbstickLeft);
-                xamlType = userType;
-                break;
-
-            case 68:   //  Template10.Behaviors.KeyBehavior.Kinds
-                userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.AddEnumValue("KeyUp", global::Template10.Behaviors.KeyBehavior.Kinds.KeyUp);
-                userType.AddEnumValue("KeyDown", global::Template10.Behaviors.KeyBehavior.Kinds.KeyDown);
-                xamlType = userType;
-                break;
-
-            case 69:   //  Microsoft.Xaml.Interactions.Core.EventTriggerBehavior
-                userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.Xaml.Interactivity.Behavior"));
-                userType.Activator = Activate_69_EventTriggerBehavior;
-                userType.SetContentPropertyName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions");
-                userType.AddMemberName("Actions");
-                userType.AddMemberName("EventName");
-                userType.AddMemberName("SourceObject");
-                xamlType = userType;
-                break;
-
-            case 70:   //  Microsoft.Xaml.Interactivity.Behavior
-                userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.AddMemberName("AssociatedObject");
-                xamlType = userType;
-                break;
-
-            case 71:   //  Template10.Behaviors.FocusAction
-                userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_71_FocusAction;
-                userType.AddMemberName("TargetObject");
-                xamlType = userType;
-                break;
-
-            case 72:   //  Microsoft.Xaml.Interactions.Core.CallMethodAction
-                userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_72_CallMethodAction;
-                userType.AddMemberName("MethodName");
-                userType.AddMemberName("TargetObject");
-                xamlType = userType;
-                break;
-
-            case 73:   //  KnowledgeCombingTree.Views.MainPage
+            case 62:   //  KnowledgeCombingTree.Views.MainPage
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_73_MainPage;
+                userType.Activator = Activate_62_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 74:   //  KnowledgeCombingTree.ViewModels.SettingsPageViewModel
+            case 63:   //  KnowledgeCombingTree.ViewModels.SettingsPageViewModel
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Template10.Mvvm.ViewModelBase"));
-                userType.Activator = Activate_74_SettingsPageViewModel;
+                userType.Activator = Activate_63_SettingsPageViewModel;
                 userType.AddMemberName("SettingsPartViewModel");
                 userType.AddMemberName("AboutPartViewModel");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 75:   //  KnowledgeCombingTree.ViewModels.SettingsPartViewModel
+            case 64:   //  KnowledgeCombingTree.ViewModels.SettingsPartViewModel
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Template10.Mvvm.ViewModelBase"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 76:   //  KnowledgeCombingTree.ViewModels.AboutPartViewModel
+            case 65:   //  KnowledgeCombingTree.ViewModels.AboutPartViewModel
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Template10.Mvvm.ViewModelBase"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 77:   //  Template10.Converters.ValueWhenConverter
+            case 66:   //  Template10.Converters.ValueWhenConverter
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_77_ValueWhenConverter;
+                userType.Activator = Activate_66_ValueWhenConverter;
                 userType.AddMemberName("When");
                 userType.AddMemberName("Value");
                 userType.AddMemberName("Otherwise");
@@ -1182,21 +892,21 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 78:   //  KnowledgeCombingTree.Views.SettingsPage
+            case 67:   //  KnowledgeCombingTree.Views.SettingsPage
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_78_SettingsPage;
+                userType.Activator = Activate_67_SettingsPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 79:   //  KnowledgeCombingTree.Views.Shell
+            case 68:   //  KnowledgeCombingTree.Views.Shell
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_79_Shell;
+                userType.Activator = Activate_68_Shell;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 80:   //  KnowledgeCombingTree.Views.Splash
+            case 69:   //  KnowledgeCombingTree.Views.Splash
                 userType = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
                 userType.SetIsLocalType();
                 xamlType = userType;
@@ -2160,200 +1870,82 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
             var that = (global::KnowledgeCombingTree.ViewModels.MainPageViewModel)instance;
             that.SearchedItems = (global::System.Collections.ObjectModel.ObservableCollection<global::KnowledgeCombingTree.Models.TreeNode>)Value;
         }
-        private object get_93_MainPageViewModel_Value(object instance)
+        private object get_93_MainPageViewModel_SelectedItem(object instance)
+        {
+            var that = (global::KnowledgeCombingTree.ViewModels.MainPageViewModel)instance;
+            return that.SelectedItem;
+        }
+        private void set_93_MainPageViewModel_SelectedItem(object instance, object Value)
+        {
+            var that = (global::KnowledgeCombingTree.ViewModels.MainPageViewModel)instance;
+            that.SelectedItem = (global::KnowledgeCombingTree.Models.TreeNode)Value;
+        }
+        private object get_94_MainPageViewModel_Value(object instance)
         {
             var that = (global::KnowledgeCombingTree.ViewModels.MainPageViewModel)instance;
             return that.Value;
         }
-        private void set_93_MainPageViewModel_Value(object instance, object Value)
+        private void set_94_MainPageViewModel_Value(object instance, object Value)
         {
             var that = (global::KnowledgeCombingTree.ViewModels.MainPageViewModel)instance;
             that.Value = (global::System.String)Value;
         }
-        private object get_94_Interaction_Behaviors(object instance)
-        {
-            return global::Microsoft.Xaml.Interactivity.Interaction.GetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance);
-        }
-        private void set_94_Interaction_Behaviors(object instance, object Value)
-        {
-            global::Microsoft.Xaml.Interactivity.Interaction.SetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance, (global::Microsoft.Xaml.Interactivity.BehaviorCollection)Value);
-        }
-        private object get_95_KeyBehavior_Actions(object instance)
-        {
-            var that = (global::Template10.Behaviors.KeyBehavior)instance;
-            return that.Actions;
-        }
-        private object get_96_KeyBehavior_Key(object instance)
-        {
-            var that = (global::Template10.Behaviors.KeyBehavior)instance;
-            return that.Key;
-        }
-        private void set_96_KeyBehavior_Key(object instance, object Value)
-        {
-            var that = (global::Template10.Behaviors.KeyBehavior)instance;
-            that.Key = (global::Windows.System.VirtualKey)Value;
-        }
-        private object get_97_KeyBehavior_AssociatedObject(object instance)
-        {
-            var that = (global::Template10.Behaviors.KeyBehavior)instance;
-            return that.AssociatedObject;
-        }
-        private object get_98_KeyBehavior_AndControl(object instance)
-        {
-            var that = (global::Template10.Behaviors.KeyBehavior)instance;
-            return that.AndControl;
-        }
-        private void set_98_KeyBehavior_AndControl(object instance, object Value)
-        {
-            var that = (global::Template10.Behaviors.KeyBehavior)instance;
-            that.AndControl = (global::System.Boolean)Value;
-        }
-        private object get_99_KeyBehavior_AndAlt(object instance)
-        {
-            var that = (global::Template10.Behaviors.KeyBehavior)instance;
-            return that.AndAlt;
-        }
-        private void set_99_KeyBehavior_AndAlt(object instance, object Value)
-        {
-            var that = (global::Template10.Behaviors.KeyBehavior)instance;
-            that.AndAlt = (global::System.Boolean)Value;
-        }
-        private object get_100_KeyBehavior_AndShift(object instance)
-        {
-            var that = (global::Template10.Behaviors.KeyBehavior)instance;
-            return that.AndShift;
-        }
-        private void set_100_KeyBehavior_AndShift(object instance, object Value)
-        {
-            var that = (global::Template10.Behaviors.KeyBehavior)instance;
-            that.AndShift = (global::System.Boolean)Value;
-        }
-        private object get_101_KeyBehavior_Event(object instance)
-        {
-            var that = (global::Template10.Behaviors.KeyBehavior)instance;
-            return that.Event;
-        }
-        private void set_101_KeyBehavior_Event(object instance, object Value)
-        {
-            var that = (global::Template10.Behaviors.KeyBehavior)instance;
-            that.Event = (global::Template10.Behaviors.KeyBehavior.Kinds)Value;
-        }
-        private object get_102_EventTriggerBehavior_Actions(object instance)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
-            return that.Actions;
-        }
-        private object get_103_EventTriggerBehavior_EventName(object instance)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
-            return that.EventName;
-        }
-        private void set_103_EventTriggerBehavior_EventName(object instance, object Value)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
-            that.EventName = (global::System.String)Value;
-        }
-        private object get_104_EventTriggerBehavior_SourceObject(object instance)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
-            return that.SourceObject;
-        }
-        private void set_104_EventTriggerBehavior_SourceObject(object instance, object Value)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
-            that.SourceObject = (global::System.Object)Value;
-        }
-        private object get_105_Behavior_AssociatedObject(object instance)
-        {
-            var that = (global::Microsoft.Xaml.Interactivity.Behavior)instance;
-            return that.AssociatedObject;
-        }
-        private object get_106_FocusAction_TargetObject(object instance)
-        {
-            var that = (global::Template10.Behaviors.FocusAction)instance;
-            return that.TargetObject;
-        }
-        private void set_106_FocusAction_TargetObject(object instance, object Value)
-        {
-            var that = (global::Template10.Behaviors.FocusAction)instance;
-            that.TargetObject = (global::Windows.UI.Xaml.Controls.Control)Value;
-        }
-        private object get_107_CallMethodAction_MethodName(object instance)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.CallMethodAction)instance;
-            return that.MethodName;
-        }
-        private void set_107_CallMethodAction_MethodName(object instance, object Value)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.CallMethodAction)instance;
-            that.MethodName = (global::System.String)Value;
-        }
-        private object get_108_CallMethodAction_TargetObject(object instance)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.CallMethodAction)instance;
-            return that.TargetObject;
-        }
-        private void set_108_CallMethodAction_TargetObject(object instance, object Value)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.CallMethodAction)instance;
-            that.TargetObject = (global::System.Object)Value;
-        }
-        private object get_109_SettingsPageViewModel_SettingsPartViewModel(object instance)
+        private object get_95_SettingsPageViewModel_SettingsPartViewModel(object instance)
         {
             var that = (global::KnowledgeCombingTree.ViewModels.SettingsPageViewModel)instance;
             return that.SettingsPartViewModel;
         }
-        private object get_110_SettingsPageViewModel_AboutPartViewModel(object instance)
+        private object get_96_SettingsPageViewModel_AboutPartViewModel(object instance)
         {
             var that = (global::KnowledgeCombingTree.ViewModels.SettingsPageViewModel)instance;
             return that.AboutPartViewModel;
         }
-        private object get_111_ValueWhenConverter_When(object instance)
+        private object get_97_ValueWhenConverter_When(object instance)
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             return that.When;
         }
-        private void set_111_ValueWhenConverter_When(object instance, object Value)
+        private void set_97_ValueWhenConverter_When(object instance, object Value)
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             that.When = (global::System.Object)Value;
         }
-        private object get_112_ValueWhenConverter_Value(object instance)
+        private object get_98_ValueWhenConverter_Value(object instance)
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             return that.Value;
         }
-        private void set_112_ValueWhenConverter_Value(object instance, object Value)
+        private void set_98_ValueWhenConverter_Value(object instance, object Value)
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             that.Value = (global::System.Object)Value;
         }
-        private object get_113_ValueWhenConverter_Otherwise(object instance)
+        private object get_99_ValueWhenConverter_Otherwise(object instance)
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             return that.Otherwise;
         }
-        private void set_113_ValueWhenConverter_Otherwise(object instance, object Value)
+        private void set_99_ValueWhenConverter_Otherwise(object instance, object Value)
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             that.Otherwise = (global::System.Object)Value;
         }
-        private object get_114_ValueWhenConverter_OtherwiseValueBack(object instance)
+        private object get_100_ValueWhenConverter_OtherwiseValueBack(object instance)
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             return that.OtherwiseValueBack;
         }
-        private void set_114_ValueWhenConverter_OtherwiseValueBack(object instance, object Value)
+        private void set_100_ValueWhenConverter_OtherwiseValueBack(object instance, object Value)
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             that.OtherwiseValueBack = (global::System.Object)Value;
         }
-        private object get_115_ValueWhenConverter_Debug(object instance)
+        private object get_101_ValueWhenConverter_Debug(object instance)
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             return that.Debug;
         }
-        private void set_115_ValueWhenConverter_Debug(object instance, object Value)
+        private void set_101_ValueWhenConverter_Debug(object instance, object Value)
         {
             var that = (global::Template10.Converters.ValueWhenConverter)instance;
             that.Debug = (global::System.Boolean)Value;
@@ -2989,152 +2581,59 @@ namespace KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo
                 xamlMember.Getter = get_92_MainPageViewModel_SearchedItems;
                 xamlMember.Setter = set_92_MainPageViewModel_SearchedItems;
                 break;
+            case "KnowledgeCombingTree.ViewModels.MainPageViewModel.SelectedItem":
+                userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("KnowledgeCombingTree.ViewModels.MainPageViewModel");
+                xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "SelectedItem", "KnowledgeCombingTree.Models.TreeNode");
+                xamlMember.Getter = get_93_MainPageViewModel_SelectedItem;
+                xamlMember.Setter = set_93_MainPageViewModel_SelectedItem;
+                break;
             case "KnowledgeCombingTree.ViewModels.MainPageViewModel.Value":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("KnowledgeCombingTree.ViewModels.MainPageViewModel");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "Value", "String");
-                xamlMember.Getter = get_93_MainPageViewModel_Value;
-                xamlMember.Setter = set_93_MainPageViewModel_Value;
-                break;
-            case "Microsoft.Xaml.Interactivity.Interaction.Behaviors":
-                userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactivity.Interaction");
-                xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "Behaviors", "Microsoft.Xaml.Interactivity.BehaviorCollection");
-                xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
-                xamlMember.SetIsAttachable();
-                xamlMember.Getter = get_94_Interaction_Behaviors;
-                xamlMember.Setter = set_94_Interaction_Behaviors;
-                break;
-            case "Template10.Behaviors.KeyBehavior.Actions":
-                userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.KeyBehavior");
-                xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "Actions", "Microsoft.Xaml.Interactivity.ActionCollection");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_95_KeyBehavior_Actions;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "Template10.Behaviors.KeyBehavior.Key":
-                userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.KeyBehavior");
-                xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "Key", "Windows.System.VirtualKey");
-                xamlMember.Getter = get_96_KeyBehavior_Key;
-                xamlMember.Setter = set_96_KeyBehavior_Key;
-                break;
-            case "Template10.Behaviors.KeyBehavior.AssociatedObject":
-                userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.KeyBehavior");
-                xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "AssociatedObject", "Windows.UI.Xaml.DependencyObject");
-                xamlMember.Getter = get_97_KeyBehavior_AssociatedObject;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "Template10.Behaviors.KeyBehavior.AndControl":
-                userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.KeyBehavior");
-                xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "AndControl", "Boolean");
-                xamlMember.Getter = get_98_KeyBehavior_AndControl;
-                xamlMember.Setter = set_98_KeyBehavior_AndControl;
-                break;
-            case "Template10.Behaviors.KeyBehavior.AndAlt":
-                userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.KeyBehavior");
-                xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "AndAlt", "Boolean");
-                xamlMember.Getter = get_99_KeyBehavior_AndAlt;
-                xamlMember.Setter = set_99_KeyBehavior_AndAlt;
-                break;
-            case "Template10.Behaviors.KeyBehavior.AndShift":
-                userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.KeyBehavior");
-                xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "AndShift", "Boolean");
-                xamlMember.Getter = get_100_KeyBehavior_AndShift;
-                xamlMember.Setter = set_100_KeyBehavior_AndShift;
-                break;
-            case "Template10.Behaviors.KeyBehavior.Event":
-                userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.KeyBehavior");
-                xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "Event", "Template10.Behaviors.KeyBehavior.Kinds");
-                xamlMember.Getter = get_101_KeyBehavior_Event;
-                xamlMember.Setter = set_101_KeyBehavior_Event;
-                break;
-            case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions":
-                userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
-                xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "Actions", "Microsoft.Xaml.Interactivity.ActionCollection");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_102_EventTriggerBehavior_Actions;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.EventName":
-                userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
-                xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "EventName", "String");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_103_EventTriggerBehavior_EventName;
-                xamlMember.Setter = set_103_EventTriggerBehavior_EventName;
-                break;
-            case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.SourceObject":
-                userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
-                xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "SourceObject", "Object");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_104_EventTriggerBehavior_SourceObject;
-                xamlMember.Setter = set_104_EventTriggerBehavior_SourceObject;
-                break;
-            case "Microsoft.Xaml.Interactivity.Behavior.AssociatedObject":
-                userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactivity.Behavior");
-                xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "AssociatedObject", "Windows.UI.Xaml.DependencyObject");
-                xamlMember.Getter = get_105_Behavior_AssociatedObject;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "Template10.Behaviors.FocusAction.TargetObject":
-                userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.FocusAction");
-                xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "TargetObject", "Windows.UI.Xaml.Controls.Control");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_106_FocusAction_TargetObject;
-                xamlMember.Setter = set_106_FocusAction_TargetObject;
-                break;
-            case "Microsoft.Xaml.Interactions.Core.CallMethodAction.MethodName":
-                userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.CallMethodAction");
-                xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "MethodName", "String");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_107_CallMethodAction_MethodName;
-                xamlMember.Setter = set_107_CallMethodAction_MethodName;
-                break;
-            case "Microsoft.Xaml.Interactions.Core.CallMethodAction.TargetObject":
-                userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.CallMethodAction");
-                xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "TargetObject", "Object");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_108_CallMethodAction_TargetObject;
-                xamlMember.Setter = set_108_CallMethodAction_TargetObject;
+                xamlMember.Getter = get_94_MainPageViewModel_Value;
+                xamlMember.Setter = set_94_MainPageViewModel_Value;
                 break;
             case "KnowledgeCombingTree.ViewModels.SettingsPageViewModel.SettingsPartViewModel":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("KnowledgeCombingTree.ViewModels.SettingsPageViewModel");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "SettingsPartViewModel", "KnowledgeCombingTree.ViewModels.SettingsPartViewModel");
-                xamlMember.Getter = get_109_SettingsPageViewModel_SettingsPartViewModel;
+                xamlMember.Getter = get_95_SettingsPageViewModel_SettingsPartViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "KnowledgeCombingTree.ViewModels.SettingsPageViewModel.AboutPartViewModel":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("KnowledgeCombingTree.ViewModels.SettingsPageViewModel");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "AboutPartViewModel", "KnowledgeCombingTree.ViewModels.AboutPartViewModel");
-                xamlMember.Getter = get_110_SettingsPageViewModel_AboutPartViewModel;
+                xamlMember.Getter = get_96_SettingsPageViewModel_AboutPartViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Template10.Converters.ValueWhenConverter.When":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Converters.ValueWhenConverter");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "When", "Object");
-                xamlMember.Getter = get_111_ValueWhenConverter_When;
-                xamlMember.Setter = set_111_ValueWhenConverter_When;
+                xamlMember.Getter = get_97_ValueWhenConverter_When;
+                xamlMember.Setter = set_97_ValueWhenConverter_When;
                 break;
             case "Template10.Converters.ValueWhenConverter.Value":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Converters.ValueWhenConverter");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "Value", "Object");
-                xamlMember.Getter = get_112_ValueWhenConverter_Value;
-                xamlMember.Setter = set_112_ValueWhenConverter_Value;
+                xamlMember.Getter = get_98_ValueWhenConverter_Value;
+                xamlMember.Setter = set_98_ValueWhenConverter_Value;
                 break;
             case "Template10.Converters.ValueWhenConverter.Otherwise":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Converters.ValueWhenConverter");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "Otherwise", "Object");
-                xamlMember.Getter = get_113_ValueWhenConverter_Otherwise;
-                xamlMember.Setter = set_113_ValueWhenConverter_Otherwise;
+                xamlMember.Getter = get_99_ValueWhenConverter_Otherwise;
+                xamlMember.Setter = set_99_ValueWhenConverter_Otherwise;
                 break;
             case "Template10.Converters.ValueWhenConverter.OtherwiseValueBack":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Converters.ValueWhenConverter");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "OtherwiseValueBack", "Object");
-                xamlMember.Getter = get_114_ValueWhenConverter_OtherwiseValueBack;
-                xamlMember.Setter = set_114_ValueWhenConverter_OtherwiseValueBack;
+                xamlMember.Getter = get_100_ValueWhenConverter_OtherwiseValueBack;
+                xamlMember.Setter = set_100_ValueWhenConverter_OtherwiseValueBack;
                 break;
             case "Template10.Converters.ValueWhenConverter.Debug":
                 userType = (global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Converters.ValueWhenConverter");
                 xamlMember = new global::KnowledgeCombingTree.KnowledgeCombingTree_XamlTypeInfo.XamlMember(this, "Debug", "Boolean");
-                xamlMember.Getter = get_115_ValueWhenConverter_Debug;
-                xamlMember.Setter = set_115_ValueWhenConverter_Debug;
+                xamlMember.Getter = get_101_ValueWhenConverter_Debug;
+                xamlMember.Setter = set_101_ValueWhenConverter_Debug;
                 break;
             }
             return xamlMember;
