@@ -14,6 +14,7 @@ using Windows.UI.Popups;
 using KnowledgeCombingTree.Services.DatabaseServices;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace KnowledgeCombingTree.Views
 {
@@ -34,6 +35,33 @@ namespace KnowledgeCombingTree.Views
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void submitButton_Click(object sender, RoutedEventArgs e)
+        {
+            var text = SearchTextBox.Text;
+            ViewModel.SearchedItems.Clear();
+            foreach (var item in DbService.SearchText(text))
+            {
+                ViewModel.SearchedItems.Add(item);
+            }
+        }
+
+        private void SecondSraechButton_Click(object sender, RoutedEventArgs e)
+        {
+            var text = SecondSearchTextBox.Text;
+            List<TreeNode> delNodes = new List<TreeNode>();
+            foreach (var item in ViewModel.SearchedItems)
+            {
+                if (!item.getDescription().Contains(text) && !item.getName().Contains(text) && !item.getPath().Contains(text))
+                {
+                    delNodes.Add(item);
+                }
+            }
+            foreach (var delItem in delNodes)
+            {
+                ViewModel.SearchedItems.Remove(delItem);
+            }
         }
 
         // 用folderpicker选择一个文件夹(目录)，自动扫描其所有子目录并生成子节点存入数据库
@@ -146,13 +174,6 @@ namespace KnowledgeCombingTree.Views
             return node;
         }
 
-
-        private void test3_Click(object sender, RoutedEventArgs e)
-        {
-            string id = "";
-            TreeNode t = DbService.GetItem(id);
-        }
-
-
+        
     }
 }

@@ -57,12 +57,12 @@
 
             <!--  secondary commands  -->
             <controls:PageHeader.PrimaryCommands>
-                <AppBarButton x:ConnectionId='11' Content="&#xE72D;" FontFamily="Segoe MDL2 Assets" Margin="30, 0, 0, 0"                            Width="Auto"/>
+                <AppBarButton x:ConnectionId='12' Content="&#xE72D;" FontFamily="Segoe MDL2 Assets" Margin="30, 0, 0, 0"                            Width="Auto"/>
             </controls:PageHeader.PrimaryCommands>
             <controls:PageHeader.SecondaryCommands>
-                <AppBarButton x:ConnectionId='12'                                         Label="Settings" />
-                <AppBarButton x:ConnectionId='13'                                        Label="Privacy" />
-                <AppBarButton x:ConnectionId='14'                                      Label="About" />
+                <AppBarButton x:ConnectionId='13'                                         Label="Settings" />
+                <AppBarButton x:ConnectionId='14'                                        Label="Privacy" />
+                <AppBarButton x:ConnectionId='15'                                      Label="About" />
             </controls:PageHeader.SecondaryCommands>
 
         </controls:PageHeader>
@@ -76,7 +76,8 @@
 
             <controls:Resizer x:ConnectionId='8' x:Name="parameterResizer" Margin="16,16,16,0">
 
-                <TextBox MinWidth="150"
+                <TextBox x:ConnectionId='11' Name="SearchTextBox"
+                         MinWidth="150"
                          MinHeight="62"
                          Header="Enter the Key Words:"
                          Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -99,7 +100,7 @@
             </controls:Resizer>
 
             <Button x:ConnectionId='9' x:Name="submitButton"
-                                                              
+                                              
                     Content="Search"
                     RelativePanel.AlignBottomWith="parameterResizer"
                     RelativePanel.RightOf="parameterResizer" />

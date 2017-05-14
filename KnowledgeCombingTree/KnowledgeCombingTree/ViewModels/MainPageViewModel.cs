@@ -5,12 +5,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Template10.Services.NavigationService;
 using Windows.UI.Xaml.Navigation;
+using System.Collections.ObjectModel;
 
 namespace KnowledgeCombingTree.ViewModels
 {
     public class MainPageViewModel : ViewModelBase
     {
-
+        private ObservableCollection<Models.TreeNode> searchedItems = new ObservableCollection<Models.TreeNode>();
+        public ObservableCollection<Models.TreeNode> SearchedItems { get { return this.searchedItems; } set { this.searchedItems = value; } }
 
         public MainPageViewModel()
         {

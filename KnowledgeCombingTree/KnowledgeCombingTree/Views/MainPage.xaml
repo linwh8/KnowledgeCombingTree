@@ -76,7 +76,8 @@
 
             <controls:Resizer x:Name="parameterResizer" Margin="16,16,16,0">
 
-                <TextBox MinWidth="150"
+                <TextBox Name="SearchTextBox"
+                         MinWidth="150"
                          MinHeight="62"
                          Header="Enter the Key Words:"
                          Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -99,7 +100,7 @@
             </controls:Resizer>
 
             <Button x:Name="submitButton"
-                    Click="{x:Bind ViewModel.GotoDetailsPage}"
+                    Click="submitButton_Click"
                     Content="Search"
                     RelativePanel.AlignBottomWith="parameterResizer"
                     RelativePanel.RightOf="parameterResizer" />

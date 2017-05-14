@@ -38,7 +38,9 @@ namespace KnowledgeCombingTree.Services.DatabaseServices
         private static string DELETE_ITEM = @"DELETE FROM treenodes WHERE id = ?";
         private static string EXIST = @"SELECT id FROM treenodes WHERE id = ?";
 
-        private static string LAST_INSERTED_ID = @"SELECT last_insert_rowid()";
+        private static string TEXT_SEARCH = @"SELECT id, parent_id, level, path, name, description, image
+                                                    FROM treenodes
+                                                    WHERE (name LIKE ?) OR (description LIKE ?) OR (path LIKE ?)";
 
         private static SQLiteConnection conn = GetConnection();
 
@@ -186,6 +188,37 @@ namespace KnowledgeCombingTree.Services.DatabaseServices
                 statement.Bind(1, id);
                 statement.Step();
             }
+        }
+
+        public static ObservableCollection<TreeNode> SearchText(string text)
+        {
+            ObservableCollection<TreeNode> list = new ObservableCollection<TreeNode>();
+            string key = "%" + text + "%";
+            using (var statement = conn.Prepare(TEXT_SEARCH))
+            {
+                statement.Bind(1, key);
+                statement.Bind(2, key);
+                statement.Bind(3, key);
+                while (SQLiteResult.ROW == statement.Step())
+                {
+                    try
+                    {
+                        TreeNode item = new TreeNode((string)statement[0],
+                                                     (string)statement[1],
+                                                     (long)statement[2],
+                                                     (string)statement[3],
+                                                     (string)statement[4],
+                                                     (string)statement[5],
+                                                     (string)statement[6]);
+                        list.Add(item);
+                    }
+                    catch (Exception e)
+                    {
+                        var i = new MessageDialog(e.Message).ShowAsync();
+                    }
+                }
+            }
+            return list;
         }
     }
 }
