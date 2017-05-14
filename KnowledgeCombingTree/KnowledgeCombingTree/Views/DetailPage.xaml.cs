@@ -416,35 +416,10 @@ namespace KnowledgeCombingTree.Views
             rootFlyout.ShowAt(sender as UIElement, e.GetPosition(sender as UIElement));
         }
 
-        // 按钮打开时可以编辑
-        private void ToggleButton_Checked(object sender, RoutedEventArgs e)
-        {
-            //name.IsReadOnly = false;
-            //description.IsReadOnly = false;
-            name.IsEnabled = true;
-            description.IsEnabled = true;
-            path.IsEnabled = true;
-            Update.IsEnabled = true;
-            //name.Background = new SolidColorBrush(Colors.White);
-            //description.Background = new SolidColorBrush(Colors.White);
-        }
-
-        // 按钮关闭时不可以编辑
-        private void ToggleButton_Unchecked(object sender, RoutedEventArgs e)
-        {
-            //name.IsReadOnly = true;
-            //description.IsReadOnly = true;
-            name.IsEnabled = false;
-            description.IsEnabled = false;
-            path.IsEnabled = false;
-            Update.IsEnabled = false;
-            //name.Background = new SolidColorBrush(Colors.LightGray);
-            //description.Background = new SolidColorBrush(Colors.LightGray);
-        }
-
         private void Update_Click(object sender, RoutedEventArgs e)
         {
             UploadModification();
+            InfoGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
@@ -456,6 +431,21 @@ namespace KnowledgeCombingTree.Views
         {
             if (ViewModel.SelectedItem != null) {
                 AddChildNode((TreeNode)ViewModel.SelectedItem);
+            }
+        }
+
+        private void toggleSwitch1_Toggled(object sender, RoutedEventArgs e)
+        {
+            if (toggleSwitch1.IsOn)
+            {
+                name.IsReadOnly = false;
+                description.IsReadOnly = false;
+                Update.IsEnabled = true;
+            }
+            else {
+                name.IsReadOnly = true;
+                description.IsReadOnly = true;
+                Update.IsEnabled = false;
             }
         }
     }

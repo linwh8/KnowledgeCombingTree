@@ -115,8 +115,8 @@
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Foreground" />
       <RootProperty Name="Text" />
-      <RootProperty Name="Name" />
       <RootProperty Name="FontWeight" />
+      <RootProperty Name="Name" />
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="Inlines" />
@@ -193,6 +193,16 @@
       <RootProperty Name="Stretch" />
       <RootEvent Name="ImageOpened" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ToggleSwitch">
+      <RootProperty Name="Header" />
+      <RootProperty Name="OnContent" />
+      <RootProperty Name="OffContent" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="FontWeight" />
+      <RootProperty Name="IsOn" />
+      <RootProperty Name="IsEnabled" />
+      <RootEvent Name="Toggled" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
       <RootProperty Name="Margin" />
       <RootProperty Name="Children" />
@@ -200,14 +210,14 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="Name" />
-      <RootProperty Name="Header" />
       <RootProperty Name="IsReadOnly" />
       <RootProperty Name="Margin" />
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="MinHeight" />
-      <RootProperty Name="IsEnabled" />
       <RootProperty Name="Text" />
+      <RootProperty Name="BorderBrush" />
       <RootProperty Name="MinWidth" />
+      <RootProperty Name="Header" />
       <RootProperty Name="Width" />
       <RootProperty Name="HorizontalAlignment" />
     </RootType>
@@ -218,11 +228,6 @@
       <RootProperty Name="IsEnabled" />
       <RootProperty Name="Command" />
       <RootEvent Name="Click" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Primitives.ToggleButton">
-      <RootProperty Name="Margin" />
-      <RootEvent Name="Checked" />
-      <RootEvent Name="Unchecked" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
       <RootProperty Name="IsItemClickEnabled" />
@@ -254,6 +259,7 @@
       <RootEvent Name="DragOver" />
     </RootType>
     <RootType FullName="KnowledgeCombingTree.Views.DetailPage" />
+    <RootType FullName="KnowledgeCombingTree.Views.InternetPage" />
     <RootType FullName="KnowledgeCombingTree.ViewModels.MainPageViewModel" />
     <RootType FullName="Microsoft.Xaml.Interactivity.Interaction">
       <RootMethod Name="GetBehaviors" />
@@ -309,13 +315,6 @@
     <RootType FullName="Windows.UI.Xaml.Documents.LineBreak" />
     <RootType FullName="Windows.UI.Xaml.Documents.Bold">
       <RootProperty Name="Inlines" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ToggleSwitch">
-      <RootProperty Name="Header" />
-      <RootProperty Name="IsOn" />
-      <RootProperty Name="OffContent" />
-      <RootProperty Name="OnContent" />
-      <RootProperty Name="IsEnabled" />
     </RootType>
     <RootType FullName="KnowledgeCombingTree.Views.SettingsPage" />
     <RootType FullName="Template10.Controls.HamburgerButtonInfo">

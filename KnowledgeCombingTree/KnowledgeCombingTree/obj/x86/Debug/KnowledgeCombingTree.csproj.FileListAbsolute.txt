@@ -763,3 +763,8 @@ D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombi
 D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x86\Debug\SQLitePCL.Ext.pri.xml
 D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x86\Debug\ProjectArchitectures.txt
 E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x86\Debug\KnowledgeCombingTree.csprojResolveAssemblyReference.cache
+D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\Views\InternetPage.xbf
+D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x86\Debug\Views\InternetPage.g.i.cs
+D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x86\Debug\Views\InternetPage.g.cs
+D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x86\Debug\Views\InternetPage.xaml
+D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x86\Debug\Views\InternetPage.xbf

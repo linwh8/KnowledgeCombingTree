@@ -17,7 +17,7 @@
         <vm:DetailPageViewModel x:Name="ViewModel" />
     </Page.DataContext>
 
-
+    
     <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
         <VisualStateManager.VisualStateGroups>
@@ -115,7 +115,7 @@
                                             <ColumnDefinition Width="3*" />
                                             <ColumnDefinition Width="8*" />
                                         </Grid.ColumnDefinitions>
-                                        <Image Source="ms-appx:///Assets/Director.png"
+                                        <Image Source="ms-appx:///Assets/Directory_new.jpg"
                                                Width="40" 
                                                Height="40" 
                                                Grid.RowSpan="2" 
@@ -154,7 +154,7 @@
                                             <ColumnDefinition Width="2*" />
                                             <ColumnDefinition Width="6*" />
                                         </Grid.ColumnDefinitions>
-                                        <Image Source="ms-appx:///Assets/Director.png"
+                                        <Image Source="ms-appx:///Assets/Directory_new.jpg"
                                                Width="30" 
                                                Height="30" 
                                                Grid.RowSpan="2" 
@@ -175,15 +175,21 @@
                         <RowDefinition Height="4*"/>
                     </Grid.RowDefinitions>
 
-                    <Image Source="ms-appx:///Assets/Director.png"/>
-                    <StackPanel Grid.Row="1" Margin="10">
-                        <TextBlock Text="Edit" Margin="10"/>
-                        <ToggleButton Checked="ToggleButton_Checked" Unchecked="ToggleButton_Unchecked" Margin="10" />
-                    </StackPanel>
+                    <Image Source="ms-appx:///Assets/Directory_new.jpg"/>
+                    <ToggleSwitch x:Name="toggleSwitch1" 
+                                  Header="Edit Toggle" 
+                                  OnContent="On" OffContent="Off" 
+                                  Toggled="toggleSwitch1_Toggled" 
+                                  Margin="10" Grid.Row="1"
+                                  FontWeight="Bold"
+                                  />
                     <StackPanel Grid.Row="2" Margin="10">
-                        <TextBox Name="path" Header="Path" IsReadOnly="True" Margin="10" TextWrapping="Wrap" MinHeight="60" IsEnabled="False" Text="{x:Bind ViewModel.SelectedItem.path,Mode=TwoWay}"/>
-                        <TextBox Name="name" Header="Name" Margin="10" TextWrapping="Wrap" MinHeight="60" IsEnabled="False" Text="{x:Bind ViewModel.SelectedItem.name, Mode=TwoWay}"/>
-                        <TextBox Name="description" Header="Description" Margin="10" TextWrapping="Wrap" MinHeight="60" IsEnabled="False" Text="{x:Bind ViewModel.SelectedItem.description, Mode=TwoWay}"/>
+                        <TextBlock Text="Path" FontWeight="Bold"/>
+                        <TextBox Name="path" IsReadOnly="True" Margin="0,10,0,10" TextWrapping="Wrap" MinHeight="30" Text="{x:Bind ViewModel.SelectedItem.path,Mode=TwoWay}" BorderBrush="Transparent"/>
+                        <TextBlock Text="Name" FontWeight="Bold"/>
+                        <TextBox Name="name" IsReadOnly="True" Margin="0,10,0,10" TextWrapping="Wrap" MinHeight="30" Text="{x:Bind ViewModel.SelectedItem.name, Mode=TwoWay}" BorderBrush="Transparent"/>
+                        <TextBlock Text="Description" FontWeight="Bold"/>
+                        <TextBox Name="description" IsReadOnly="True" Margin="0,10,0,10" TextWrapping="Wrap" MinHeight="30" Text="{x:Bind ViewModel.SelectedItem.description, Mode=TwoWay}" BorderBrush="Transparent"/>
                         <StackPanel Orientation="Horizontal" Margin="10,40,0,0">
                             <Button Name="Update" Content="Update" Margin="0,0,10,0" IsEnabled="False" Click="Update_Click"/>
                             <Button Name="Cancel" Content="Cancel" Margin="10,0,0,0" Click="Cancel_Click"/>
