@@ -39,9 +39,6 @@ namespace KnowledgeCombingTree.Views
             ViewModel.RootItems = DbService.GetItemsByParentId("-1");
         }
 
-
-
-
         /*----------------------------------- api --------------------------------*/
         // 用文件资源管理器打开一个目录
         // @param: 要打开的目录的路径
@@ -229,6 +226,7 @@ namespace KnowledgeCombingTree.Views
             DbService.UpdateItem(node);
         }
 
+        /***************************************** UI相关函数 *******************************************/
         /*-----------------------------------------拖拽相关------------------------------------------*/
         // 拖拽完成后执行的函数(拖拽接受区域)
         private async void Border_Drop(object sender, Windows.UI.Xaml.DragEventArgs e)

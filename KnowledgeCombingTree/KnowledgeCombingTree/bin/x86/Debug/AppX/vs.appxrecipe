@@ -28,13 +28,13 @@
     <AppXManifest Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-14T14:10:53.121</Modified>
+      <Modified>2017-05-14T14:38:43.403</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\KnowledgeCombingTree.exe">
       <PackagePath>entrypoint\KnowledgeCombingTree.exe</PackagePath>
-      <Modified>2017-05-14T14:10:51.446</Modified>
+      <Modified>2017-05-14T14:38:42.533</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\48953\.nuget\packages\Microsoft.CSharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -626,11 +626,11 @@
     <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-14T14:10:52.161</Modified>
+      <Modified>2017-05-14T14:37:11.392</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\Core\KnowledgeCombingTree.exe">
       <PackagePath>KnowledgeCombingTree.exe</PackagePath>
-      <Modified>2017-05-14T14:10:53.111</Modified>
+      <Modified>2017-05-14T14:38:43.393</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
