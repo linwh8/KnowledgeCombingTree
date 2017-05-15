@@ -317,6 +317,7 @@ namespace KnowledgeCombingTree.Views
         {
             if (ViewModel.SelectedItem != null)
             {
+                path.IsEnabled = true;
                 CreateChildNode(ViewModel.SelectedItem.getId());
             }
         }

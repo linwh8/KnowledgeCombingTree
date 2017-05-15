@@ -121,8 +121,8 @@
                                                Height="40" 
                                                Grid.RowSpan="2" 
                                                Margin="10"/>
-                                            <TextBlock Grid.Column="1"  Text="{x:Bind name}" FontWeight="Bold" Name="rootItemName"/>
-                                            <TextBlock Grid.Column="1" Grid.Row="1" Text="{x:Bind path}" />
+                                            <TextBlock Grid.Column="1"  Text="{x:Bind name}" FontWeight="Bold" Name="rootItemName" Margin="5"/>
+                                            <TextBlock Grid.Column="1" Grid.Row="1" Text="{x:Bind path}" Margin="5"/>
                                         </Grid>
                                     </Grid>
                                 </DataTemplate>
@@ -162,8 +162,8 @@
                                                Height="30" 
                                                Grid.RowSpan="2" 
                                                Margin="10"/>
-                                            <TextBlock Grid.Column="1"  Text="{x:Bind name}" FontWeight="Bold" TextWrapping="Wrap" Name="childItemName"/>
-                                            <TextBlock Grid.Column="1" Grid.Row="1" Text="{x:Bind path}" TextWrapping="WrapWholeWords"/>
+                                            <TextBlock Grid.Column="1"  Text="{x:Bind name}" FontWeight="Bold" TextWrapping="Wrap" Name="childItemName" Margin="5"/>
+                                            <TextBlock Grid.Column="1" Grid.Row="1" Text="{x:Bind path}" TextWrapping="WrapWholeWords" Margin="5"/>
                                         </Grid>
                                     </Grid>
                                 </DataTemplate>
