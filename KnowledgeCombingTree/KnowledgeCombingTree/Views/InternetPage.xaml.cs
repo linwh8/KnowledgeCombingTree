@@ -178,7 +178,7 @@ namespace KnowledgeCombingTree.Views
 
         private void DeleteItem()
         {
-            if (DelItem.getId() == ViewModel.SelectedItem.getId())
+            if (ViewModel.SelectedItem != null && DelItem.getId() == ViewModel.SelectedItem.getId())
             {
                 // 如果删除的节点是SelectedItem，则删除之后应该把编辑栏隐藏
                 InfoGrid.Visibility = Visibility.Collapsed;

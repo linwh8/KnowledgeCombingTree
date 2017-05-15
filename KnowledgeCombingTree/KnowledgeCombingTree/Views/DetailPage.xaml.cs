@@ -123,8 +123,16 @@ namespace KnowledgeCombingTree.Views
         {
             if (ViewModel.SelectedItem != null)
             {
-                //ViewModel.SelectedItem.name = name.Text;
-                //ViewModel.SelectedItem.description = description.Text;
+                if (ViewModel.SelectedItem.getParentId() == "-1")
+                {
+                    ViewModel.RootItems.Remove(ViewModel.RootItems.Where(x => x.getId() == ViewModel.SelectedItem.getId()).FirstOrDefault());
+                    ViewModel.RootItems.Add(ViewModel.SelectedItem);
+                }
+                else
+                {
+                    ViewModel.ChildrenItems.Remove(ViewModel.ChildrenItems.Where(x => x.getId() == ViewModel.SelectedItem.getId()).FirstOrDefault());
+                    ViewModel.ChildrenItems.Add(ViewModel.SelectedItem);
+                }
                 UpdateNode(ViewModel.SelectedItem);
                 ViewModel.SelectedItem = null;
             }
