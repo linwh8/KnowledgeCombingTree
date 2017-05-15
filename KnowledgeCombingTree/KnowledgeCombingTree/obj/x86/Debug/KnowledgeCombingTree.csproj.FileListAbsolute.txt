@@ -776,3 +776,6 @@ E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree
 E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\NotificationsExtensions.winmd
 E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\NotificationsExtensions.Win10.dll
 E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\NotificationsExtensions.Win10.pdb
+D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\NotificationsExtensions.winmd
+D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\NotificationsExtensions.Win10.dll
+D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\NotificationsExtensions.Win10.pdb

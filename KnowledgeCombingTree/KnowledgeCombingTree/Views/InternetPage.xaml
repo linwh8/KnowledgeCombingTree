@@ -54,7 +54,9 @@
                              Text="Internet Page" >
             <controls:PageHeader.PrimaryCommands>
                 <AppBarButton Icon="Add" Name="AddNode" Click="AddNode_Click"/>
-                <AppBarButton Icon="Delete" Name="Delete"/>
+                <AppBarButton Icon="Delete" Name="Delete" AllowDrop="True"
+                       Drop="Delete_Drop"
+                       DragOver="Delete_DragOver" />
             </controls:PageHeader.PrimaryCommands>
         </controls:PageHeader>
 
@@ -140,8 +142,8 @@
                                                 <ColumnDefinition Width="6*" />
                                             </Grid.ColumnDefinitions>
                                             <Image Source="ms-appx:///Assets/Internet.jpg"
-                                               Width="30" 
-                                               Height="30" 
+                                               Width="40" 
+                                               Height="40" 
                                                Grid.RowSpan="2" 
                                                Margin="10"/>
                                             <TextBlock Grid.Column="1"  Text="{x:Bind name}" FontWeight="Bold" TextWrapping="Wrap" Name="childItemName"/>
@@ -162,7 +164,7 @@
                                 <RowDefinition Height="4*"/>
                             </Grid.RowDefinitions>
 
-                            <Image Source="ms-appx:///Assets/Internet.jpg"/>
+                            <Image Name ="InfoImage" Source="ms-appx:///Assets/Directory_new.jpg"/>
                             <ToggleSwitch x:Name="toggleSwitch1" 
                                   Header="Edit Toggle" 
                                   OnContent="On" OffContent="Off" 
@@ -172,15 +174,19 @@
                                   />
                             <StackPanel Grid.Row="2" Margin="10">
                                 <TextBlock Text="Path" FontWeight="Bold"/>
-                                <TextBox Name="path" IsReadOnly="True" Margin="0,10,0,10" TextWrapping="Wrap" MinHeight="30" Text="{x:Bind ViewModel.SelectedItem.path,Mode=TwoWay}" BorderBrush="Transparent"/>
+                                <TextBox Name="path" IsReadOnly="True" IsEnabled="False" Margin="0,10,0,10" TextWrapping="Wrap" MinHeight="30" Text="{x:Bind ViewModel.SelectedItem.path,Mode=TwoWay}" BorderBrush="Transparent"/>
                                 <TextBlock Text="Name" FontWeight="Bold"/>
                                 <TextBox Name="name" IsReadOnly="True" Margin="0,10,0,10" TextWrapping="Wrap" MinHeight="30" Text="{x:Bind ViewModel.SelectedItem.name, Mode=TwoWay}" BorderBrush="Transparent"/>
                                 <TextBlock Text="Description" FontWeight="Bold"/>
                                 <TextBox Name="description" IsReadOnly="True" Margin="0,10,0,10" TextWrapping="Wrap" MinHeight="30" Text="{x:Bind ViewModel.SelectedItem.description, Mode=TwoWay}" BorderBrush="Transparent"/>
-                                <StackPanel Orientation="Horizontal" Margin="10,40,0,0">
+                                <Grid Margin="10,40,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
                                     <Button Name="Update" Content="Update" Margin="0,0,10,0" IsEnabled="False" Click="Update_Click"/>
-                                    <Button Name="Cancel" Content="Cancel" Margin="10,0,0,0" Click="Cancel_Click"/>
-                                </StackPanel>
+                                    <Button Name="Cancel" Content="Cancel" Margin="10,0,0,0" Click="Cancel_Click" Grid.Column="1"/>
+                                </Grid>
                             </StackPanel>
                         </Grid>
                     </ScrollViewer>

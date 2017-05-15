@@ -19,6 +19,7 @@ using KnowledgeCombingTree.Models;
 using Windows.System;
 using Windows.ApplicationModel.DataTransfer;
 using System.Diagnostics;
+using Windows.UI.Xaml.Media.Imaging;
 
 // “空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=234238 上有介绍
 
@@ -226,11 +227,13 @@ namespace KnowledgeCombingTree.Views
         {
             var root = (TreeNode)e.ClickedItem;
             ViewModel.SelectedItem = root;
+            path.IsEnabled = false;
             path.Text = root.getPath();
             name.Text = root.getName();
             description.Text = root.getDescription();
             InfoGrid.Visibility = Visibility.Visible;
-
+            BitmapImage bitmapImage = new BitmapImage(new Uri("ms-appx:///Assets/Directory_new.jpg"));
+            InfoImage.Source = bitmapImage;
             ViewModel.ChildrenItems.Clear();
             foreach (var item in DbService.GetItemsByParentId(root.getId()))
             {
@@ -241,6 +244,9 @@ namespace KnowledgeCombingTree.Views
         // ChildList的ItemClick处理函数
         private void ChildList_ItemClick(object sender, ItemClickEventArgs e)
         {
+            path.IsEnabled = true;
+            BitmapImage bitmapImage = new BitmapImage(new Uri("ms-appx:///Assets/Internet.jpg"));
+            InfoImage.Source = bitmapImage;
             var child = (TreeNode)e.ClickedItem;
             ViewModel.SelectedItem = (TreeNode)e.ClickedItem;
             path.Text = child.getPath();
@@ -333,9 +339,21 @@ namespace KnowledgeCombingTree.Views
             }
         }
 
-        private void AddNode_Click_1(object sender, RoutedEventArgs e)
+        private async void Delete_Drop(object sender, DragEventArgs e)
         {
+            var msgDialog = DelItem.getParentId() == "-1" ?
+                new Windows.UI.Popups.MessageDialog("确定删除该节点(包括其子节点)？") { Title = "删除提示" } :
+                new Windows.UI.Popups.MessageDialog("确定删除该节点？") { Title = "删除提示" };
+            msgDialog.Commands.Add(new Windows.UI.Popups.UICommand("确定", uiCommand => { this.DeleteItem(); }));
+            msgDialog.Commands.Add(new Windows.UI.Popups.UICommand("取消", uiCommand => { this.CancelDelete(); }));
+            await msgDialog.ShowAsync();
+        }
 
+        private void Delete_DragOver(object sender, DragEventArgs e)
+        {
+            e.AcceptedOperation = DataPackageOperation.Move;
+            e.DragUIOverride.Caption = "Delete";
+            e.DragUIOverride.IsContentVisible = false;
         }
     }
 }

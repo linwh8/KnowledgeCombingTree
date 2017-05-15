@@ -195,10 +195,14 @@
                                 <TextBox Name="name" IsReadOnly="True" Margin="0,10,0,10" TextWrapping="Wrap" MinHeight="30" Text="{x:Bind ViewModel.SelectedItem.name, Mode=TwoWay}" BorderBrush="Transparent"/>
                                 <TextBlock Text="Description" FontWeight="Bold"/>
                                 <TextBox Name="description" IsReadOnly="True" Margin="0,10,0,10" TextWrapping="Wrap" MinHeight="30" Text="{x:Bind ViewModel.SelectedItem.description, Mode=TwoWay}" BorderBrush="Transparent"/>
-                                <StackPanel Orientation="Horizontal" Margin="10,40,0,0">
+                                <Grid Margin="10,40,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
                                     <Button Name="Update" Content="Update" Margin="0,0,10,0" IsEnabled="False" Click="Update_Click"/>
-                                    <Button Name="Cancel" Content="Cancel" Margin="10,0,0,0" Click="Cancel_Click"/>
-                                </StackPanel>
+                                    <Button Name="Cancel" Content="Cancel" Margin="10,0,0,0" Click="Cancel_Click" Grid.Column="1"/>
+                                </Grid>
                             </StackPanel>
                         </Grid>
                     </ScrollViewer>
