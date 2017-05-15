@@ -150,12 +150,19 @@ namespace KnowledgeCombingTree.Views
         private async void ResultBox_DoubleTapped(object sender, Windows.UI.Xaml.Input.DoubleTappedRoutedEventArgs e)
         {
             TreeNode item = (TreeNode)ResultBox.SelectedItems[0];
-            OpenFolder(item.getFeature_id());
-            var target = await StorageApplicationPermissions.FutureAccessList.GetFolderAsync(item.getFeature_id());
-            StorageApplicationPermissions.MostRecentlyUsedList.Add(target);
-            foreach (TreeNode node in DbService.GetItemsByPath(target.Path))
+            if (item.getLevel() == -1)
+            { // level == -1, url节点, 用浏览器打开
+                OpenUrl(item.getPath());
+            }
+            else
             {
-                ViewModel.HistoryItems.Insert(0, node);
+                OpenFolder(item.getFeature_id());
+                var target = await StorageApplicationPermissions.FutureAccessList.GetFolderAsync(item.getFeature_id());
+                StorageApplicationPermissions.MostRecentlyUsedList.Add(target);
+                foreach (TreeNode node in DbService.GetItemsByPath(target.Path))
+                {
+                    ViewModel.HistoryItems.Insert(0, node);
+                }
             }
         }
 
@@ -194,6 +201,18 @@ namespace KnowledgeCombingTree.Views
         }
 
         /*----------------------------------- api --------------------------------------*/
+        private async void OpenUrl(string url)
+        {
+            try
+            {
+                await Launcher.LaunchUriAsync(new Uri(url));
+            }
+            catch (Exception ex)
+            {
+                var i = new MessageDialog(ex.ToString()).ShowAsync();
+            }
+        }
+
         // 用文件资源管理器打开一个目录
         // @param: 要打开的目录的路径
         private async void OpenFolder(string feature_id)

@@ -36,9 +36,9 @@ namespace KnowledgeCombingTree.Services.DatabaseServices
         private static string SELECT_ITEMS_BY_LEVEL = @"SELECT id, parent_id, level, path, name, description, feature_id
                                                     FROM treenodes
                                                     WHERE level = ?";
-        private static string SELECT_ROOT_URL_ITEMS = @"SELECT id, parent_id, level, path, name, description, feature_id
-                                                    FROM treenodes
-                                                    WHERE level = ? AND parent_id = ?";
+        private static string SELECT_ITEMS_BY_LEVEL_AND_PARENTID = @"SELECT id, parent_id, level, path, name, description, feature_id
+                                                                     FROM treenodes
+                                                                     WHERE level = ? AND parent_id = ?";
         private static string ADD_ITEM = @"INSERT INTO treenodes (id, parent_id, level, path, name, description, feature_id)
                                                 VALUES(?, ?, ?, ?, ?, ?, ?)";
         private static string UPDATE_ITEM = @"UPDATE treenodes
@@ -165,10 +165,39 @@ namespace KnowledgeCombingTree.Services.DatabaseServices
             return list;
         }
 
+        public static ObservableCollection<TreeNode> GetRootFolderItems()
+        {
+            ObservableCollection<TreeNode> list = new ObservableCollection<TreeNode>();
+            using (var statement = conn.Prepare(SELECT_ITEMS_BY_LEVEL_AND_PARENTID))
+            {
+                statement.Bind(1, 0);
+                statement.Bind(2, "-1");
+                while (SQLiteResult.ROW == statement.Step())
+                {
+                    try
+                    {
+                        TreeNode item = new TreeNode((string)statement[0],
+                                                     (string)statement[1],
+                                                     (long)statement[2],
+                                                     (string)statement[3],
+                                                     (string)statement[4],
+                                                     (string)statement[5],
+                                                     (string)statement[6]);
+                        list.Add(item);
+                    }
+                    catch (Exception e)
+                    {
+                        var i = new MessageDialog(e.Message).ShowAsync();
+                    }
+                }
+            }
+            return list;
+        }
+
         public static ObservableCollection<TreeNode> GetRootUrlItems()
         {
             ObservableCollection<TreeNode> list = new ObservableCollection<TreeNode>();
-            using (var statement = conn.Prepare(SELECT_ROOT_URL_ITEMS))
+            using (var statement = conn.Prepare(SELECT_ITEMS_BY_LEVEL_AND_PARENTID))
             {
                 statement.Bind(1, -1);
                 statement.Bind(2, "-1");

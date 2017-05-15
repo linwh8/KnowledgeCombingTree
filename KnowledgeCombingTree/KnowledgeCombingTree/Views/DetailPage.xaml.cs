@@ -36,7 +36,7 @@ namespace KnowledgeCombingTree.Views
             InitializeComponent();
             NavigationCacheMode = NavigationCacheMode.Disabled;
 
-            ViewModel.RootItems = DbService.GetItemsByParentId("-1");
+            ViewModel.RootItems = DbService.GetRootFolderItems();
         }
 
         /*----------------------------------- api --------------------------------*/
