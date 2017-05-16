@@ -393,9 +393,10 @@ namespace KnowledgeCombingTree.Views
             DelItem = e.Items.FirstOrDefault() as Models.TreeNode;
         }
 
-        /*-----------------------------------------ÍÏ×§Ïà¹Ø------------------------------------------*/
         private void RootList_DoubleTapped(object sender, Windows.UI.Xaml.Input.DoubleTappedRoutedEventArgs e)
         {
+            TreeNode item = (TreeNode)RootList.SelectedItems[0];
+            OpenFolder(item.getFeature_id());
             //TreeNode clickedItem = (TreeNode)e.OriginalSource;
             //ViewModel.SelectedItem = clickedItem;
             //Create

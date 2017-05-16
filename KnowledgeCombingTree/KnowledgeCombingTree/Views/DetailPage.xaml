@@ -101,8 +101,8 @@
                               DragItemsStarting="RootList_DragItemsStarting"
                               IsItemClickEnabled="True" 
                               ItemsSource="{x:Bind ViewModel.RootItems}"
-                              DoubleTapped="RootList_DoubleTapped"
                               ItemClick="RootList_ItemClick"
+                              DoubleTapped="RootList_DoubleTapped"
                               RightTapped="RootList_RightTapped">
                             <ListView.ItemTemplate>
                                 <DataTemplate x:DataType="md:TreeNode">

@@ -15,10 +15,10 @@ namespace KnowledgeCombingTree.Services.DatabaseServices
                                             treenodes(id             VARCHAR(40) PRIMARY KEY NOT NULL,
                                                       parent_id      VARCHAR(40) NOT NULL,
                                                       level          INTEGER NOT NULL,
-                                                      path           VARCHAR(60) NOT NULL,
+                                                      path           VARCHAR(100) NOT NULL,
                                                       name           VARCHAR(20) NOT NULL,
                                                       description    VARCHAR(200),
-                                                      feature_id          VARCHAR(60) NOT NULL
+                                                      feature_id     VARCHAR(60) NOT NULL
                                                      );";
         private static string SELECT_ITEM = @"SELECT id, parent_id, level, path, name, description, feature_id
                                                 FROM treenodes
@@ -26,21 +26,26 @@ namespace KnowledgeCombingTree.Services.DatabaseServices
         private static string SELECT_ITEMS = @"SELECT id FROM treenodes";
         private static string SELECT_ITEMS_BY_ID = @"SELECT id, parent_id, level, path, name, description, feature_id
                                                     FROM treenodes
-                                                    WHERE id = ?";
+                                                    WHERE id = ?
+                                                    ORDER BY name";
         private static string SELECT_ITEMS_BY_PARENT_ID = @"SELECT id, parent_id, level, path, name, description, feature_id
                                                     FROM treenodes
-                                                    WHERE parent_id = ?";
+                                                    WHERE parent_id = ?
+                                                    ORDER BY name";
         private static string SELECT_ITEMS_BY_PATH = @"SELECT id, parent_id, level, path, name, description, feature_id
                                                     FROM treenodes
-                                                    WHERE path = ?";
+                                                    WHERE path = ?
+                                                    ORDER BY name";
         private static string SELECT_ITEMS_BY_LEVEL = @"SELECT id, parent_id, level, path, name, description, feature_id
                                                     FROM treenodes
-                                                    WHERE level = ?";
+                                                    WHERE level = ?
+                                                    ORDER BY name";
         private static string SELECT_ITEMS_BY_LEVEL_AND_PARENTID = @"SELECT id, parent_id, level, path, name, description, feature_id
                                                                      FROM treenodes
-                                                                     WHERE level = ? AND parent_id = ?";
+                                                                     WHERE level = ? AND parent_id = ?
+                                                                     ORDER BY name";
         private static string ADD_ITEM = @"INSERT INTO treenodes (id, parent_id, level, path, name, description, feature_id)
-                                                VALUES(?, ?, ?, ?, ?, ?, ?)";
+                                           VALUES(?, ?, ?, ?, ?, ?, ?)";
         private static string UPDATE_ITEM = @"UPDATE treenodes
                                                 SET level = ?, path = ?, name = ?, description = ?, feature_id = ?
                                                 WHERE id = ?";
@@ -50,7 +55,8 @@ namespace KnowledgeCombingTree.Services.DatabaseServices
 
         private static string TEXT_SEARCH = @"SELECT id, parent_id, level, path, name, description, feature_id
                                                     FROM treenodes
-                                                    WHERE (name LIKE ?) OR (description LIKE ?) OR (path LIKE ?)";
+                                                    WHERE (name LIKE ?) OR (description LIKE ?) OR (path LIKE ?)
+                                                    ORDER BY name";
 
         private static SQLiteConnection conn = GetConnection();
 
