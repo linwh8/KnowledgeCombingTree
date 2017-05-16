@@ -260,6 +260,17 @@
     <RootType FullName="KnowledgeCombingTree.Views.DetailPage" />
     <RootType FullName="KnowledgeCombingTree.Views.InternetPage" />
     <RootType FullName="KnowledgeCombingTree.ViewModels.MainPageViewModel" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
+      <RootProperty Name="Name" />
+      <RootProperty Name="Header" />
+      <RootProperty Name="SelectedIndex" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Items" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ComboBoxItem">
+      <RootProperty Name="Name" />
+      <RootProperty Name="Content" />
+    </RootType>
     <RootType FullName="KnowledgeCombingTree.Views.MainPage" />
     <RootType FullName="KnowledgeCombingTree.ViewModels.SettingsPageViewModel" />
     <RootType FullName="Template10.Converters.ValueWhenConverter">

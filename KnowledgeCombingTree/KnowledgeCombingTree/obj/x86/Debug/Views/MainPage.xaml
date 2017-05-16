@@ -58,12 +58,12 @@
 
             <!--  secondary commands  -->
             <controls:PageHeader.PrimaryCommands>
-                <AppBarButton x:ConnectionId='28' Content="&#xE72D;" FontFamily="Segoe MDL2 Assets" Margin="30, 0, 0, 0"                            Width="Auto"/>
+                <AppBarButton x:ConnectionId='33' Content="&#xE72D;" FontFamily="Segoe MDL2 Assets" Margin="30, 0, 0, 0"                            Width="Auto"/>
             </controls:PageHeader.PrimaryCommands>
             <controls:PageHeader.SecondaryCommands>
-                <AppBarButton x:ConnectionId='29'                                         Label="Settings" />
-                <AppBarButton x:ConnectionId='30'                                        Label="Privacy" />
-                <AppBarButton x:ConnectionId='31'                                      Label="About" />
+                <AppBarButton x:ConnectionId='34'                                         Label="Settings" />
+                <AppBarButton x:ConnectionId='35'                                        Label="Privacy" />
+                <AppBarButton x:ConnectionId='36'                                      Label="About" />
             </controls:PageHeader.SecondaryCommands>
 
         </controls:PageHeader>
@@ -86,25 +86,42 @@
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <StackPanel Orientation="Horizontal">
-                           <TextBox x:ConnectionId='25' Name="SearchTextBox"
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <ComboBox x:ConnectionId='28' Name="SearchType" Header="Srarch Type" SelectedIndex="0" Margin="10">
+                                <ComboBoxItem Content="All"></ComboBoxItem>
+                                <ComboBoxItem Content="Folder"></ComboBoxItem>
+                                <ComboBoxItem Content="Website"></ComboBoxItem>
+                            </ComboBox>
+                            <ComboBox x:ConnectionId='29' Name="SearchBy" Header="Srarch By" SelectedIndex="0" Margin="10">
+                                <ComboBoxItem x:ConnectionId='30' Name="SearchByAll" Content="All(include path)"></ComboBoxItem>
+                                <ComboBoxItem x:ConnectionId='31' Name="SearchByName" Content="Name"></ComboBoxItem>
+                                <ComboBoxItem x:ConnectionId='32' Name="SearchByDescription" Content="Description"></ComboBoxItem>
+                            </ComboBox>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox x:ConnectionId='25' Name="SearchTextBox"
+                                     Margin="0, 0, 0, 10"
                                     Header="Enter the Key Words:"
                                     PlaceholderText="Key Words"
                                     TextWrapping="Wrap">
                             </TextBox>
 
-                            <StackPanel Margin="16,16,16,0">
-                            <Button x:ConnectionId='26' x:Name="submitButton"
-                                    BorderBrush="Gray"
-                                                              
-                                    Content="Search"/>
+                            <StackPanel Margin="16,16,16,0" Orientation="Horizontal">
+                                <Button x:ConnectionId='26' x:Name="submitButton"
+                                        BorderBrush="Gray"
+                                        Margin="5"
+                                                                  
+                                        Content="Search"/>
 
-                            <Button x:ConnectionId='27' x:Name="submitButton2"
-                                    BorderBrush="Gray"
-                                                                    
-                                    Content="DeepSearch"/>
+                                <Button x:ConnectionId='27' x:Name="submitButton2"
+                                        Margin="5"
+                                        BorderBrush="Gray"
+                                                                        
+                                        Content="DeepSearch"/>
+                            </StackPanel>
                         </StackPanel>
-
                     </StackPanel>
                     <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1">
                         <StackPanel>

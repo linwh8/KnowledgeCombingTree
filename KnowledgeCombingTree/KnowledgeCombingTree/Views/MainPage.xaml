@@ -86,25 +86,42 @@
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <StackPanel Orientation="Horizontal">
-                           <TextBox Name="SearchTextBox"
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <ComboBox Name="SearchType" Header="Srarch Type" SelectedIndex="0" Margin="10">
+                                <ComboBoxItem Content="All"></ComboBoxItem>
+                                <ComboBoxItem Content="Folder"></ComboBoxItem>
+                                <ComboBoxItem Content="Website"></ComboBoxItem>
+                            </ComboBox>
+                            <ComboBox Name="SearchBy" Header="Srarch By" SelectedIndex="0" Margin="10">
+                                <ComboBoxItem Name="SearchByAll" Content="All(include path)"></ComboBoxItem>
+                                <ComboBoxItem Name="SearchByName" Content="Name"></ComboBoxItem>
+                                <ComboBoxItem Name="SearchByDescription" Content="Description"></ComboBoxItem>
+                            </ComboBox>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Name="SearchTextBox"
+                                     Margin="0, 0, 0, 10"
                                     Header="Enter the Key Words:"
                                     PlaceholderText="Key Words"
                                     TextWrapping="Wrap">
                             </TextBox>
 
-                            <StackPanel Margin="16,16,16,0">
-                            <Button x:Name="submitButton"
-                                    BorderBrush="Gray"
-                                    Click="submitButton_Click"
-                                    Content="Search"/>
+                            <StackPanel Margin="16,16,16,0" Orientation="Horizontal">
+                                <Button x:Name="submitButton"
+                                        BorderBrush="Gray"
+                                        Margin="5"
+                                        Click="submitButton_Click"
+                                        Content="Search"/>
 
-                            <Button x:Name="submitButton2"
-                                    BorderBrush="Gray"
-                                    Click="SecondSreachButton_Click"
-                                    Content="DeepSearch"/>
+                                <Button x:Name="submitButton2"
+                                        Margin="5"
+                                        BorderBrush="Gray"
+                                        Click="SecondSreachButton_Click"
+                                        Content="DeepSearch"/>
+                            </StackPanel>
                         </StackPanel>
-
                     </StackPanel>
                     <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1">
                         <StackPanel>

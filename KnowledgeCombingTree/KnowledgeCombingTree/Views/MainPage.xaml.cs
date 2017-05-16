@@ -96,7 +96,7 @@ namespace KnowledgeCombingTree.Views
             var text = SearchTextBox.Text;
             if (text == "") return;
             ViewModel.SearchedItems.Clear();
-            foreach (var item in DbService.SearchText(text))
+            foreach (var item in DbService.SearchText(text, SearchType.SelectedIndex, SearchBy.SelectedIndex))
             {
                 ViewModel.SearchedItems.Add(item);
             }

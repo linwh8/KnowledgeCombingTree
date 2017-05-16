@@ -57,6 +57,14 @@ namespace KnowledgeCombingTree.Services.DatabaseServices
                                                     FROM treenodes
                                                     WHERE (name LIKE ?) OR (description LIKE ?) OR (path LIKE ?)
                                                     ORDER BY name";
+        private static string TEXT_SEARCH_WITH_NAME = @"SELECT id, parent_id, level, path, name, description, feature_id
+                                                        FROM treenodes
+                                                        WHERE name LIKE ?
+                                                        ORDER BY name";
+        private static string TEXT_SEARCH_WITH_DESCRIPTION = @"SELECT id, parent_id, level, path, name, description, feature_id
+                                                                FROM treenodes
+                                                                WHERE description LIKE ?
+                                                                ORDER BY name";
 
         private static SQLiteConnection conn = GetConnection();
 
@@ -301,7 +309,42 @@ namespace KnowledgeCombingTree.Services.DatabaseServices
             }
         }
 
-        public static ObservableCollection<TreeNode> SearchText(string text)
+        // 根据字符串及检索类型检索数据
+        public static ObservableCollection<TreeNode> SearchText(string text, int type, int search_by)
+        {
+            ObservableCollection<TreeNode> _result;
+            if (search_by == 0)
+                _result = SearchTextAll(text);
+            else if (search_by == 1)
+                _result = SearchTextWith(text, TEXT_SEARCH_WITH_NAME);
+            else
+                _result = SearchTextWith(text, TEXT_SEARCH_WITH_DESCRIPTION);
+
+            if (type == 0) // all
+            {
+                return _result;
+            }
+            else if (type == 2) // website
+            {
+                ObservableCollection<TreeNode> result = new ObservableCollection<TreeNode>();
+                foreach (var item in _result)
+                {
+                    if (item.getLevel() == -1) result.Add(item);
+                }
+                return result;
+            }
+            else // folder
+            {
+                ObservableCollection<TreeNode> result = new ObservableCollection<TreeNode>();
+                foreach (var item in _result)
+                {
+                    if (item.getLevel() != -1) result.Add(item);
+                }
+                return result;
+            }
+        }
+        // 检索辅助函数
+        private static ObservableCollection<TreeNode> SearchTextAll(string text)
         {
             ObservableCollection<TreeNode> list = new ObservableCollection<TreeNode>();
             string key = "%" + text + "%";
@@ -310,6 +353,35 @@ namespace KnowledgeCombingTree.Services.DatabaseServices
                 statement.Bind(1, key);
                 statement.Bind(2, key);
                 statement.Bind(3, key);
+                while (SQLiteResult.ROW == statement.Step())
+                {
+                    try
+                    {
+                        TreeNode item = new TreeNode((string)statement[0],
+                                                     (string)statement[1],
+                                                     (long)statement[2],
+                                                     (string)statement[3],
+                                                     (string)statement[4],
+                                                     (string)statement[5],
+                                                     (string)statement[6]);
+                        list.Add(item);
+                    }
+                    catch (Exception e)
+                    {
+                        var i = new MessageDialog(e.Message).ShowAsync();
+                    }
+                }
+            }
+            return list;
+        }
+        // 检索辅助函数
+        private static ObservableCollection<TreeNode> SearchTextWith(string text, string search_string)
+        {
+            ObservableCollection<TreeNode> list = new ObservableCollection<TreeNode>();
+            string key = "%" + text + "%";
+            using (var statement = conn.Prepare(search_string))
+            {
+                statement.Bind(1, key);
                 while (SQLiteResult.ROW == statement.Step())
                 {
                     try
