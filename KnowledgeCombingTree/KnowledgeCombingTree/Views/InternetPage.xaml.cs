@@ -318,6 +318,8 @@ namespace KnowledgeCombingTree.Views
             if (ViewModel.SelectedItem != null)
             {
                 path.IsEnabled = true;
+                name.Text = "";
+                description.Text = "";
                 CreateChildNode(ViewModel.SelectedItem.getId());
             }
         }
