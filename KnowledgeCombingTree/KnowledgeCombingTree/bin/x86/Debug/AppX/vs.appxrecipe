@@ -16,25 +16,25 @@
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
-    <RegisteredManifestChecksum>A390FC26153F351438B01B945FDC1DEDE781E825C72A494347EF3AF412113435</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>6fbb16e7-57e8-4a27-bfc5-bd2652b4aff0_1.0.4.0_x86__4xx88nz50dyqw</RegisteredPackageMoniker>
+    <RegisteredManifestChecksum>1155E0CA32D05C4638FC5E9631904052A69855D96416FA119FE8444EA30C404E</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>6fbb16e7-57e8-4a27-bfc5-bd2652b4aff0_1.0.6.0_x86__4xx88nz50dyqw</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>6fbb16e7-57e8-4a27-bfc5-bd2652b4aff0_4xx88nz50dyqw!App</RegisteredUserModeAppID>
     <RegisteredPackageID>6fbb16e7-57e8-4a27-bfc5-bd2652b4aff0</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=67517</RegisteredPackagePublisher>
-    <RegisteredVersion>1.0.4.0</RegisteredVersion>
+    <RegisteredVersion>1.0.6.0</RegisteredVersion>
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-17T08:33:26.973</Modified>
+      <Modified>2017-05-18T03:47:35.173</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\KnowledgeCombingTree.exe">
       <PackagePath>entrypoint\KnowledgeCombingTree.exe</PackagePath>
-      <Modified>2017-05-17T08:33:25.933</Modified>
+      <Modified>2017-05-17T14:05:16.783</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\67517\.nuget\packages\Microsoft.CSharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -619,7 +619,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\KnowledgeCombingTree.xr.xml">
       <PackagePath>KnowledgeCombingTree.xr.xml</PackagePath>
-      <Modified>2017-05-17T08:33:25.527</Modified>
+      <Modified>2017-05-17T14:05:16.033</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -660,11 +660,11 @@
     <AppxPackagedFile Include="D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-17T08:33:26.574</Modified>
+      <Modified>2017-05-18T03:47:34.456</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x86\Debug\Core\KnowledgeCombingTree.exe">
       <PackagePath>KnowledgeCombingTree.exe</PackagePath>
-      <Modified>2017-05-17T08:33:26.961</Modified>
+      <Modified>2017-05-18T03:47:35.159</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
