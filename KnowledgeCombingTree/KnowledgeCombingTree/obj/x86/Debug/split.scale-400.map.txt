@@ -3,5 +3,5 @@
 "ResourceDimensions"		"scale-400"
 
 [Files]
-"D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x86\Debug\split.scale-400.pri"			"resources.pri"
-"D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x86\Debug\PackageLayout\Assets\SplashScreen.scale-400.png"			"Assets\SplashScreen.scale-400.png"
+"E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x86\Debug\split.scale-400.pri"			"resources.pri"
+"E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x86\Debug\PackageLayout\Assets\SplashScreen.scale-400.png"			"Assets\SplashScreen.scale-400.png"

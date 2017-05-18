@@ -3,4 +3,4 @@
 "ResourceDimensions"		"language-zh-tw"
 
 [Files]
-"D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x86\Debug\split.language-zh-hant.pri"			"resources.pri"
+"E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x86\Debug\split.language-zh-hant.pri"			"resources.pri"

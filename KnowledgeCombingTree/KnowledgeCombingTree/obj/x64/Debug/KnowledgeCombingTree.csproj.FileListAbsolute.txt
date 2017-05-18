@@ -291,3 +291,12 @@ D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombi
 D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x64\Debug\XamlSaveStateFile.xml
 D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x64\Debug\KnowledgeCombingTree.exe
 D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x64\Debug\KnowledgeCombingTree.pdb
+E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x64\Debug\KnowledgeCombingTree.csprojResolveAssemblyReference.cache
+E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x64\Debug\Views\InternetPage.g.i.cs
+E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x64\Debug\Views\InternetPage.g.cs
+E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x64\Debug\Views\InternetPage.xaml
+E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x64\Debug\Views\InternetPage.xbf
+E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x64\Debug\Views\InternetPage.xbf
+E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x64\Debug\NotificationsExtensions.winmd
+E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x64\Debug\NotificationsExtensions.Win10.dll
+E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\bin\x64\Debug\NotificationsExtensions.Win10.pdb

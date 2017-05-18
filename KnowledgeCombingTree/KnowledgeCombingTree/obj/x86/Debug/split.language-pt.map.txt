@@ -3,4 +3,4 @@
 "ResourceDimensions"		"language-pt-br"
 
 [Files]
-"D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x86\Debug\split.language-pt.pri"			"resources.pri"
+"E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x86\Debug\split.language-pt.pri"			"resources.pri"

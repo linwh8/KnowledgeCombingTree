@@ -3,4 +3,4 @@
 "ResourceDimensions"		"language-ja-jp"
 
 [Files]
-"D:\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x86\Debug\split.language-ja.pri"			"resources.pri"
+"E:\git_repository\KnowledgeCombingTree\KnowledgeCombingTree\KnowledgeCombingTree\obj\x86\Debug\split.language-ja.pri"			"resources.pri"
