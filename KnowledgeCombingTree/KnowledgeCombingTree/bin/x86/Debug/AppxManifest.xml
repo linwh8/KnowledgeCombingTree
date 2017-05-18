@@ -7,7 +7,7 @@
 
   有关程序包清单文件的详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=241727
  -->
-  <Identity Name="6fbb16e7-57e8-4a27-bfc5-bd2652b4aff0" Publisher="CN=67517" Version="1.0.5.0" ProcessorArchitecture="x86" />
+  <Identity Name="6fbb16e7-57e8-4a27-bfc5-bd2652b4aff0" Publisher="CN=67517" Version="1.0.6.0" ProcessorArchitecture="x86" />
   <mp:PhoneIdentity PhoneProductId="6fbb16e7-57e8-4a27-bfc5-bd2652b4aff0" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>KnowledgeCombingTree</DisplayName>
